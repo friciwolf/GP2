@@ -1,0 +1,31 @@
+\babel@toc {german}{}
+\contentsline {section}{\numberline {1}Theorie}{3}
+\contentsline {section}{\numberline {2}Allgemeiner Versuchsaufbau}{5}
+\contentsline {section}{\numberline {3}Kalibrierung des Wegaufnehmers}{7}
+\contentsline {subsection}{\numberline {3.1}Versuchsbeschreibung}{7}
+\contentsline {subsection}{\numberline {3.2}Versuchsaufbau und Durchf\IeC {\"u}hrung}{7}
+\contentsline {subsection}{\numberline {3.3}Versuchsauswertung}{7}
+\contentsline {section}{\numberline {4}Abstandsmessung}{10}
+\contentsline {subsection}{\numberline {4.1}Versuchsbeschreibung}{10}
+\contentsline {subsection}{\numberline {4.2}Versuchsaufbau und Durchf\IeC {\"u}hrung}{10}
+\contentsline {subsection}{\numberline {4.3}Versuchsauswertung}{11}
+\contentsline {section}{\numberline {5}Stehende Welle}{14}
+\contentsline {subsection}{\numberline {5.1}Versuchsbeschreibung}{14}
+\contentsline {subsection}{\numberline {5.2}Versuchsaufbau und Durchf\IeC {\"u}hrung}{14}
+\contentsline {subsection}{\numberline {5.3}Versuchsauswertung}{14}
+\contentsline {section}{\numberline {6}Polarisationsfilter}{17}
+\contentsline {subsection}{\numberline {6.1}Versuchsbeschreibung}{17}
+\contentsline {subsection}{\numberline {6.2}Versuchsaufbau und Durchf\IeC {\"u}hrung}{17}
+\contentsline {subsection}{\numberline {6.3}Versuchsauswertung}{17}
+\contentsline {section}{\numberline {7}Winkelkalibrierung}{21}
+\contentsline {subsection}{\numberline {7.1}Versuchsbeschreibung}{21}
+\contentsline {subsection}{\numberline {7.2}Versuchsbeschreibung, Aufbau und Durchf\IeC {\"u}hrung}{21}
+\contentsline {subsection}{\numberline {7.3}Versuchsauswertung}{21}
+\contentsline {section}{\numberline {8}Brechung am PE-Halbzylinder}{24}
+\contentsline {subsection}{\numberline {8.1}Versuchsbeschreibung}{24}
+\contentsline {subsection}{\numberline {8.2}Versuchsaufbau und Durchf\IeC {\"u}hrung}{24}
+\contentsline {subsection}{\numberline {8.3}Versuchsauswertung}{24}
+\contentsline {section}{\numberline {9}Optischer Tunneleffekt}{29}
+\contentsline {subsection}{\numberline {9.1}Versuchsbeschreibung}{29}
+\contentsline {subsection}{\numberline {9.2}Versuchsaufbau und Durchf\IeC {\"u}hrung}{29}
+\contentsline {subsection}{\numberline {9.3}Versuchsauswertung}{29}
