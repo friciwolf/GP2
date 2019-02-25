@@ -1,0 +1,146 @@
+% !TeX spellcheck = en_US
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{float}
+
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{verbatim} 
+
+
+\author{Gruppe A2 \\ Julián Häck, Maria Spethmann}
+\title{Protokoll Optik 1 \\ Physikalisches Grundpraktikum 2}
+
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty} % Keine Seitenzahl auf der Titelseite
+	\newpage
+	\pagestyle{headings} % Seitenzahlen oben, Section und Subsection in Kopfzeile
+	\tableofcontents
+	\newpage
+
+
+\section{Einleitung}
+Bei diesem Versuch versuchen wir mithilfe eines Michelson-Interferometer die Wellenlänge eines unbekannten Lasers zu vermessen. Anschließend werden wir die Druckabhängigkeit der Brechungsindex von Luft bestimmen und zu guter Letzt den Brechungsindex von $CO_2$ bei Normaldruck.
+\section{Physikalische Grundlagen} 
+Bei einem Michelson-Interferometer wird durch Amplitudenaufspaltung Laserlicht auf getrennte Bahnen geleitet, durchlaufen unterschiedliche optische Wege und können dann so wieder zusammengeführt werden, dass sie sich auf einem Schirm nach dem Superpositionsprinzip überlagern und sich ein Interferenzmusster bildet.
+Abhängig vom Öffnungswinkel $\Theta$ des Laserlichts ergiben sich somit Ringförmige Maxima:
+\begin{equation}
+2\cdot d\cdot cos(\Theta)=m\cdot \lambda
+\end{equation}
+\section{Bestimmen des Übersetzungskoeffizients}
+Für die folgenden Versuche benötigen wir das Übersetzngsverhältnis der Feinsteinstellschraube und damit den Zusammenhang zwischen der optischen Weglänge $d$ und dem Skalenwert $s$ der hier als linear angenommen wird:
+\begin{equation}
+d=k\cdot s
+\end{equation}
+Dazu betrachten wir Differenz der Maxima im Mittelpunkt $\Theta = 0$ beim Verschieben einer der beiden Spiegel. Somit ergibt sich für den Übersetzungskoeffizienten folgender Zusammenhang:
+\begin{equation}
+k = \frac{\lambda \cdot \Delta m}{2\cdot \Delta s}
+\end{equation}
+\subsection{Versuchsaufbau und Durchführung}
+Das Laserlicht wird über einen Spiegel durch eine Linse gelenkt um den Öffnungswinkel zu vergrößern. Dadurch können die einzelnen Maxima besser erkannt werden. Danach fällt der Lichststrahl auf einen weiteren Spiegel der ihn auf einen Strahlteiler lenkt. Dieser Teilt den Strahl so auf zwei senkrecht zueinander stehende Wege auf, an deren Ende je ein Spiegel steht von denen einer durch den Feinsteinstelltrieb beweglich ist, dass sie nach der Reflexion beide auf einem Schirm zusammen fallen.\\\\
+Durch Drehen an der Feinsteinstellschraube kann nun einer der optischen Wege verändert werden und somit eine Veränderung des Interferenzbildes auf derm Schirm beobachtet werden. Man zählt nun die im zentralen Maxima verschwindenden oder erscheinenden Maxima (Ringe) und erhällt somit $\Delta m$.
+\subsection{Versuchsauswertung}
+\subsubsection{Rohdaten}
+\subsubsection{Transformation der Rohdaten und Analyse}
+\subsubsection{Fazit}
+\section{Bestimmung der Wellenlänge}
+\subsection{Versuchsaufbau und Durchführung}
+Sowohl der Versuchsaufbau als auch die Durchführung sind identisch zum vorherigen Versuch. Der Unterschied besteht allein in der Auswertung, da nun $k$ bekannt und $\lambda$ unbekannt ist.
+\subsection{Versuchsauswertung}
+\subsubsection{Rohdaten}
+\begin{table}[H]\centering
+\begin{tabular}{c||c}
+m&s in mm\\
+\hline
+0&7.5\\
+10&7.55\\
+20&7.61\\
+30&7.66\\
+40&7.71\\
+50&7.77\\
+60&7.82\\
+70&7.88\\
+80&7.94\\
+90&8.00\\
+100&8.05\\
+110&8.11\\
+120&8.16\\
+130&8.21\\
+140&8.28\\
+150&8.34\\
+160&8.39\\
+170&8.45\\
+180&8.51\\
+190&8.56\\
+200&8.62\\
+210&8.67\\
+220&8.73\\
+230&8.79\\
+240&8.85\\
+250&8.90\\
+260&8.96\\
+270&9.01\\
+
+\end{tabular}
+\caption{Rohdaten für s}\label{Tabelle}
+\end{table}
+\subsubsection{Transformation der Rohdaten und Analyse}
+Es wird nun $m$ gegen $2\cdot s \cdot k$ aufgetragen. Der statistische Fehler wird aus der linearen Regression, der systematische durch dreifache lineare Regression mit $k$, $k+\sigma_k$ bzw. $k-\sigma_k$ bestimmt.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{Bilder/Lambdagrün_LinReg.pdf}
+\caption{Lineare Regression der Wellenlänge für k}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{Bilder/Lambdagrün_Residuen.pdf}
+\caption{Residuen der Wellenlänge für k}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{Bilder/Lambdagrün_LinReg2.pdf}
+\caption{Lineare Regression der Wellenlänge für k-$\sigma_k$}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{Bilder/Lambdagrün_Residuen2.pdf}
+\caption{Residuen der Wellenlänge für k-$\sigma_k$}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{Bilder/Lambdagrün_LinReg3.pdf}
+\caption{Lineare Regression der Wellenlänge für k+$\sigma_k$}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{Bilder/Lambdagrün_Residuen3.pdf}
+\caption{Residuen der Wellenlänge für k+$\sigma_k$}
+\end{figure}
+
+Die Auswertung ergibt somit eine Wellenlänge von:
+\begin{align*}
+\lambda = 531,805 \pm 0,731(stat.) \pm 5.234(sys.) nm
+\end{align*}
+bei einem $\chi^2$ pro Freiheitsgrad von:
+\begin{align*}
+\frac{\chi^2}{n_df} = 2.73
+\end{align*}
+
+\subsubsection{Fazit}
+Das $\frac{\chi^2}{n_df}$ von 2.73 ist nicht ideal, was wir uns durch Verzählen der Maxima erklären. Durch einmalig falsches Abzählen verschieben sich die Punkte für jeweils zehn Maxima, was auch die Systematik in den Residuen erklärt.
+Bedenken wir diese Ungenauigkeit in unserer Auswertung sind wir mit unserem Endergebnis dennoch einigermaßen zufrieden. Das Resultat für die Wellenlänge liegt im $1\sigma$ Bereich der Erwartung. Der sehr kleine statistische Fehler ist gerechtfertigt durch die hohe Präzision bei der Interferenz eines Michelson-Interferometers. Der recht große systematische Fehler kommt durch Schwierigkeiten bei der Justage und des vorher erwähnten Ablesens.
+\end{document}

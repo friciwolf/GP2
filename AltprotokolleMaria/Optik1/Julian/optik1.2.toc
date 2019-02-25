@@ -1,0 +1,11 @@
+\babel@toc {german}{}
+\contentsline {section}{\numberline {1}Physikalische Grundlagen}{3}
+\contentsline {section}{\numberline {2}Versuchsaufbau und -durchf\IeC {\"u}hrung}{4}
+\contentsline {subsection}{\numberline {2.1}Bestimmung der Dispersionskurve}{5}
+\contentsline {subsection}{\numberline {2.2}Vermessen eines unbekannt Spektrums}{5}
+\contentsline {subsection}{\numberline {2.3}Aufl\IeC {\"o}sungsverm\IeC {\"o}gen}{5}
+\contentsline {section}{\numberline {3}Auswertung}{5}
+\contentsline {subsection}{\numberline {3.1}Bestimmung der Messunsicherheit auf $\phi _i$}{5}
+\contentsline {subsection}{\numberline {3.2}Bestimmung der Dispersionskurve $n(\lambda )$ mit der Cauchy Formel}{7}
+\contentsline {subsection}{\numberline {3.3}Untersuchung des Spektrums einer Zinklampe}{7}
+\contentsline {subsection}{\numberline {3.4}Aufl\IeC {\"o}sungsverm\IeC {\"o}gen}{7}

@@ -1,0 +1,21 @@
+\babel@toc {german}{}
+\contentsline {section}{\numberline {1}Einleitung}{3}
+\contentsline {section}{\numberline {2}Physikalische Grundlagen}{3}
+\contentsline {section}{\numberline {3}Serienschwingkreis}{3}
+\contentsline {subsection}{\numberline {3.1}Physikalische Grundlagen}{3}
+\contentsline {subsection}{\numberline {3.2}Messbr\IeC {\"u}cke}{4}
+\contentsline {subsection}{\numberline {3.3}Oszilloskop}{5}
+\contentsline {subsubsection}{\numberline {3.3.1}Versuchsaufbau und Durchf\IeC {\"u}hrung}{5}
+\contentsline {subsubsection}{\numberline {3.3.2}Auswertung}{6}
+\contentsline {subsection}{\numberline {3.4}CASSY-Messung}{6}
+\contentsline {subsubsection}{\numberline {3.4.1}Versuchsaufbau- und Durchf\IeC {\"u}hrung}{6}
+\contentsline {subsubsection}{\numberline {3.4.2}Auswertung}{7}
+\contentsline {subsection}{\numberline {3.5}Zusammenfassung}{12}
+\contentsline {section}{\numberline {4}Parallelschwingkreis}{15}
+\contentsline {subsection}{\numberline {4.1}Physikalische Grundlagen}{15}
+\contentsline {subsection}{\numberline {4.2}Messbr\IeC {\"u}cke}{15}
+\contentsline {subsection}{\numberline {4.3}CASSY-Messung}{16}
+\contentsline {subsubsection}{\numberline {4.3.1}Aufbau und Durchf\IeC {\"u}hrung}{16}
+\contentsline {subsubsection}{\numberline {4.3.2}Auswertung}{16}
+\contentsline {subsection}{\numberline {4.4}Zusammenfassung}{21}
+\contentsline {section}{\numberline {5}Anhang}{23}
