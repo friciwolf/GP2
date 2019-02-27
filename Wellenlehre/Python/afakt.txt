@@ -1,0 +1,2 @@
+# a-Faktor Umrechnung Spannung in Intensität, stat. Fehler, syst. Fehler
+-1.561177969618707806e+00 3.837409968543784716e-02 4.016340367271720169e-03
