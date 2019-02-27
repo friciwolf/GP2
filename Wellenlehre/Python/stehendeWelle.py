@@ -183,3 +183,15 @@ print("Wellenlänge1 = {:.4f} ± {:.4f}(stat) ± {:.4f}(sys) cm".format(Wellenla
 wellenlaenge.append(Wellenlaenge)
 ewellenlaenge.append(eWellenlaenge)
 esyswellenlaenge.append(esysWellenlaenge)
+
+# Zusammenfassen der Werte
+
+
+Lambda, eLambda = anal.gewichtetes_mittel(np.array(wellenlaenge), np.array(ewellenlaenge))
+esysLambda = max(esyswellenlaenge)
+
+print("\n\n gewichtetes Mittel aller Werte: Wellenlaenge = {:.4f} ± {:.4f} ± {:.4f}(sys) cm".format(Lambda, eLambda, esysLambda))
+
+np.savetxt('Lambda.txt', [[Lambda, eLambda, esysLambda]], header="Wellenlänge durch stehende Wellen, stat. Fehler, syst. Fehler")
+
+
