@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 26 13:26:54 2019
+Created on Tue Feb 26 15:00:39 2019
 
 @author: Mate
 """
@@ -10,17 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.gridspec import GridSpec
 import praktikum.analyse as anal
-
-def c_open(file):
-    """
-    Zum Einlesen der CASSY-Messungen
-    Parameter: file - Messdatei
-    returns: R, U
-    """
-    data = cassy.CassyDaten(file)
-    R = data.messung(1).datenreihe("R_B1").werte
-    U = data.messung(1).datenreihe("U_A1").werte
-    return np.array(R), np.array(U)
+import praktikum.cassy1 as cassy1
 
 def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
     """
@@ -43,9 +33,9 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
     y = np.array(y)
     ex = np.array(ex)
     ey = np.array(ey)
-    a,ea,b,eb,chiq,corr = anal.lineare_regression_xy(x,y,ex,ey)
+    a,ea,b,eb,chiq,corr = anal.lineare_regression(x,y,ey)
     
-    gs1 = GridSpec(3, 3)
+    gs1 = GridSpec(3, 5)
     
     plt.subplot(gs1[:-1,:-1])
     plt.title(titel)
@@ -55,7 +45,8 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
     y2 = a*x2+b
     plt.plot(x2, y2, color="orange")
     plt.ylabel(yl+" [{}]".format(xeinheit))
-    plt.legend(title="Lineare Regression\n{} = ({:.2f} ± {:.2f}){} $\cdot$ {}+({:.2f}±{:.2f}){}\n$\chi^2 /NDF={:.2f}$".format(yl,a,ea, xeinheit,xl,b, eb, yeinheit, chiq/(len(x)-2)), loc=1)
+    plt.ylim(top=15)
+    plt.legend(title="Lineare Regression\n{} = ({:.4f} ± {:.4f}){}/{} $\cdot$ {}+({:.4f}±{:.4f}){}\n$\chi^2 /NDF={:.2f}$".format(yl,a,ea, xeinheit, yeinheit,xl,b, eb, xeinheit, chiq/(len(x)-2)), loc=1)
     
     plt.subplot(gs1[2, :-1])
     plt.errorbar(x,y-a*x-b, np.sqrt(ex**2*a**2+ey**2), marker="x", linestyle="None", capsize=5)
@@ -63,3 +54,15 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
     plt.xlabel(xl+" [{}]".format(yeinheit))
     
     plt.tight_layout()
+    return a, ea, b, eb, chiq
+
+data = cassy1.lese_lab_datei("../Winkelkal.lab")
+R = data[:,3]
+phi = data[:,5]
+
+eR = np.ones(len(R))*0.005 #nehme als statistische Fehler den Digitalisirungsfehler - chiq akzeptabel
+
+a, ea, b, eb, chiq = pltmitres(phi, R, np.ones(len(R))*0, eR, "$\phi$", "R", "$k\Omega$", "°", "")
+plt.savefig("../Images/Winkelkalib.pdf")
+plt.show()
+print("Lineare Regression\n{} = ({:.4f} ± {:.4f}){}/{} * {}+({:.4f}±{:.4f}){}\nchi^2 /NDF={:.2f}".format("R",a,ea, "kOhm", "°","phi",b, eb, "°", chiq/(len(R)-2)))
