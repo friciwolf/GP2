@@ -270,7 +270,7 @@ durchführen kann. Als Fehler wurde hier folgende Werte genommen:
 	$\sigma_R = \SI{0.005}{k \Omega}$\\
 	$\sigma_{\phi} = 0.5^\circ$
 \end{center}
-Die Ergebnisse der Regression sind in der Abb \ref{fig:winkelkalib} dargestellt:
+Die Ergebnisse der Regression sind in der Abb. \ref{fig:winkelkalib} dargestellt:
 
 \begin{figure}[H]
 	\centering
@@ -317,7 +317,7 @@ Unser Ziel ist es, die Spannung des Verstärkers gegen den Widerstand des Winkel
 	\lambda &= d \cdot \sin(\phi),&\, \text{für einen Doppelspalt mit Spaltabstand d}
 \end{align*}
 \footnotetext{der Faktor 4.49341 kommt durch $((\sin(x)/x)^2)'=0  \Rightarrow x = \tan(x)$ zustande (für die Maxima erster Ordnung)}
-Die Rohdaten zweier Beispielmessungen sind in der Abb. \ref{fig:rohdaten} dargestellt. Man erkennt sofort, dass die Peaks unscharf erscheinen, sodass die Unsicherheit auf die Maxima groß wird. Außerdem sieht man auch, dass die Verteilung gegen die Nullage verschoben ist, sodass sie zuerst zentriert werden soll, um sie mit der theoretischen Vorhersage zu vergleichen.
+Die Rohdaten (mit den umgerechneten Widerstandswerten) zweier Beispielmessungen sind in der Abb. \ref{fig:rohdaten} dargestellt. Man erkennt sofort, dass die Peaks unscharf erscheinen, sodass die Unsicherheit auf die Maxima unvermeidlich groß wird. Außerdem sieht man auch, dass die Verteilung gegen die Nullage verschoben ist, sodass sie zuerst zentriert werden soll, um sie mit der theoretischen Vorhersage zu vergleichen.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
@@ -331,7 +331,39 @@ Die Rohdaten zweier Beispielmessungen sind in der Abb. \ref{fig:rohdaten} darges
 	\caption{Rohdaten der Spannungsmessung}
 	\label{fig:rohdaten}
 \end{figure}
+Aus diesen (insgesamt 11) Graphen wurden zuerst die Lagen $\phi_1,  \phi_2$ der Maxima erster Ordnung mittels der Bibliothek scipy bestimmt. Um die Graphen zu zentrieren, wurden alle Daten mit $(\phi_1+\phi_2)/2$ verschoben, sodass diese Maxima symmetrisch verteilt sind. Die Plots der gleichen verschobenen Rohdaten sind in Abb. \ref{fig:daten_mit_theo} dargestellt.
 
-
-
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{Rohdaten/Images/einzelspalt_3_3}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{Rohdaten/Images/doppelspalt_2}
+	\end{subfigure}
+	\caption{Rohdaten der Spannungsmessung}
+	\label{fig:daten_mit_theo}
+\end{figure}
+Durch Zusammenfassen der einzelnen Messungen erhält man in der Tab. \ref{tab:messwerte} dargestellten Resultate.\\
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline 
+		Messkonfiguration& Gemessener Wert & Theoretischer Wert \\ 
+		\hline 
+		Einzelspalt d=3cm &(28,4$\pm$0,95)$^\circ$&27,69$^\circ$ \\ 
+		\hline 
+		Einzelspalt d=4cm &(21.245$\pm$0,95)$^\circ$ &20,4$^\circ$ \\ 
+		\hline 
+		Doppelspalt d=4,9cm, b=2,4cm&(10,455$\pm$1,34)$^\circ$ &11.47$^\circ$ \\ 
+		\hline 
+		Doppelspalt d=4,3cm, b=1,8cm&(12,74$\pm$1,9)$^\circ$ &13,1$^\circ$ \\
+		\hline 
+	\end{tabular}
+	\label{tab:messwerte}
+	\caption{Zusammenfassung der gemessenen Extrema} 
+\end{table}
+Man erkennt, dass alle der gemessenen Werte im 1$\sigma$-Bereich der theoretischen Vorhersage liegen. Allerdings gibt es Abweichungen in der Intensität, die u.A. auf Störeffekte (Reflexion an umliegenden Gegenstände) zurückführen lassen, was man durch eine Rauschmessung hätte korrigieren können.
 \end{document}
