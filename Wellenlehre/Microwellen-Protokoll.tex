@@ -29,9 +29,9 @@
 
 \section{Theorie}
 
-Schallwellen sind Longitudinalwellen, die sich in der Luft ausbreiten. Die zugehörigen Feldgrößen, der Schalldruck $p$ und die Schallschnelle $u$, lassen sich mit den Eulerschen GLeichungen zu den Wellengleichungen kombinieren.
+Schallwellen sind Longitudinalwellen, die sich in der Luft ausbreiten. Die zugehörigen Feldgrößen, der Schalldruck $p$ und die Schallschnelle $u$, lassen sich mit den Eulerschen Gleichungen zu den Wellengleichungen kombinieren.
 \begin{equation}
-\frac{\partial^2p}{\partial t^2}=\frac{\kappa p_0}{\rho}\Delta p:
+\frac{\partial^2p}{\partial t^2}=\frac{\kappa p_0}{\rho}\Delta p,
 \end{equation}
 mit dem Außendruck $p_0$, der Gasdichte $\rho$ und dem Adiabatenexponenten $\kappa$ (analog f"ur $u$).
 Die Schallgeschwindigkeit ist somit
@@ -52,7 +52,7 @@ Bei Reflexion an einer Wand kann es zur Ausbildung von stehenden Wellen kommen, 
 p(x,t)=2p_0\sin(\omega t)\sin(kx)\text{\ \ \ \ mit Reflexion bei }x=0
 \end{equation}
 In Abst"anden einer halben Wellenl"ange bilden sich Knoten, an denen die Amplitude zu allen Zeiten null ist.\\
-Trifft eine ebene Welle auf einen Einzelspalt, so ergibt sich in gro\ss em Abstand dahinter (Frauenhofer N"aherung) ein Interferenzmuster mit einem Hauptmaximum und mehreren Nebenminima und Maxima, wobei f"ur die Minima gilt $\sin(\alpha)=n\lambda/b$, wobei $n=1,2,3...$, $\alpha$ der Winkel zur Einfallsrichtung ist, und $b$ der Spaltbreite.\\
+Trifft eine ebene Welle auf einen Einzelspalt, so ergibt sich in gro\ss em Abstand dahinter (Frauenhofer N"aherung) ein Interferenzmuster mit einem Hauptmaximum und mehreren Nebenminima und Maxima, wobei f"ur die Minima gilt $\sin(\alpha)=n\lambda/b$, mit $n=1,2,3...$, dem Winkel zur Einfallsrichtung $\alpha$, und der Spaltbreite $b$.\\
 Bei einem Doppelspalt zeigt das Interferenzmuster Maxima bei $\sin(\alpha)=m\lambda/d$, mit $m=1,2,3...$ und Spaltabstand $d$ und Minima bei $\sin(\alpha)=(m-1/2)\lambda/d$.
 Allgemein gilt f"ur das Intensit"atsmuster eines N-fach Spaltes:
 \begin{equation}
@@ -83,7 +83,7 @@ Wir nehmen Fehler an von
 \sigma_S &=0.3mm\\
 \sigma_R &= \frac{3\text{k}\Omega}{4096\cdot\sqrt{12}}
 \end{align}
-weil wir die Stative auf ca 1/3mm genau verschieben konnten und wir f"ur den Widerstand den Binningfehler durch die Digitalisierung annehmen.
+weil wir die Stative auf ca 1/3mm genau verschieben konnten und wir f"ur den Widerstand den Digitalisierungsfehler des Cassygeräts annehmen.
 Wir erhalten den Kalibrierungsfaktor K als Steigung zu $K=16.017\pm0.011cm/k\Omega$. Das $\chi^2/n$ ergibt 1.93. Unter Ber"ucksichtigung der geringen Anzahl an Messpunkten ist dieser Wert ein Hinweis darauf, dass sich die Kalibrierung gut durch die Gerade darstellen l"asst. Der Residuenplot zeigt keine Auff"alligkeiten.
 \begin{figure}[H]
 	\centering
@@ -172,7 +172,7 @@ Die folgenden Graphen zeigen die Ergebnisse der linearen Regression.
 	\caption{Residuenplot der Abstandsmessung}
 	\label{Abstandsabh_Residuenplot}
 \end{figure}
-Das $\chi^2/n$ ist mit "uber 20000 sehr gro\ss, was zu erwarten ist, da wir eine wellenartige Verteilung mit einer Gerade anpassen wollen. Die Graphen zeigen jedoch, dass die Gerade durchaus den durchschnittlichen Verlauf der Intensit"at wiedergibt. Wir erhalten einen Wert von $a=1.55$, wobei der Fehler auf $a$ aus der linearen Regression unbrauchbar ist. Um trotzdem eine sinnvolle Breite f"ur $a$ zu berechnen, werden zwei weitere Messreihen analog ausgewertet. Die Werte f"ur $a$ dieser Messreihen lauten $a=1.60$ und $a=1.53$. Wir berechnen den ungewichteten Mittelwert dieser drei Werte von $a$ und die emprisische Standardabweichung als Ma\ss\  f"ur die Unsicherheit. Um den systematischen Fehler auf $a$ zu erhalten, wird die gesamte Rechnung mit um $\sigma_{S_0}$ und $\sigma_{K}$ verschobenem $s$ wiederholt, und die Differenz von $a$ zum urspr"unglichen $a$ als systematischen Fehler angerechnet. Insgesamt erh"alt man so:
+Das $\chi^2/n$ ist mit "uber 20000 sehr gro\ss, was zu erwarten ist, da wir eine wellenartige Verteilung mit einer Gerade anpassen wollen. Die Graphen zeigen jedoch, dass die Gerade durchaus den durchschnittlichen Verlauf der Intensit"at wiedergibt. Wir erhalten einen Wert von $a=1.55$, wobei der Fehler auf $a$ aus der linearen Regression unbrauchbar ist. Um trotzdem eine sinnvolle Breite f"ur $a$ zu berechnen, werden zwei weitere Messreihen analog ausgewertet. Die Werte f"ur $a$ dieser Messreihen lauten $a=1.60$ und $a=1.53$. Wir berechnen den ungewichteten Mittelwert dieser drei Werte von $a$ und die empirische Standardabweichung als Ma\ss\  f"ur die Unsicherheit. Um den systematischen Fehler auf $a$ zu erhalten, wird die gesamte Rechnung mit um $\sigma_{S_0}$ und $\sigma_{K}$ verschobenem $s$ wiederholt, und die Differenz von $a$ zum urspr"unglichen $a$ als systematischen Fehler angerechnet. Insgesamt erh"alt man so:
 \begin{equation}
 a=1.561\pm0.038(stat)\pm0.004(sys)
 \end{equation}
@@ -186,8 +186,7 @@ Ziel dieses Versuchs ist die Bestimmung der Wellenl"ange durch das Vermessen von
 Zur Erzeugung der ebenen Wellen wird ein Parabolspiegel an die Schiene gebaut und der Sender im Brennpunkt und auf den Spiegel zeigend positioniert. Am Schienenende wird eine Wand montiert und der verschiebbare Empf"anger Richtung Wand ausgerichtet. Wie im vorherigen Versuch l"asst sich die Position des Empf"angers mit dem Wegaufnehmer bestimmen.
 
 \subsection{Versuchsdurchf"uhrung}
-Der Empf"anger wird auf der Schiene langsam verschoben und die Spannung des Verst"arkers als Funktion des Widerstandes am Wegaufnehmer gemessen. Die genaue Entfernung zur Wand wird bei dem Versuch nicht ben"otigt, sodass kein Ab
-standsoffset in die Berechnung mit einflie\ss t.
+Der Empf"anger wird auf der Schiene langsam verschoben und die Spannung des Verst"arkers als Funktion des Widerstandes am Wegaufnehmer gemessen. Die genaue Entfernung zur Wand wird bei dem Versuch nicht ben"otigt, sodass kein Abstandsoffset in die Berechnung mit einflie\ss t.
 Die Messwerterfassung erfolgt identisch zum vorherigen Versuch und es werden wieder drei Messreihen durchgef"uhrt.
 
 \subsection{Versuchsauswertung}
@@ -366,8 +365,8 @@ Durch Zusammenfassen der einzelnen Messungen erhält man in der folgenden Tabell
 	\end{tabular}
 	\caption{Zusammenfassung der gemessenen Extrema} 
 \end{table}
-Man erkennt, dass alle der gemessenen Werte im 1$\sigma$-Bereich der theoretischen Vorhersage liegen. Allerdings gibt es Abweichungen in der Intensität, die unter Anderem auf Störeffekte (Reflexion an herumliegenden Gegenständen) zurückführen lassen, was durch eine Rauschmessung hätte korrigiert werden können.\\
-Aus der Lage der zuvor erwähnten Maxima kann man damit mithilfe der Gl. \ref{eq:lambda1} und der Gl. \ref{eq:lambda2} die Wellenlänge $\lambda$ bestimmen. Der Fehler $\sigma_\lambda$ wurde dafür mittels Fehlerfortpflanzung bestimmt (wobei $\sigma_d=\sigma_b=1mm/\sqrt{12}$)
+Man erkennt, dass alle der gemessenen Werte im 1$\sigma$-Bereich der theoretischen Vorhersage liegen. Allerdings gibt es Abweichungen in der Intensität, die sich unter Anderem auf Störeffekte (Reflexion an herumliegenden Gegenständen) zurückführen lassen, was durch eine Rauschmessung hätte korrigiert werden können.\\
+Aus der Lage der zuvor erwähnten Maxima kann man mithilfe der Gl. \ref{eq:lambda1} und der Gl. \ref{eq:lambda2} die Wellenlänge $\lambda$ bestimmen. Der Fehler $\sigma_\lambda$ wurde mittels Fehlerfortpflanzung bestimmt (wobei $\sigma_d=\sigma_b=1mm/\sqrt{12}$)
 \begin{equation*}
 	\sigma_{\lambda 1} = \left(\frac{\pi}{4.49341}\right)^2 \cdot \left[(\sin(\phi)\sigma_b)^2+(b\cos(\phi)\sigma_\phi)^2\right]
 \end{equation*}
@@ -378,5 +377,21 @@ sodass man durch Kombination aller Messungen erhält
 \begin{equation}
 	\lambda = (0.9961 \pm 0.0171) cm.
 \end{equation}
-Dieser Wert liegt im 1,3$\sigma$-Bereich des im Abschnitt 3.3 erhaltenen Werts. Dieses Ergebnis lässt sich aber auch verbessern, indem man die Extrema höherer Ordnungen mitbetrachtet, sofern in der Messung sichtbar.
+Dieser Wert liegt im 1,3$\sigma$-Bereich des im Abschnitt 3.3 erhaltenen Werts. Dieses Ergebnis lie\ss e sich verbessern, indem man die Extrema höherer Ordnungen mitbetrachtet, sofern in der Messung sichtbar.
+
+
+\section{Zusammenfassung}
+Bei der Abstandsmessung konnte der Exponentialfaktor $a$ zur Umrechnung der gemessenen Spannung $U$ zur Intensit"at der Schallwelle $I\sim(U/U_0)^{2/a}$ bestimmt werden zu
+\begin{equation}
+a=1.561\pm0.038(stat)\pm0.004(sys).
+\end{equation}
+Die Wellenl"ange konnte zum einen "uber die Vermessung von stehenden Wellen bestimmt werden, zum anderen "uber die Auswertung der Intensit"atsverteilungen hinter Einzelspalten und Doppelspalten.
+\begin{equation}
+\lambda_{Stehende Welle}=0.9736\pm0.0012(stat)\pm0.0006(sys)\ cm
+\end{equation}
+\begin{equation}
+\lambda_{Beugung} = (0.9961 \pm 0.0171) cm.
+\end{equation}
+St"oreffekte treten vor allem durch die Reflexion der Schallwelle an Raumw"anden und Gegenst"anden auf.
+
 \end{document}
