@@ -19,7 +19,7 @@ U1 = data[:,2]
 
 eR1=3/4096/sqrt(12)*np.ones(len(R1))
 eU1=1/4096/sqrt(12)*np.ones(len(U1))
-
+x
 K, eK = np.genfromtxt('K.txt')
 
 S0 = 25.3
@@ -33,6 +33,7 @@ es1 = sqrt(2)*K*eR1
 
 #Plot Rohdaten
 figure()
+plot(R1, U1, color="lightgrey", linewidth=1)
 scatter(R1, U1, s=1)
 ylabel('U / V')
 xlabel('R / $k\\Omega$')
@@ -120,6 +121,7 @@ es1 = sqrt(2)*K*eR1
 
 #Plot Rohdaten
 figure()
+plot(R1, U1, color="lightgrey", linewidth=1)
 scatter(R1, U1, s=1)
 ylabel('U / V')
 xlabel('R / $k\\Omega$')
@@ -206,6 +208,7 @@ es1 = sqrt(2)*K*eR1
 
 #Plot Rohdaten
 figure()
+plot(R1, U1, color="lightgrey", linewidth=1)
 scatter(R1, U1, s=1)
 ylabel('U / V')
 xlabel('R / $k\\Omega$')

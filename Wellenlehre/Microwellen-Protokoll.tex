@@ -1,0 +1,718 @@
+% !TeX spellcheck = en_US
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{float}
+
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{verbatim} 
+
+
+\author{Gruppe B2 \\ Máté Farkas, Maria Spethmann}
+\title{Protokoll Wellenlehre \\ Physikalisches Grundpraktikum 2}
+
+
+\begin{document}
+	\maketitle\thispagestyle{empty} % Keine Seitenzahl auf der Titelseite
+	\newpage
+	\pagestyle{headings} % Seitenzahlen oben, Section und Subsection in Kopfzeile
+	\tableofcontents
+	\newpage
+
+\section{Theorie}
+
+Schallwellen sind Longitudinalwellen, die sich in der Luft ausbreiten. Die zugehörigen Feldgrößen, der Schalldruck $p$ und die Schallschnelle $u$, lassen sich mit den Eulerschen GLeichungen zu den Wellengleichungen kombinieren.
+\begin{equation}
+\frac{\partial^2p}{\partial t^2}=\frac{\kappa p_0}{\rho}\Delta p:
+\end{equation}
+mit dem Außendruck $p_0$, der Gasdichte $\rho$ und dem Adiabatenexponenten $\kappa$ (analog f"ur $u$).
+Die Schallgeschwindigkeit ist somit
+\begin{equation}
+c_{Schall}=\sqrt{\frac{\kappa p_0}{\rho}}\approx343\frac{m}{s}.
+\end{equation}
+Spezielle L"osungen der Wellengleichung sind die ebene Welle
+\begin{equation}
+p(x,t)=p_0f(kx-\omega t),
+\end{equation}
+die sich in x-Richtung ausbreitet, mit $c_{Schall}=\frac{\omega}{k}$, und die Kugelwelle,
+\begin{equation}
+p(r,t)=p_0\frac{r_0}{r}f(r-c_{Schall}t),
+\end{equation}
+die sich in alle Raumrichtungen gleich ausbreitet. Die Intensit"at ist dabei proportional zum Quadrat der Feldgr"o\ss e.\\
+Bei Reflexion an einer Wand kann es zur Ausbildung von stehenden Wellen kommen, bei denen die "ortliche und die zeitliche Komponenten entkoppelt sind. 
+\begin{equation}
+p(x,t)=2p_0\sin(\omega t)\sin(kx)\text{\ \ \ \ mit Reflexion bei }x=0
+\end{equation}
+In Abst"anden einer halben Wellenl"ange bilden sich Knoten, an denen die Amplitude zu allen Zeiten null ist.\\
+Trifft eine ebene Welle auf einen Einzelspalt, so ergibt sich in gro\ss em Abstand dahinter (Frauenhofer N"aherung) ein Interferenzmuster mit einem Hauptmaximum und mehreren Nebenminima und Maxima, wobei f"ur die Minima gilt $\sin(\alpha)=n\lambda/b$, wobei $n=1,2,3...$, $\alpha$ der Winkel zur Einfallsrichtung ist, und $b$ der Spaltbreite.\\
+Bei einem Doppelspalt zeigt das Interferenzmuster Maxima bei $\sin(\alpha)=m\lambda/d$, mit $m=1,2,3...$ und Spaltabstand $d$ und Minima bei $\sin(\alpha)=(m-1/2)\lambda/d$.
+Allgemein gilt f"ur das Intensit"atsmuster eines N-fach Spaltes:
+\begin{equation}
+I(\alpha)=I_0\left(\frac{\sin(\pi\frac{b}{\lambda}\sin\alpha)}{\pi\frac{b}{\lambda}\sin\alpha}\right)^2\left(\frac{\sin(N\pi\frac{d}{\lambda}\sin\alpha)}{\sin(\pi\frac{d}{\lambda}\sin\alpha)}\right)^2
+\end{equation}
+
+\section{Abstandsmessung}
+\subsection{Versuchsaufbau}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{Bilder/versuchsaufbau.png}
+	\caption{Versuchsaufbau (Quelle: Versuchshandbuch)}
+	\label{versuchsaufbau}
+\end{figure}
+
+Der Versuchsaufbau ist in Abb. \ref{versuchsaufbau} dargestellt (bei diesem Teilversuch ohne Parabolspiegel). Ein Piezoelement als Ultraschallsender ist fest auf einer Schiene montiert und mit einem Generator angeschlossen, der den Ultraschallwandler in Resonanzfrequenz anregt. Als Empf"anger dient ebenfalls ein Piezoelement, das auf den Sender gerichtet ist und sich auf der Schiene frei verschieben l"asst. Das Signal des Empf"angers wird "uber einen Verst"arker als Spannung an das Cassy-Ger"at geleitet. Um die Position des Empf"angers zu bestimmen, wird ein Faden von dem Empf"angerstativ "uber das Drehpotentiometer des Wegaufnehmers gef"uhrt und mit einem kleinen Gewicht gespannt. Der Wegaufnehmer gibt die Position des Empf"angers somit als Widerstand aus.
+
+\subsection{Vorversuch: Kalibrierung des Wegaufnehmers}
+Zun"achst muss der Wegaufnehmer kalibriert werden. Die L"angenverschiebung $S$ des Empf"angers h"angt linear von der Widerstandsmessung $R$ des Wegaufnehmers ab. Zur Kalibrierung wird der Empf"anger in Schritten von 5cm manuell verschoben, insgesamt 10 Mal, und jeweils der Widerstand aufgenommen. Das Ausmessen erfolgt per Ma\ss band zwischen den F"u\ss en der Piezoelemente.\\
+Die Messwerterfassung des Widerstandes erfolgte im Bereich $0..3k\Omega$ und "uber 200ms gemittelt (wie auch im Hauptversuch).\\
+Anschlie\ss en wurde eine lineare Regression mit den Daten durchgef"uhrt, wobei die Datens"atze zuerst auf ihren Mittelpunkt verschoben wurden, sodass die Ungenauigkeit auf den Kailbrationsfaktor minimal wird und der y-Achsenabschnitt null.
+\begin{equation}
+S-\bar{S}=K\cdot(R-\bar{R})
+\end{equation}
+Wir nehmen Fehler an von 
+\begin{align}
+\sigma_S &=0.3mm\\
+\sigma_R &= \frac{3\text{k}\Omega}{4096\cdot\sqrt{12}}
+\end{align}
+weil wir die Stative auf ca 1/3mm genau verschieben konnten und wir f"ur den Widerstand den Binningfehler durch die Digitalisierung annehmen.
+Wir erhalten den Kalibrierungsfaktor K als Steigung zu $K=16.017\pm0.011cm/k\Omega$. Das $\chi^2/n$ ergibt 1.93. Unter Ber"ucksichtigung der geringen Anzahl an Messpunkten ist dieser Wert ein Hinweis darauf, dass sich die Kalibrierung gut durch die Gerade darstellen l"asst. Der Residuenplot zeigt keine Auff"alligkeiten.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{Python/WegaufKal_Rohdaten.pdf}
+	\caption{Abstand als Funktion der gemessenen Widerstände des Wegaufnehmers}
+	\label{Abstandskal_Rohdaten}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{Python/WegaufKal_LinReg.pdf}
+	\caption{Lineare Regression der Kalibrierung des Wegaufnehmers}
+	\label{Abstandskal_LinReg}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{Python/WegaufKal_Residuen.pdf}
+	\caption{Residuenplot der Kalibrierung des Wegaufnehmers}
+	\label{Abstandskal_Residuenplot}
+\end{figure}
+
+
+
+
+
+\subsection{Versuchsdurchf"uhrung}
+Der Sender sendet eine Kreiswelle aus, sodass die Intensit"at der Schallwelle quadratisch mit der Entfernung f"allt. Der Verst"arker quadriert das Signal des Empf"angers, das wiederum proportional zum Schalldruck ist:
+\begin{equation}
+U\sim p^a \sim r^{-a}
+\end{equation}
+mit Erwartung $a=2$ und dem Zusammenhang $I\sim (U/U_0)^{\frac{2}{a}}$
+In diesem Versuch wird $a$ berechnet, indem die Spannung des Verst"arkers gegen den Abstand zwischen Sender und Empf"anger $s$ gemessen wird. Dazu wird zuerst der Abstandsoffset zwischen den beiden Piezoelementen mithilfe des Ma\ss bandes bestimmt. Anschlie\ss end schiebt man den Empf"anger langsam von dem Sender und misst die dazukommende Entfernung mithilfe des Wegaufnehmers.\\
+Die Messwerterfassung erfolgte folgenderma\ss en:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|c|}
+		\hline 
+		Messbereich Spannung  & -1 V .. 1 V \\ 
+		\hline 
+		Messbereich Widerstand Wegaufnehmer & $0\,\text{k}\Omega\ ..\ 3\,\text{k}\Omega$\\ 
+		\hline 
+		Messwerterfassung Spannung & gemittelt über 200 ms \\ 
+		\hline
+		Messwerterfassung Widerstand Wegaufnehmer & gemittelt über 200 ms \\ 
+		\hline 
+		Messwertaufnahme & automatisch, Intervalle von 200 ms \\ 
+		\hline 
+		Anzahl Messreihen & 3 \\ 
+		\hline 
+	\end{tabular} 
+	\label{tab:MessparameterAllgemein}
+\end{table}
+
+
+\subsection{Versuchsauswertung}
+Die Rohdaten wirken, als w"urden die Messwerte stark streuen. Bei genauerer Betrachtung erkennt man jedoch, dass sich stehende Wellen durch Reflexion an weiteren Gegenst"anden im Raum bilden, die zu einer wellenartigen Spannungsverteilung f"uhren.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{Python/Abstandsmessung_Rohdaten3.pdf}
+	\caption{Rohdaten der Abstandsmessung}
+	\label{Abstandskal_Rohdaten}
+\end{figure}
+Wir messen einen Abstandsoffset von $S_0=25.3cm$ zwischen Sender und Empf"anger bei einem Widerstand des Wegaufnehmers von 1.160k$\Omega$. Als Fehler auf $S_0$ nehmen wir $1mm$ an, weil sich die genaue Position des Piezoelementes im Bauteil nicht genau bestimmen lie\ss. Wir berechnen den Abstand $s$ "uber
+\begin{equation}
+s=K(R-R_0)+S_0
+\end{equation}
+Als statistischen Fehler auf $R$ und $R_0$ nehmen wir erneut den Digitalisierungsfehler  von $\sigma_R=3/4096/\sqrt{12}$ an, womit wir f"ur den statistischen Fehler auf $s$ erhalten:
+\begin{equation}
+\sigma_s(stat)=\sqrt{2}K\sigma_R
+\end{equation}
+Wir tragen die Spannung doppellogarithmisch auf gegen den Abstand $s$ und f"uhren eine lineare Regression durch. Aus der Steigung erhalten wir den Faktor $-a$.
+Der Fehler auf $K$ flie\ss t als systematischer Fehler in den Teilversuch mit ein, wird jedoch bei der linearen Regression zun"achst nicht ber"ucksichtigt. Die Ungenauigkeit auf die Spannung wird wie beim Widersetand mit dem Digitalisierungsfehler des Cassyger"ates angenommen und auf den Logarithmus fortgepflanzt:
+\begin{equation}
+\sigma_{log(U/V)}=\frac{1V}{U\cdot4096\sqrt{12}}
+\end{equation}
+Die Fehlerfportpflanzung erfolgt analog f"ur den Abstand.
+Die folgenden Graphen zeigen die Ergebnisse der linearen Regression.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{Python/Abstand3_LinReg.pdf}
+	\caption{Lineare Regression der Abstandsmessung}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{Python/Abstand3_Residuen.pdf}
+	\caption{Residuenplot der Abstandsmessung}
+	\label{Abstandsabh_Residuenplot}
+\end{figure}
+Das $\chi^2/n$ ist mit "uber 20000 sehr gro\ss, was zu erwarten ist, da wir eine wellenartige Verteilung mit einer Gerade anpassen wollen. Die Graphen zeigen jedoch, dass die Gerade durchaus den durchschnittlichen Verlauf der Intensit"at wiedergibt. Wir erhalten einen Wert von $a=1.55$, wobei der Fehler auf $a$ aus der linearen Regression unbrauchbar ist. Um trotzdem eine sinnvolle Breite f"ur $a$ zu berechnen, werden zwei weitere Messreihen analog ausgewertet. Die Werte f"ur $a$ dieser Messreihen lauten $a=1.60$ und $a=1.53$. Wir berechnen den ungewichteten Mittelwert dieser drei Werte von $a$ und die emprisische Standardabweichung als Ma\ss\  f"ur die Unsicherheit. Um den systematischen Fehler auf $a$ zu erhalten, wird die gesamte Rechnung mit um $\sigma_{S_0}$ und $\sigma_{K}$ verschobenem $s$ wiederholt, und die Differenz von $a$ zum urspr"unglichen $a$ als systematischen Fehler angerechnet. Insgesamt erh"alt man so:
+\begin{equation}
+a=1.561\pm0.038(stat)\pm0.004(sys)
+\end{equation}
+Der Wert weicht von der Erwartung $a=2$ ab, weil die Piezoelemente wom"oglich keine idealen Kugelwellen aussenden und die Messung durch Reflexion an umliegeneden W"anden gest"ort wird.
+
+
+\section{Stehende Wellen}
+
+\subsection{Versuchsaufbau}
+Ziel dieses Versuchs ist die Bestimmung der Wellenl"ange durch das Vermessen von stehenden Wellen, die durch Reflexion von ebenen Wellen an einer Wand entstehen.
+Zur Erzeugung der ebenen Wellen wird ein Parabolspiegel an die Schiene gebaut und der Sender im Brennpunkt und auf den Spiegel zeigend positioniert. Am Schienenende wird eine Wand montiert und der verschiebbare Empf"anger Richtung Wand ausgerichtet. Wie im vorherigen Versuch l"asst sich die Position des Empf"angers mit dem Wegaufnehmer bestimmen.
+
+\subsection{Versuchsdurchf"uhrung}
+Der Empf"anger wird auf der Schiene langsam verschoben und die Spannung des Verst"arkers als Funktion des Widerstandes am Wegaufnehmer gemessen. Die genaue Entfernung zur Wand wird bei dem Versuch nicht ben"otigt, sodass kein Ab
+standsoffset in die Berechnung mit einflie\ss t.
+Die Messwerterfassung erfolgt identisch zum vorherigen Versuch und es werden wieder drei Messreihen durchgef"uhrt.
+
+\subsection{Versuchsauswertung}
+Die Spannung wird gegen den Widerstand graphisch aufgetragen und es ist klar erkennbar, dass sich stehende Wellen mit B"auchen (Maxima) und Knoten (Minima) in gleichen Abst"anden ausbilden. Wir w"ahlen  f"ur jede Messung einen m"oglichst gro\ss en Bereich zwischen zwei Knoten und z"ahlen die Knoten $N$ in diesem Intervall, wobei wir den ersten nicht mitz"ahlen. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Python/stehwel1.pdf}
+	\caption{Stehende Welle: Messung 1. Der dunkelunterlegte Bereich enth"alt 75 halbe Wellenl"angen. (Der erste Knoten wird bei der Z"ahlung nicht mitgez"ahlt.)}
+\end{figure}
+
+Die Wellenl"ange $\lambda$ erhalten wir durch
+\begin{equation}
+\lambda=K\Delta R\frac{2}{N}
+\end{equation}
+$\Delta R=R_N-R_0$ ist die Widerstandsdifferenz zwischen dem letztem und dem 0. Knoten. Auf die genaue Position der Knoten nehmen wir eine Ungenauigkeit von $\sigma_R=0.003k\Omega$ an, da es pro Knotenpunkt nur wenige Messwerte gibt und sich bei Betrachtung der einzelnen Widerstandswerte der Knotenpunkt ca. auf diese Gr"o\ss enordnung genau bestimmen lie\ss. Damit erhalten wir einen statistischen Fehler von
+\begin{equation}
+\sigma_{\lambda}(stat)=\sqrt{2}K\frac{2}{N}\sigma_{R}.
+\end{equation}
+Der Fehler auf $K$ f"uhrt zu einem systematischen Fehler in der Wellenl"ange.
+\begin{equation}
+\sigma_{\lambda}(sys)=\Delta R\frac{2}{N}\sigma_{K}.
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Python/stehwel2.pdf}
+	\caption{Stehende Welle: Messung 2.}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Python/stehwel3.pdf}
+	\caption{Stehende Welle: Messung 3, erste Z"ahlung}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Python/stehwel4.pdf}
+	\caption{Stehende Welle: Messung 3, zweite Z"ahlung}
+\end{figure}
+
+Bei der dritten Messung gibt es mehrere Bereiche, in denen nicht erkennbar ist, ob dort ein Knotenpunkt entsteht. Teilweise liegt das daran, dass der Empf"anger zu schnell bewegt wurde. Wir entscheiden uns, zwei Bereiche getrennt auszuwerten, in denen die Anzahl an Knotenpunkten eindeutig gez"ahlt werden kann. Insgesamt erhalten wir so vier Berechnungen der Wellenl"ange, die in folgender Tabelle zusammengefasst sind.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline 
+		& $\lambda$[cm]&$\sigma_{\lambda}(stat)$[cm]&$\sigma_{\lambda}(sys)$[cm]\\ 
+		\hline 
+		Messung 1&0.9751&0.0018&0.0006\\
+		\hline
+		Messung 2&0.9729&0.0017&0.0006\\
+		\hline
+		Messung 3&0.9722&0.0045&0.0006\\
+		\hline
+		Messung 4&0.9686&0.0072&0.0006\\
+		\hline
+	\end{tabular} 
+\end{table}
+Da die Messungen innerhalb ihrer statistischen Fehler "ubereinstimmen, berechnen wir das gewichtete Mittel und erhalten:
+\begin{equation}
+\lambda=0.9736\pm0.0012(stat)\pm0.0006(sys)\ cm
+\end{equation}
+
+
+\begin{comment}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Bilder/Versuchsaufbau.png}
+\caption{Prinzipieller Versuchsaufbau (Quelle: Versuchshandbuch)}
+\label{versuchsaufbau}
+\end{figure}
+\end{comment}
+
+
+
+
+\begin{comment}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline 
+		Messbereich Spannung  & -0.3 V .. 0.3 V \\ 
+		\hline 
+		Messbereich Widerstand Wegaufnehmer & $0\,\text{k}\Omega\ ..\ 10\,\text{k}\Omega$\\ 
+		\hline 
+		Messbereich Widerstand Winkelaufnehmer & $0\,\text{k}\Omega\ ..\ 10\,\text{k}\Omega$\\
+		\hline
+		Messwerterfassung Spannung & gemittelt über 200 ms \\ 
+		\hline 
+		Messwerterfassung Widerstand Wegaufnehmer & gemittelt über 200 ms \\ 
+		\hline 
+		Messwerterfassung Widerstand Winkelaufnehmer & gemittelt über 200 ms \\ 
+		\hline
+	\end{tabular} 
+	\caption{Einstellungen der Messparameter}
+	\label{tab:MessparameterAllgemein}
+\end{table}
+\newpage
+\section{Kalibrierung des Wegaufnehmers}
+\subsection{Versuchsbeschreibung}
+Die Vermessung stehender Wellen im späteren Teilversuch erfordert die Bestimmung der genauen Entfernung zwischen Empfänger und Reflexionswand. Dazu wird ein Mehrgang-Drehpotentiometer als Wegaufnehmer verwendet, den wir in diesem Vorversuch kalibrieren.
+Um nun aus dem gemessenen Widerstand die Strecke zu erhalten, benötigen wir den sich aus dem linearen Zusammenhang zwischen Widerstand und Strecke ergebenden Kalibrationsfaktor k:
+\begin{align*}
+S = k \cdot R + b
+\end{align*}
+Dieser wird in diesem Versuch bestimmt.
+\subsection{Versuchsaufbau und Durchführung}
+Der Schlitten des Empfängers wird mit dem Faden verbunden und dieser dann über die Rolle des Wegaufnehmers gelegt. Auf der anderen Seite des Fadens wird das Gegengewicht befestigt um den Faden gespannt zu halten. Dabei ist darauf zu achten, dass der Faden parallel zu der Führungsschiene des Schlittens läuft um Fehler durch eine Parallaxe zu vermeiden. Als Reflxionswand verwenden wir einen Polarisationsfilter, der senkrecht zur Polarisationsebene der ausgesendeten Wellen ausgerichtet ist, und somit die Welle vollständig reflektiert. \newline
+Nun wird der Abstand zwischen Empfänger und Reflexionswand gegen den Widerstand des Wegaufnehmers gemessen. Dazu wird der Schlitten des Empfängers in äquidistanten Abstängen $\Delta S = 5\,\text{cm}$ verschoben. Nach jeder Verschiebung wird der Widerstand des Wegaufnehmers über 200ms gemittelt aufgezeichnet. Die Strecken werden manuell mit einem Maßband mit Millimeterskala abgelesen. 
+
+\subsection{Versuchsauswertung}
+
+\begin{figure}[]
+\centering
+\includegraphics[scale=1]{Bilder/Abstandskal_Rohdaten.pdf}
+\caption{Abstand des Empfängers zur Reflexionswand als Funktion der gemessenen Widerstände des Wegaufnehmers}
+\label{Abstandskal_Rohdaten}
+\end{figure}
+
+Abb.~\ref{Abstandskal_Rohdaten} zeigt die Rohdaten unserer Messung. Mit Hilfe der linearen Regression wird nun eine Ausgleichsgerade durch die Messpunkte gelegt und deren Steigung bestimmt. Um die Korrelation zwischen der Steigung $k$ und dem y-Achsensabschnitt $b$ zu minimieren, werden die Messwerte zun"achst um ihren Mittelwert verschoben. Letztendlich erh"alt man die Strecke $S$ als Funktion des Widerstandes als
+\begin{align}
+S-\bar{S}=k\cdot (R-\bar{R}) + b
+\end{align}
+wobei $\bar{S}$ und $\bar{R}$ die Mittelwerte der gemessenen Orte bzw. Widerst"ande sind.
+Dabei wurde angenommen, dass sowohl die Wegmessung mit dem Maßband als auch die Widerstandsmessung fehlerbehaftet sind mit den konstanten Unsicherheiten:
+\begin{align}
+\sigma_S &= \frac{1\text{mm}}{\sqrt{12}} \\
+\sigma_R &= \frac{10\text{k}\Omega}{4096\cdot\sqrt{12}}
+\end{align}
+Der Fehler auf S ist auf die Genauigkeit des Maßbandes und der Fehler auf R auf die Digitalisierung der Widerstandsmessung mit dem Sensor Cassy zurückzuführen. Wir nehmen eine Gleichverteilung innerhalb der kleinsten Skalenbreite an.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Abstandskal_LinReg.pdf}
+	\caption{Lineare Regression der Abstandskalibrierung}
+	\label{Abstandskal_LinReg}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Abstandskal_Residuen.pdf}
+	\caption{Residuenplot der Abstandskalibrierung}
+	\label{Abstandskal_Residuenplot}
+\end{figure}
+\\Abb.~\ref{Abstandskal_LinReg} zeigt das Ergebnis der linearen Regression:
+\begin{align}
+k = 16.30\pm0.019\frac{\text{cm}}{\Omega}
+\end{align}
+\begin{align}
+\frac{\chi^2}{n}=6.72
+\end{align}
+Der Wert f"ur $\chi^2/n$ ist mit 6.72 sehr gro\ss\ -  ein Zeichen daf"ur, dass unsere Fehlerabsch"atzung zu klein ist. Schwer zu quantisierbare Fehlerquellen, die nicht mit in die Auswertung eingeflossen sind, waren unter anderem, dass der Faden des Wegaufnehmers m"oglicherweise nicht ganz parallel zur Schiene stand und durch das ruckelige Fortbewegen des Empf"angerschlittens teilweise an der Rolle verrutscht. Die Bedeutung des $\chi^2/n$ wird dadurch abgeschw"acht, dass nur 7 Messpunkte in den Fit einflie\ss en. Der Residuenplot zeigt keine Au\ss ergew"ohnlichkeiten, au\ss er der Tatsache, dass die Fehlerbalken nur selten die Nulllinie schneiden, wie bei einem gro\ss en $\chi^2/n$ zu erwarten ist.
+\newpage
+
+
+
+
+\section{Abstandsmessung}
+\subsection{Versuchsbeschreibung}
+Für die späteren Versuche benötigen wir die Abhängigkeit der Intensität von der gemessenen Spannung am Empf"anger.
+Dabei wird ausgenutzt, dass die Intensität einer Kugelwelle mit $I\sim\frac{1}{r^2}$ abnimmt. Bei dem Versuch nutzen wir eine Tunneldiode als Empf"anger, die das Signal quadratisch weiterleitet, also
+\begin{equation}\label{eq:Spannungvsr}
+U\sim E^{-a}\sim\frac{1}{r^{-a}}=r^a,
+\end{equation}
+mit Erwartung $a=-2$. Die Intensit"at h"angt quadratisch von dem E-Feld ab $I\sim E^2$ und somit 
+\begin{equation}
+I \sim U^{\frac{2}{-a}}.
+\end{equation}
+Durch die Messung der Signalspannung $U$ in Abhängigkeit des Abstands $r$ (Gl.~\eqref{eq:Spannungvsr}) zwischen Sender und Empfänger wird in diesem Versuch nun der Parameter $a$ bestimmt.
+\subsection{Versuchsaufbau und Durchführung}
+Wie bei der Abstandskalibrierung wird der Schlitten, auf dem nun der Empfänger montiert ist, auf der Schiene verschoben. Dabei beginnen wir nahe am Sender und führen eine automatische Messung mit CASSYLab durch, indem wir den Empfänger langsam und gleichmäßig von dem Sender entfernen. Um nun $a$ zu bestimmen, tragen wir $U$ gegen $S$ doppellogarithmisch auf:
+\begin{align*}
+log(U)=b-a\cdot log(S),
+\end{align*}
+Die Strecke $S$ entspricht hier dem Radius der Kugelwelle $r$ und wird wieder "uber den Widerstand des Wegaufnehmers gemessen, wobei diesmal eine Schnellkalibrierung "uber zwei Referenzpunkte in CASSYlab vorgenommen wurde. 
+\subsection{Versuchsauswertung}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{Bilder/Abstandsabh_Rohdaten.pdf}
+\caption{Gemessene Spannung als Funktion des Abstandes zwischen Sender und Empf"anger}
+\end{figure}
+Wir analysieren die Messwerte, indem wir Weg und Spannung doppellogarithmisch auftragen und eine linearen Regression vornehmen. Der Parameter $a$ ergibt sich nun aus der Steigung. Es wurden folgende Unsicherheiten auf die Messwerte angenommen
+\begin{align}
+\sigma_S &= \frac{0.5\text{cm}}{\sqrt{12}} \\
+\sigma_U &= 0.002\,\text{V}.
+\end{align}
+Die recht gro\ss e Unsicherheit auf die Strecke ergibt sich dadurch, dass sich die genaue Position des Senders und des Empf"angers innerhalb der Hornantennen nicht genau bestimmen lässt. Au\ss erdem ist die Schnellkalibrierung durch CASSYlab fehleranf"allig, weil nur zwei Messwerte verwendet werden. Wir sch"atzen unsere Messskala deshalb mit einer kleinsten Skalenbreite von 0.5cm ab und nehmen eine Gleichverteilung innerhalb dieser an.\\
+Bei Betrachtung der Rohdaten stellen wir fest, dass die Mikrowellen anscheinend an umliegenden Gegenst"anden, Personen oder Raumwämden reflektiert wurden und sich stehende Wellen ausbilden. Die Knoten und Bäuche der stehenden Welle sind im Spannungsverlauf deutlich zu erkennen. Um die Messwerte trotzdem linear annähern zu können, schätzen wir den Fehler auf die Spannung auf ca. 1/3 der durchschnittlichen Spannungsdifferenz zwischen nebeneinanderliegenden Knoten und Bäuchen ab, was einen Wert von $0.002\,\text{V}$ ergibt. Dieser Fehler ist deutlich größer als der Digitalisierungsfehler des CASSY-Geräts von $\frac{0.6 kV}{4096\cdot\sqrt{12}}$, sodass letzteres vernachlässigt wird.
+Für die Fehler auf den Logarithmus nutzen wir Gaußsche Fehlerfortpflanzung:
+\begin{align}
+\sigma(\log(S))&=\frac{\sigma_S}{S}\\
+\sigma(\log(U))&=\frac{\sigma_U}{U}
+\end{align}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Abstandsabh_LinReg.pdf}
+	\caption{Lineare Regression der Abstandsmessung}
+	\label{Abstandsabh_LinReg}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Abstandsabh_Residuen.pdf}
+	\caption{Residuenplot der Abstandsmessung}
+	\label{Abstandsabh_Residuenplot}
+\end{figure}
+Abb.~\ref{Abstandsabh_LinReg} stellt die Ergebnisse der Linearen Regression dar. Die Messdaten werden insgesamt gut durch die genäherte Gerade beschrieben und der Residuenplot zeigt keine Auffälligkeiten. Das $\chi^2/n$ ist nur geringfügig kleiner als 1. Wir erhalten einen Wert $a=-1.86$, was etwas kleiner ist als der erwartete Wert von $a=-2$. Ein Grund könnte sein, dass die Tunneldiode das Signal nicht quadratisch umsetzt. Außerdem sendet die Hornantenne keine idealen Kugelwellen aus und die gemessene Spannung wird durch die Reflexion an umliegenden Gegenst"anden verstärkt.
+\newpage
+\vphantom{v}
+\newpage
+\section{Stehende Welle}
+\subsection{Versuchsbeschreibung}
+
+Mit  Hilfe einer Reflexionswand gegenüber des Senders wird eine stehende Welle erzeugt. Einfallende und reflektierte Welle überlagern sich und ergeben eine stehende Welle, bei der die räumlichen und zeitlichen Oszillationen entkoppelt sind. Es entstehen Knoten in Abständen einer halben Wellenlänge, bei der die Intensität der Welle immer ann"ahernd null ist. Dazwischen liegen Bäuche, die im zeitlichen Mittel eine positive Intensität liefern. In diesem Versuch wird der Empfänger zwischen Sender und Reflexionswand verschoben und die Spannung gegen den Ort aufgezeichnet. Anhand der gemessenen Maxima, die einem Bauch entsprechen, kann die Wellenlänge bestimmt werden: Zwischen $n$ Bäuchen liegen $n/2$ Wellenlängen (Z"ahlung bei null beginnend).
+\subsection{Versuchsaufbau und Durchführung}
+Für die Vermessung der stehenden Welle wird ein Polarisationsfilter als Reflexionswand verwendet. Dazu wird dessen Polarisationsebene um $90^{\circ}$ zum Sender gedreht. Der Empfänger  befindet sich auf der Schiene zwischen Sender und Reflexionswand, wobei die Hornantenne auf den Polarisationsfilter gerichtet ist.
+Der Empfänger wird für die Messung nah beim Polarisationsfilter beginnend in Richtung Sender langsam verschoben. Die Verschiebung wird durch den Wegaufnehmer als Widerstand aufgezeichnet. Mithilfe der Abstandskalibrierung aus dem ersten Versuchsteil kann der Widerstand in eine Strecke umgerechnet werden.
+\subsection{Versuchsauswertung}
+Abb.~\ref{stehendeWelle} stellt die gemessene Spannung als Funktion des Widerstandes des Wegaufnehmers dar. Wie erwartet sind viele Knoten in Form von Minima und B"auche in Form von Maxima zu erkennen. Von ausgewählten Peaks wurde mit dem Programm CASSYlab der Peakschwerpunkt und die darauf liegende Unsicherheit berechnet, siehe Tabelle \ref{tab:stehendeWellePeaks}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline 
+		i&$R_i\pm\sigma_{R_i}$ in k$\Omega$\\ 
+		\hline
+		0&$5.904\pm0.008$\\
+		4&$6.313\pm0.015$\\
+		8&$6.713\pm0.016$\\
+		14&$7.298\pm0.018$\\
+		19&$7.802\pm0.016$\\
+		25&$8.398\pm0.021$\\
+		29&$8.797\pm0.011$\\
+		33&$9.187\pm0.015$\\
+		\hline
+	\end{tabular} 
+	\caption{Positionen der Peaks und ihre Unsicherheit}
+	\label{tab:stehendeWellePeaks}
+\end{table}
+Aus den Messdaten bestimmen wir die Wellenl"ange auf zwei unterschiedliche Arten.\\
+Zum einen wird der Abstand $\Delta R=R_{33}-R_0$ zwischen dem Peak bei $R_0=5.90\,\text{k}\Omega$ und dem Peak bei $R_{33}=9.19\,\text{k}\Omega$ berechnet, die Anzahl $n$ dazwischen liegender B"auche gez"ahlt und daraus die Wellenl"ange mit 
+\begin{equation}
+\lambda=\frac{2k\Delta R}{n}
+\end{equation}
+berechnet, wobei k der Umrechnungsfaktor aus der Wegkalibrierung ist.  Mit $n=33$ ergibt sich eine Wellenl"ange von $\lambda_1=3.243\,\text{cm}$. Die statstische Unsicherheit wird mit der Gaußschen Fehlfortpflanzung berechnet:
+\begin{equation}
+\sigma_{\lambda,\text{stat}}=\frac{2k}{33}\sqrt{\sigma_{R_0}^2+\sigma_{R_{33}}^2}=0.017\,\text{cm}
+\end{equation}
+Dazu kommt ein systematischer Fehler durch den Umrechnungsfaktor k, der auf folgende Weise abgesch"atzt wird:
+\begin{align}
+\sigma_{\lambda,\text{sys}}=\lambda(k+\sigma_k)-\lambda(k)=\frac{2\Delta R}{33}\sigma_k=0.004\,\text{cm}
+\end{align}
+Insgesamt erh"alt man so
+\begin{equation}
+\lambda_1=3.243\pm0.017\pm0.004\,\text{cm}.
+\end{equation}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/stehendeWelle.pdf}
+\caption{Gemessene Spannung am Empf"anger als Funktion des Widerstandes des Wegaufnehmers und Markierung ausgew"ahlter Maxima}
+\label{stehendeWelle}
+\end{figure}Als zweite Methode zur Berechnung der Wellenlänge werden die Positionen der Widerstandspeaks gegen die Nummerierung der Peaks aufgetragen und wir führen eine lineare Regression (Abb.~\ref{stehendeWelle_LinReg}) durch. Die Wellenlänge berechnet sich aus der Steigung $m_{\text{sw}}$ durch
+\begin{equation}
+\lambda=2km_{\text{sw}}.
+\end{equation}
+Die Auswertung der linearen Regression ergibt ein $\chi^2/n$ von 0.17. Dieser Wert deutet an, dass die Unsicherheiten auf die Widerstandspeaks kleiner gewählt werden können. Die Steigung $m_{\text{sw}}=0.0996\pm0.0004$ hat nur eine sehr kleine Unsicherheit, was dafür spricht, dass diese Methode zur Wellenlängenbestimmung zuverlässig ist. Der Residuenplot in Abb.~\ref{stehendeWelle_Residuenplot} zeigt, dass die Messwerte gleichmäßig um die genäherte Gerade liegen.
+Die Wellenlänge ergibt sich zu $3.246\,\text{cm}$ mit Unsicherheiten
+\begin{align}
+\sigma_{\lambda,\text{stat}}&=2k\sigma_{m_{\text{sw}}}=0.013\,\text{cm}\\
+\sigma_{\lambda,\text{sys}}&=2m_{\text{sw}}\sigma_k=0.004\,\text{cm}
+\end{align}
+Insgesamt also
+\begin{equation}
+\lambda_2=3.246\pm0.017\pm0.004\,\text{cm}.
+\end{equation}
+Die Wellenlängen $\lambda_1$ und $\lambda_2$ liegen nah beieinander und überschneiden sich im Rahmen ihrer Unsicherheiten. Allerdings ist bei der Betrachtung zu berücksichtigen, dass sich die beiden vorgestellten Methoden in ihrer Herangehensweise ähneln und die beiden Werte der Wellenlänge voneinander abh"angen.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/stehendeWelle_LinReg.pdf}
+	\caption{Lineare Regression der Spannungspeaks der stehenden Welle}
+	\label{stehendeWelle_LinReg}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/stehendeWelle_Residuen.pdf}
+	\caption{Residuenplot}
+	\label{stehendeWelle_Residuenplot}
+\end{figure}
+
+\newpage
+\section{Polarisationsfilter}
+\subsection{Versuchsbeschreibung}
+In diesem Versuch wird das Gesetz von Malus veranschaulicht. Dieses besagt, dass linear polarisierte Wellen beim Passieren eines Polarisationsfilters ihre Schwingungsebene drehen und sich die Intesität auf
+\begin{equation}
+I=I_0\cos^2{\phi}
+\end{equation}
+verringert, wobei $\phi$ der Winkel zwischen einfallender Polarisationsebene und Ausrichtung des Polarisators ist. In unserem Versuch werden Sender und Empf"anger mit paralleler Ausrichtung der Dipole positioniert. Dazwischen befindet sich ein Polarisationsfilter mit drehbarer Polarisationsrichtung $\phi$. Wir bestimmen die Intensit"at am Empf"anger als Funktion von $\phi$ und erwarten eine Abh"angigkeit
+\begin{equation}\label{eq:MalusGesetzx}
+I=I_0\cos^x{\phi}
+\end{equation}
+mit $x=4$, weil der Empf"anger als Analysator ebenfalls polarisierend wirkt.
+\subsection{Versuchsaufbau und Durchführung}
+Die Hornantennen werden mit einem Abstand von ca. 40cm und zueinander ausgerichtet auf der Schiene befestigt. Dazwischen wird der Polarisationsfilter montiert, ein Gitter aus elektrisch leitenden St"aben. Die Polarisationsrichtung l"asst sich manuell um $\ang{360}$ drehen, wobei die minimale Skalenbreite bei $\ang{1}$ liegt. Nun wird die Polarisationsrichtung in Abst"anden von $\ang{10}$ manuell verschoben, angefangen bei maximaler Ausl"oschung bei $\phi=-\ang{90}$ bis zum Winkel $\phi=\ang{270}$, wobei nach jeder Drehung des Filters das Signal des Empf"angers als Spannung aufgezeichnet wird.
+\subsection{Versuchsauswertung}
+Abb.~\ref{Polarisation_Rohdaten} stellt den gemessenen Spannungsverlauf am Empf"anger als Funktion der Polarisationsrichtung $\phi$ dar. Wie erwartet ist die Spannung und somit Intensit"at bei $\ang{0}$ und bei $\ang{180}$ maximal; bei $\ang{-90}$, $\ang{90}$ und $\ang{270}$ ist die Spannung dagegen nahezu bei 0. Die Werte liegen symmetrisch um $\ang{90}$ und somit ist keine weitere Anpassung der Gradskala notwendig.
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Polarisation_Rohdaten.pdf}
+\caption{Spannungsverlauf in Abh"angigkeit der Ausrichtung des Polarisationsfilters}
+\label{Polarisation_Rohdaten}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Polarisation_Intensitaet.pdf}
+	\caption{Intensität Polarisation}
+	\label{Polarisation_Intensitaet}
+\end{figure}
+Um den Faktor $x$ aus Gl.~\eqref{eq:MalusGesetzx} zu erhalten, wird zun"achst die Spannung mit $I=(U-U_0)^{-2/a}$ in die Intensit"at umgerechnet, wobei $U_0$ der kleinste gemessene Wert der Spannung ist (Abb.~\ref{Polarisation_Intensitaet}). Anschließend tragen wir $\log{I/I_0}$ gegen $\log{|cos{\phi}|}$ auf, wobei $I_0$ der größte erhaltene Wert von $I$ in unserer Berechnung ist, und f"uhren eine lineare Regression durch. Die Steigung entspricht dem gesuchten Wert f"ur $x$. Damit die logarithmischen Werte und die f"ur die Regression ben"otigten Unsicherheiten endliche Werte ergeben, werden die Punkte mit $\phi=\{\ang{-90},\ang{0},\ang{90},\ang{180},\ang{270}\}$ nicht in die Berechnung mit einbezogen.\\
+Die Unsicherheiten auf die Messgr"o\ss en werden folgendermaßen abgeschätzt:
+\begin{align*}
+\sigma_\phi &= \frac{\ang{1}}{\sqrt{12}} \\
+\sigma_U &= 0.0005\,\text{k}\Omega\\
+\end{align*}
+Wie Wahl f"ur $\sigma_{\phi}$ beruht auf der Annahme, dass die Messwerte innerhalb der kleinsten Skalenbreite gleichverteilt sind. Der Fehler auf $U$ ergibt sich aus den Schwankungen der Spannungswerte im station"aren Zustand, wie aus unserem Messungen herauszulesen ist. Dieser ist um eine Gr"o\ss enordnung größer als der Digitalisierungsfehler des CASSY Sensors.
+Die Fehler auf $\log{I/I_0}$ und $\log{|cos{\phi}|}$ werden durch Fehlerfortpflanzung berechnet. Eigentlich m"usste die systematische Unsicherheit auf $a$ getrennt betrachtet werden. Weil die f"ur das Praktikum zur Verf"ugung stehenden Python-Funktionen f"ur die lineare Regression keine Trennung von statistischen und systematischen Fehlern vorsieht, nehmen wir vereinfachend an, $\sigma_a$ sei ein statistischer Fehler und nehmen ihn bei der Gaußschen Fehlerfortpflanzung mit auf. Damit ergibt sich
+\begin{align}
+\log{\frac{I}{I_0}}=-\frac{2}{a}\log(U-U_0)&-\log(I_0)\\
+\Rightarrow\sigma(\log{\frac{I}{I_0}})&=\sqrt{\left(\frac{2\sigma_a}{a^2}\log(U-U_0)\right)^2+\left(\frac{2\sigma_U}{a(U-U_0)}\right)^2}\\
+\sigma(\log|\cos{\phi}|)&=\Big|\frac{sin{\phi}}{\cos{\phi}}\Big|\sigma_{\phi}
+\end{align} 
+Die lineare Regression ist in Abb.~\ref{Polarisation_LinReg} dargestellt und gibt einen Wert f"ur $x$ von $x=2.99\pm0.04$. Somit ist der gemessene Wert deutlich kleiner als die Erwartung $x=4$. Das $\chi^2/n$ ist mit 5.12 zu gro\ss, ein Zeichen dafür, dass unsere Fehler zu klein gewählt wurden oder die Messdaten nicht gut durch eine Gerade dargestellt werden. Letzere Vermutung wird dadurch bekräftigt, dass f"ur kleine Werte von $|\cos{\phi}|$ die Ausgleichsgerade der linearen Regression deutlich unterhalb der gemessenen Werte liegt, wie im Residuenplot in Abb.~\ref{Polarisation_Residuenplot} zu erkennen. Nicht berücksichtigte Fehlerquellen sind wieder die Reflexion der Wellen an umliegenden Gegenständen und ein fehlerbehafteter Polaristionsfilter, der möglicherweise auch die Intensität der Mikrowellen abschwächt, wenn die Gitterstäbe senkrecht zur Dipolausrichtung stehen. 
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Polarisation_LinReg.pdf}
+	\caption{Lineare Regression zum Gesetz von Malus}
+	\label{Polarisation_LinReg}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Polarisation_Residuen.pdf}
+	\caption{Residuenplot zum Gesetz von Malus}
+	\label{Polarisation_Residuenplot}
+\end{figure}
+
+
+\newpage
+\vphantom{v}
+\newpage
+\section{Winkelkalibrierung}
+\subsection{Versuchsbeschreibung}
+In diesem Vorversuch wird der Winkelaufnehmer am Drehtisch kalibriert, um in den folgenden Versuchen den gemessenen Widerstand in einen Winkel umrechnen zu k"onnen. Die Vorgehensweise ist analog zur Kalibrierung des Wegaufnehmers.
+\subsection{Versuchsbeschreibung, Aufbau und Durchführung} 
+Bei den Versuchen zur Brechung und zur Frustrierten Totalen Internen Reflexion (FTIR) wird der Empfänger an den Schwenkarm des motorbetriebenen Drehtisches befestigt. Die Reflexionswand wird abgebaut. Die Hornantenne befindet sich auf einem Radius von etwa 30cm und auf gleicher Höhe wie der Sender. Ähnlich wie beim Wegaufnehmer erfolgt die Winkelmessung mit einem Drehpotentiometer, der am Drehtisch verbaut ist und einen Widerstand in Abhängigkeit des Dreharmwinkels ausgibt. Dieser Winkelaufnehmer wird in diesem Vorversuch kalibriert. Dazu werden die am Drehtisch manuell abgelesenen Winkel $\gamma$ in äquidistanten Schritten von $\ang{10}$ im Messwertbereich von $\ang{-90}$ bis $\ang{90}$ gegen den Widerstand aufgetragen. Wie bereits in Tabelle \ref{tab:MessparameterAllgemein} zusammengefasst, werden die Widerstandswerte über 200ms gemittelt und der Messbereich des Winkelaufnehmers auf 0..10k$\Omega$ gesetzt. Die Skalenbreite zur Winkelablesung am Drehtisch beträgt $\ang{5}$.
+\subsection{Versuchsauswertung}
+Die gemessenen Winkel $\gamma$ werden in Abb.~\ref{Winkelkalibrierung_Rohdaten} gegen den Widerstand des Winkelaufnehmers aufgetragen. "Ahnlich wie bei der Kalibrierung des Wegaufnehmers werden die Winkel und Widerst"ande zun"achst zu ihren Mittelwerten $\bar{\gamma},\bar{R}$ verschobenen, bevor die lineare Regression durchgef"uhrt wird. Der Grund f"ur die Verschiebung ist, dass die Korrelation zwischen Steigung und y-Achsenabschnitt minimiert wird.
+\begin{align}\label{eq:Winkelkal}
+\gamma-\bar{\gamma}=k_{\gamma}\cdot (R-\bar{R}) + b_{\gamma}
+\end{align}
+F"ur die Unsicherheit auf den Widerstand wird der Digitalisierungsfehler des CASSY Sensors angenommen:
+\begin{equation}
+\sigma_R=\frac{10\text{k}\Omega}{4096\cdot\sqrt{12}}
+\end{equation}
+Der Fehler auf $\gamma$ wird mit der kleinsten Skalenbreite abgesch"atzt unter Annahme einer Gleichverteilung:
+\begin{equation}
+\sigma_{\gamma}=\frac{\ang{5}}{\sqrt{12}}
+\end{equation}
+Die lineare Regression erzeugt eine Ausgleichsgerade mit Steigung $k_{\gamma}=-0.68\pm0.05$. Der y-Achsenabschnitt $b_{\gamma}$ ist null aufgrund der Verschiebung der Messwerte zu ihren Mittelwerten. Das $\chi^2/n$ ist mit 0.03 sehr klein, was darauf hinweist, dass die Unsicherheiten zu gro\ss \ gew"ahlt wurden. Diese Vermutung best"atigt sich im Residuenplot (Abb.~\ref{Winkelkal_Residuenplot}), wo zu erkennen ist, dass die Fehlerbalken aller Messpunkte die Regressionsgerade schneiden. Vor allem der Fehler auf $\gamma$ wird in Realit"at kleiner sein als in der linearen Regression angenommen, weil sich die Winkel trotz fehlender Skalenstriche deutlich genauer am Drehteller ablesen lassen.\\
+Der Fehler auf $k_{\gamma}$ wird in den Folgeversuchen als systematischer angenommen, weil er einen zus"atzlichen Beitrag als Skalenfehler bei der Umrechnung vom Widerstand auf den Winkel liefert.
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Winkelkal_Rohdaten.pdf}
+\caption{Gemessene Winkel $\gamma$ am Drehtisch als Funktion des Widerstandes des Winkelaufnehmers}
+\label{Winkelkalibrierung_Rohdaten}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Winkelkal_LinReg.pdf}
+\caption{Lineare Regression der Winkelkalibrierung}
+\label{Winkelkal_LinReg}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Winkelkal_Residuen.pdf}
+\caption{Residuenplot der Winkelkalibrierung}
+\label{Winkelkal_Residuenplot}
+\end{figure}
+\newpage
+\vphantom{v}
+\newpage
+
+\section{Brechung am PE-Halbzylinder}
+
+\subsection{Versuchsbeschreibung}
+In diesem Versuch wird die Brechung der Mikrowellen an der Grenzfläche von PE und Luft untersucht. Das Snelliussche Brechungsgesetz bezieht Einfallswinkel $\alpha$, Brechungswinkel $\beta$ und die Brechungsindexe des Mediums der einfallenden Welle $n_1$ und der transmittierten Wellen $n_2$ aufeinander:
+\begin{equation}
+n_1\sin{\alpha}=n_2\sin{\beta}
+\end{equation}
+Durch Variation der Einfallswinkel bei der Brechung an PE-Halbzylindern und das Messen der zugehörigen Ausfallswinkel, lässt sich der Brechungsindex von PE bestimmen. 
+\subsection{Versuchsaufbau und Durchführung}
+Der Versuchsaufbau entspricht dem der Winkelkalibrierung mit folgenden Ergänzungen: Über dem Drehteller wird horizontal eine runde Platte mit Winkelskala montiert, die mittels eines U-Profils am Schienenkreuz befestigt ist. Somit bewegt sie sich nicht mit dem Schwenkarm des Drehtellers mit. Auf dieser Platte werden PE-Halbzylinder gelegt, sodass sich unterschiedliche Einfallswinkel ergeben, wenn die Mikrowellen vom Sender auf den Halbzylinder treffen. Je nachdem, ob die runde Seite des Halbzylinders auf den Empfänger oder auf den Sender zeigt, findet die Brechung von PE in Luft oder von Luft in PE statt. Der Schwenkarm dreht sich während der Messung im Halbkreis um den Drehtisch und das CASSY-Gerät zeichnet die verstärkte Spannung am Empfänger gegen den Widerstand des Winkelaufnehmers auf.\\
+Bei der Brechung von Luft in PE nehmen wir die Intensitätsverteilung für die Einfallswinkel $\alpha_1=\{0,\ang{20},\ang{40},\ang{60}\}$ auf, bei der Brechung von PE in Luft wählen wir Einfallswinkel $\alpha_2=\{0,\ang{-20},\ang{-40}\}$. Im Verlauf des Versuches gab unser Winkelaufnehmer immer häufiger Fehlwerte aus, sodass wir den Versuch nach der Messung von $\alpha_2=\ang{-40}$ abbrechen mussten. Die bis dahin aufgenommenen Daten reichen jedoch f"ur eine erste Auswertung aus.
+\subsection{Versuchsauswertung}
+Die Abb.~\ref{Brechung_Rohdaten} und \ref{Brechung2_Rohdaten} zeigen den Spannungsverlauf des Empf"angers in Abh"angigkeit des Schwenkarmwinkels $\gamma$ f"ur unterschiedliche Einfallswinkel. Abb.~\ref{Brechung_Rohdaten} zeigt die Spannung f"ur die Brechung von Luft nach PE, Abb.~\ref{Brechung2_Rohdaten}  f"ur die Brechung von PE nach Luft. Die Werte von $\gamma$ wurden aus den gemessenen Widerst"anden mit der Winkelkalibrierung des Wegaufnehmers berechnet (Gl.~\eqref{eq:Winkelkal}). Die Peaks der Spannungskurven geben den Winkel von $\gamma$ an, in die die Welle w"ahrend der Brechung transmittiert wird. Diese Werte wurden mit dem Peakschwerpunktfinder in CASSYlab ermittelt und lauten
+\begin{align}
+\gamma_{10}&=\ang{0.39}\pm\ang{0.15}\\
+\gamma_{11}&=\ang{7.95}\pm\ang{0.15}\\
+\gamma_{12}&=\ang{16.15}\pm\ang{0.14}\\
+\gamma_{13}&=\ang{26.97}\pm\ang{0.14}\\
+\gamma_{20}&=\ang{-1.03}\pm\ang{0.06}\\
+\gamma_{21}&=\ang{-14.79}\pm\ang{0.08}\\
+\gamma_{22}&=\ang{-33.37}\pm\ang{0.34}
+\end{align}
+Der Ausfallswinkel $\beta$ berechnet sich folgenderma\ss en als Funktion von $\alpha$ und $\gamma$
+\begin{align}
+\text{Brechung von Luft nach PE: }\beta_1&=\alpha_1-\gamma_1\\
+\text{Brechung von PE nach Luft: }\beta_2&=\alpha_2+\gamma_2
+\end{align} 
+F"ur die Berechnung des Brechungsindexes wird $\sin{\alpha_1}$ gegen $\sin{\beta_1}$ aufgetragen, bzw $\sin{\beta_2}$ gegen $\sin{\alpha_2}$ und es wird jeweils eine lineare Regression durchgef"uhrt. Die Steigungen entsprechen dem Brechungsindex von PE (der Brechungsindex von Luft wird mit 1 angenn"ahert). Die Unsicherheiten auf $\sin{\alpha}$ und $\sin{\beta}$ wurden mit Gau\ss scher Fehlerfortpflanzung berechnet, wobei
+\begin{align}
+\sigma(\alpha)=\frac{\ang{5}}{\sqrt{12}}\\
+\sigma(\beta)=\sqrt{\sigma^2(\alpha)+\sigma^2(\gamma)}
+\end{align}
+Ersteres wird damit begr"undet, dass die kleinste Skalenbreite der Platte mit den PE-Halbzylindern $\ang{5}$ war.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Brechung_gamma.pdf}
+	\caption{Winkel $\gamma$ als Funktion der am Empf"anger ausgegeben Spannung f"ur die vier Einfallswinkel $\alpha_1$ bei der Brechung von Luft in PE. Markierung der Spannungspeaks mit schwarzen vertikalen Linien}
+	\label{Brechung_Rohdaten}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Brechung_gamma2.pdf}
+	\caption{Winkel $\gamma$ als Funktion der am Empf"anger ausgegeben Spannung f"ur die drei Einfallswinkel $\alpha_2$ bei der Brechung von PE in Luft. Markierung der Spannungspeaks mit schwarzen vertikalen Linien}
+	\label{Brechung2_Rohdaten}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Brechung_LinReg.pdf}
+	\caption{Lineare Regression zur Bestimmung des Brechungsindexes bei der Brechung von Luft in PE}
+	\label{Brechung_LinReg}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Brechung_Residuen.pdf}
+	\caption{Residuenplot zum Versuch zur Brechung von Luft in PE}
+	\label{Brechung_Residuenplot}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Brechung_LinReg2.pdf}
+	\caption{Lineare Regression zur Bestimmung des Brechungsindexes bei der Brechung von PE in Luft}
+	\label{Brechung2_LinReg}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/Brechung_Residuen2.pdf}
+	\caption{Residuenplot zum Versuch zur Brechung von PE in Luft}
+	\label{Brechung2_Residuenplot}
+\end{figure}
+\\Die Abbildungen \ref{Brechung_LinReg} und \ref{Brechung2_LinReg} stellen die Ergebnisse dar, die Abbildungen \ref{Brechung_Residuenplot} und \ref{Brechung2_Residuenplot} die dazugeh"origen Residuenplots. Das $\chi^2/n$ f"ur die Brechung von Luft in PE ist zu klein, was zeigt, dass unsere Fehler zu groß gew"ahlt wurden. Wie bei der Winkelkalibrierung l"asst sich der Winkel auf $\alpha$ besser einstellen, als die Messskalenbreite vermuten l"asst. Die Residuenplots zeigen keine Auff"alligkeiten, die Messwerte liegen gleichm"a\ss ig um die Ausgleichsgerade. Die Steigung der Regressionsgrade f"ur die Brechung von Luft in PE $n_{\text{PE},1}=1.57\pm0.10$ "uberschneidet sich mit dem Literaturwert von $n_{\text{PE}}=1.55$ (Quelle: Versuchshandbuch) im 1-$\sigma$ Intervall, die Steigung der Regressionsgraden f"ur die Brechung von PE in Luft $n_{\text{PE},2}=1.45\pm0.08$ schneidet den Literaturwert im 2-$\sigma$ Intervall. Somit geben die Messergebnisse sehr gut das Snelliussche Brechungsgesetz wieder.
+\newpage
+\vphantom{v}
+\newpage
+\section{Optischer Tunneleffekt}
+
+\subsection{Versuchsbeschreibung}
+In diesem Versuch wird eine quantitative Messung zur Frustrierten Totalen Internen Reflexion (FTIR) realisiert. Trifft eine Welle in einem Medium und Brechungsindex $n$ auf einen Spalt mit kleinerem Brechungsindex unter einem Einfallswinkel, der größer ist als der Grenzwinkel der Totalreflexion, wird trotzdem ein Teil der Welle transmittiert, wenn die Spaltbreite $D$ klein gegenüber der Wellenlänge $\lambda$ ist. Die Intensität der transmittierten Welle hängt exponentiell von der Spaltbreite und der Wellenlänge ab:
+\begin{equation}
+I_T \sim exp(\frac{-2\pi D}{\lambda})
+\end{equation}
+Dieser Zusammenhang wird in diesem Versuch untersucht, indem die Intensität der transmittierten Welle für unterschiedliche Spaltbreiten gemessen wird.
+\subsection{Versuchsaufbau und Durchführung}
+Wie im vorherigen Versuch wird der Empfänger auf dem Schwenkarm des Drehtellers befestigt. Zwischen Sender und Empfänger werden auf dem U-Profil zwei Halbzylinder so mit den flachen Seiten aneinander platziert, dass sie einen Vollzylinder mit Spalte der Breite $D$ darstellen. Die Halbzylinder werden so gedreht, dass die vom Sender ausgegebene Welle ungebrochen in das PE eindringt und anschließend mit einem Einfallswinkel von $60^{\circ}$ auf die Luftspalte trifft. Obwohl bei diesem Winkel klassischerweise auschließlich eine Totalreflexion stattfinden sollte, wird nur ein Teil der Welle reflektiert und der andere durch den optischen Tunneleffekt in den zweiten Halbzylinder transmittiert. Wärend der Messung fährt der Empfänger angetrieben durch den Motor des Drehtellers um die beiden Prismen im Winkel von $-80^{\circ}$ bis $80^{\circ}$ und zeichnet die Intensität als Spannung auf. So kann sowohl die transittierte als auch die reflektierte Intensität gemessen werden. Durch Variation der Spaltbreiten $D$ mithilfe von Abstandsblechen lässt sich der Zusammenhang zwischen Spaltbreite und Intensität der transmittierten Welle untersuchen.
+
+
+\subsection{Versuchsauswertung}
+Die erfasste Spannung wird "uber $I\sim U^{-2/a}$  auf Intensit"aten umgerechnet und in Abb.~\ref{FTIR_Rohdaten} aufgetragen. Die drch den Peakschwerpunktfinder des CASSYlabs erhaltenen Maxima lauten
+\begin{align}
+I'_{T,1mm}&=0.0209\\
+I'_{T,4mm}&=0.0095\\
+I'_{T,10mm}&=0.0020\\
+I_{R,1mm}&=0.0052\\
+I_{R,4mm}&=0.0152\\
+I_{R,10mm}&=0.0217
+\end{align} 
+wobei die Werte einheitslos betrachtet werden, weil nur das relative Verhältnis untereinander von Bedeutung ist. Wie erwartet sinkt die maximale Intensit"at der transmittierten Welle bzw steigt die Intensit"at der reflektierten Welle bei größer werdendem Spaltabstand $D$. Da bei der transmittierten Welle Beugungs- und Interferenzerscheinungen auftreten, die die Intensit"at der transmittierten Welle verf"alschen, und dieser Effekt vor allem bei den Spaltbreiten $4\,\text{mm}$ und $10\,\text{mm}$ erkennbar sind, wir die totale Intensit"at $I_{tot}$ bestimmt durch
+\begin{equation}
+I_{tot}=I_{R,1mm}+I'_{T,1mm}
+\end{equation}
+Statt der ausgelesenen transmittierten Wellen $I'_{T,i}$ rechnen wir im folgenden mit $I_{T,i}=I_{tot}-I_{R,i}$. Als nächstes werden $D$ und $\log(I-T/I_{tot})$ gegeneinander aufgetragen und eine lineare Regression durchgef"uhrt. Der Fehler auf $D$ wird mit 
+\begin{equation}
+\sigma_D=\frac{1\,\text{mm}}{\sqrt{12}}
+\end{equation}
+abgesch"atzt durch Annahme einer Gleichverteilung und einer minimalen Skalenbreite von 1mm der Abstandsbleche. Der Fehler auf $I_R$ und $I_{tot}$ wird abgesch"atzt durch 
+\begin{equation}
+\sigma_I\equiv\sigma(I_{tot})=\sigma(I_R)=\frac{1}{2}(\max(I_R+I'_T)-\min(I_R+I'_T))
+\end{equation}
+und durch Fehlerfortpflanzung
+\begin{equation}
+\sigma({\log(I_T/I_{tot})})=\frac{I_R\sigma_{I}}{I_{tot}-I_R}\sqrt{\frac{1}{I_{tot}^2}+\frac{1}{I_R^2}}
+\end{equation}
+Der systematische Fehler durch die Umrechnung von Spannung zu Intensit"at wird vernachl"assigt. Die Ergebnisse der linearen Regression sind in Abb.~\ref{FTIR_LinReg} und \ref{FTIR_Residuenplot} dargestellt. Das $\chi^2/n$ ist bei drei Messpunkten wenig aussagekr"aftig, allerdings sehen die Datenpunkte so aus, als w"urden sie recht gut durch die Regressionsgerade beschrieben werden. Die Steigung ist $k_{\text{FTIR}}=-1.9\pm0.3\frac{1}{\text{cm}}$. Daraus berechnet sich die Wellenl"ange zu 
+\begin{equation}
+\lambda=\frac{-2\pi}{k_{\text{FTIR}}}=3.31\pm0.52\,\text{cm}
+\end{equation}
+Dieser Wert stimmt im Rahmen der Unsicherheit mit den berechneten Werten aus dem Versuch der stehenden Welle "uberein. Allerdings ist die Unsicherheit auf $\lambda$ recht gro\ss. M"ogliche Feehlerquellen bei dem Versuch waren die nicht ganz geraden Fl"achen der PE-Halbyzlinder, die eine genaue Abmessung des Spaltes erschweren und die Tatsache, dass die Mikrowellen an Gegenst"anden und Personen im Raum reflektiert werden und eine genaue Messung der Intensit"at erschweren.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/FTIR_Rohdaten.pdf}
+	\caption{Intensit"aten der transmittierten Welle bei $\gamma\approx0$ und der reflektierten Welle bei $\gamma\approx\ang{-65}$}
+	\label{FTIR_Rohdaten}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/FTIR_LinReg.pdf}
+	\caption{Lineare Regression zur FTIR in PE}
+	\label{FTIR_LinReg}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{Bilder/FTIR_Residuen.pdf}
+	\caption{Residuenplot zur FTIR in PE}
+	\label{FTIR_Residuenplot}
+\end{figure}
+
+\end{comment}
+
+\end{document}

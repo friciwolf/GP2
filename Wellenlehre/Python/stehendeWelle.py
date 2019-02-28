@@ -34,9 +34,10 @@ eDeltaR = np.sqrt(2)*eR
 
 figure(figsize=((10,3)))
 plot(R,U, color='grey')
+plot(R,U, 'x', color='grey', markersize=3)
 plot(R_lim, U_lim, color='black')
 text(1.0, 0.85, "{} Knoten".format(NKnoten))
-xlabel('R / $\\Omega$')
+xlabel('R / $k\\Omega$')
 ylabel('U / V')
 savefig('stehwel1.pdf', bbox_inches = 'tight')
 show()
@@ -77,11 +78,12 @@ eDeltaR = np.sqrt(2)*eR
 
 figure(figsize=((10,3)))
 plot(R,U, color='grey')
+plot(R,U, 'x', color='grey', markersize=3)
 plot(R_lim, U_lim, color='black')
 text(1.0, 0.8, "{} Knoten".format(NKnoten))
 text(1.0, 1.3, "Als Knoten mitgezählt", color="red")
 plot(1.0665, 1.1265, "x", color="red")
-xlabel('R / $\\Omega$')
+xlabel('R / $k\\Omega$')
 ylabel('U / V')
 savefig('stehwel2.pdf', bbox_inches = 'tight')
 show()
@@ -121,9 +123,10 @@ eDeltaR = np.sqrt(2)*eR
 
 figure(figsize=((10,3)))
 plot(R,U, color='grey')
+plot(R,U, 'x', color='grey', markersize=3)
 plot(R_lim, U_lim, color='black')
 text(1.0, 0.8, "{} Knoten".format(NKnoten))
-xlabel('R / $\\Omega$')
+xlabel('R / $k\\Omega$')
 ylabel('U / V')
 savefig('stehwel3.pdf', bbox_inches = 'tight')
 show()
@@ -164,9 +167,10 @@ eDeltaR = np.sqrt(2)*eR
 
 figure(figsize=((10,3)))
 plot(R,U, color='grey')
+plot(R,U, 'x', color='grey', markersize=3)
 plot(R_lim, U_lim, color='black')
 text(1.0, 0.8, "{} Knoten".format(NKnoten))
-xlabel('R / $\\Omega$')
+xlabel('R / $k\\Omega$')
 ylabel('U / V')
 savefig('stehwel4.pdf', bbox_inches = 'tight')
 show()
@@ -193,5 +197,9 @@ esysLambda = max(esyswellenlaenge)
 print("\n\n gewichtetes Mittel aller Werte: Wellenlaenge = {:.4f} ± {:.4f} ± {:.4f}(sys) cm".format(Lambda, eLambda, esysLambda))
 
 np.savetxt('Lambda.txt', [[Lambda, eLambda, esysLambda]], header="Wellenlänge durch stehende Wellen, stat. Fehler, syst. Fehler")
+
+for i in range(4):
+    print("Messung {}&{:.4f}&{:.4f}&{:.4f}\\\\\n\hline".format(i+1,wellenlaenge[i], ewellenlaenge[i], esyswellenlaenge[i]))
+
 
 

@@ -35,7 +35,7 @@ close()
 #-----------------------------Lineare Regresion----------------------------------
 
 eR=3/4096/sqrt(12)*np.ones(len(R))                     #Binningfehler auf Widerstand in kOhm
-ed=0.1/sqrt(12)*np.ones(len(d))                        #Ablesefehler Maßband in cm
+ed=0.03*np.ones(len(d))#/sqrt(12)*np.ones(len(d))      #Ablesefehler Maßband in cm
 d_mean=np.mean(d)
 R_mean=np.mean(R)
 
@@ -53,7 +53,7 @@ errorbar(R, d, xerr=eR, yerr=ed, linestyle='none', marker='o', markersize=4, eli
 plot(R, AbstandausW(R),'-', zorder=2)
 xlabel('R / $k\\Omega$')
 ylabel('S / cm')
-legend(title='Lineare Regression \nSteigung [cm/k$\\Omega$]: ${:.2f}\\pm{:.2f}$ \ny-Achsenabschnitt[cm]: ${:.1f}\\pm{:.1f}$ \nDatenpunkte: {}'.format(a, ea, b, eb, len(R-R_mean)))
+legend(title='Lineare Regression \nSteigung [cm/k$\\Omega$]: ${:.3f}\\pm{:.3f}$ \ny-Achsenabschnitt[cm]: ${:.1f}\\pm{:.1f}$ \nDatenpunkte: {}'.format(a, ea, b, eb, len(R-R_mean)))
 savefig('WegaufKal_LinReg.pdf', bbox_inches = 'tight')
 show()
 
