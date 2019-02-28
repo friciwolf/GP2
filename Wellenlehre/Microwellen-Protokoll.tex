@@ -1,4 +1,4 @@
-% !TeX spellcheck = en_US
+% !TeX spellcheck = de_DE
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
@@ -257,7 +257,28 @@ Da die Messungen innerhalb ihrer statistischen Fehler "ubereinstimmen, berechnen
 Ziel dieses Versuchs ist es die Intensit"atsverteilung hinter einem Einzel- oder Doppelspalt in Abh"angigkeit des Winkels $\alpha$ zur Einfallsrichtung zu bestimmen. Der Aufbau des Senders mit dem Parabolspiegel zur Erzeugung ebener Wellen aus dem vorherigen Versuch bleibt bestehen. Der Empf"anger dagegen wird dagegen an einem schwenkbaren Dreharm hinter der Reflexionswand befestigt (Der Aufbau entspricht den gestrichelten Linien von Abb. \ref{versuchsaufbau}). In die Reflexionswand lassen sich mithilfe von verschiebbaren Metallplatten Einzelspalten und Doppelspalten unterschiedlicher Breite einbauen. Der Drehtisch, an dem der Dreharm befestigt ist, l"asst sich mit einem Motor drehen und ist mit einem Drehpotentiometer verbunden, der somit als Winkelaufnehmer wirkt. 
 
 \subsection{Vorversuch: Kalibrierung des Winkelaufnehmer}
-Zun"achst muss in einem Vorversuch der Winkelaufnehmer kalibriert werden. Der Winkel $\alpha$ h"angt linear von der Widerstandsmessung $R$ des WInkelaufnehmers ab. Zur Kalibrierung wird der Dreharm in Schritten von $\ang{10}$ von $\ang{-80}$ bis $\ang{80}$ manuell gedreht und jeweils der Widerstand aufgenommen. Die Winkel werden an dem Drehtisch abgelesen. Die Messwerterfassung des Widerstandes erfolgte im Bereich $0..10k\Omega$ und "uber 200ms gemittelt.
+Zun"achst muss in einem Vorversuch der Winkelaufnehmer kalibriert werden. Der Winkel $\alpha$ h"angt linear von der Widerstandsmessung $R$ des Winkelaufnehmers ab. Zur Kalibrierung wird der Dreharm in Schritten von $\ang{10}$ von $\ang{-80}$ bis $\ang{80}$ manuell gedreht und jeweils der Widerstand aufgenommen. Die Winkel werden an dem Drehtisch abgelesen. Die Messwerterfassung des Widerstandes erfolgte im Bereich $0..10k\Omega$ und "uber 200ms gemittelt.\\
+Analog zur Kalibration des Wegaufnehmers erwartet man einen linearen Zusammenhang zwischen dem gemessenen Widerstandswert $R$ und dem Drehwinkel $\phi$, sodass man wider eine lineare Regression der Art
+
+\begin{equation}
+	R-\bar{R}=K\cdot(\phi-\bar{\phi})
+\end{equation}
+
+durchführen kann. Als Fehler wurde hier folgende Werte genommen:
+\begin{center}
+	$\sigma_R = \SI{0.005}{k \Omega}$\\
+	$\sigma_{\phi} = 0.5^\circ$
+\end{center}
+Die Ergebnisse der Regression sind in der Abb \ref{fig:winkelkalib} dargestellt:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Rohdaten/Images/Winkelkalib}
+	\caption{Lineare Regression des Winkelaufnehmers}
+	\label{fig:winkelkalib}
+\end{figure}
+
+Als Ergebnis der Regression erhält man einen $K$-Wert von $(0.02633\pm0.00007)k\Omega/^\circ$. Dieses Ergebnis wurde auf $\phi$ umgestellt (man misst den Widerstand $R$), sodass es einen Umrechenfaktor von $K^{-1} =(37.9795\pm0.1006)^\circ/k\Omega$
 
 
 \subsection{Versuchsdurchf"uhrung}
