@@ -74,7 +74,7 @@ def Einzelspalt(file, b, debug):
     #Maxima abspeichern
     null = np.min(np.abs(peaks))
     i_null = index_element(null,np.abs(peaks))
-    peak_1_theo = np.arcsin(1.5*l/b)*180/pi
+    peak_1_theo = np.arcsin(4.49/pi*l/b)*180/pi
     maxima.append(np.round(peaks[i_null], 2))
     maxima.append(np.round(peaks[i_null+1], 2))
     maxima.append(np.round(peaks[i_null-1], 2))
@@ -181,8 +181,8 @@ wellenlaenge = []
 e_wellenlaenge = []
 for i in range(len(maxima)):
     if (i)%3!=0 and i<8*3:
-        wellenlaenge.append(einzelspalt_breite[i]*np.sin(maxima[i]*pi/180)/1.5)
-        e_wellenlaenge.append(einzelspalt_breite[i]*np.cos(maxima[i]*pi/180)*e_maxima*pi/180/1.5)
+        wellenlaenge.append(einzelspalt_breite[i]*np.sin(maxima[i]*pi/180)*pi/4.49)
+        e_wellenlaenge.append(einzelspalt_breite[i]*np.cos(maxima[i]*pi/180)*e_maxima*(pi/180)*pi/4.49)
     elif (i)%3!=0 and i>=8*3:
         wellenlaenge.append(doppelspalt_abstand[i-24]*np.sin(maxima[i]*pi/180))
         e_wellenlaenge.append(doppelspalt_abstand[i-24]*np.cos(maxima[i]*pi/180)*e_maxima*pi/180)
