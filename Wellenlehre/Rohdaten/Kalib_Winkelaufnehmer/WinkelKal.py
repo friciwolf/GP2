@@ -67,7 +67,7 @@ eR = np.ones(len(R))*0.005 #nehme als statistische Fehler den Digitalisirungsfeh
 a, ea, b, eb, chiq = pltmitres(phi, R, ephi, eR, "$\phi$", "R", "$k\Omega$", "°", "")
 plt.savefig("../Images/Winkelkalib.pdf")
 plt.show()
-print("Lineare Regression\n{} = ({:.4f} ± {:.4f}){}/{} * {}+({:.4f}±{:.4f}){}\nchi^2 /NDF={:.2f}".format("R",a,ea, "kOhm", "°","phi",b, eb, "°", chiq/(len(R)-2)))
+print("Lineare Regression\n{} = ({:.5f} ± {:.5f}){}/{} * {}+({:.2f}±{:.2f}){}\nchi^2 /NDF={:.2f}".format("R",a,ea, "kOhm", "°","phi",b, eb, "°", chiq/(len(R)-2)))
 print("oder umgestellt:")
 print("phi = R*{:.4f}".format(1/a))
 print("DurchschnittsR = ", np.average(R))
