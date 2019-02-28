@@ -12,7 +12,8 @@
 
 \usepackage{subcaption}
 \usepackage{siunitx}
-\usepackage{verbatim} 
+\usepackage{verbatim}
+\usepackage{subfig} 
 
 
 \author{Gruppe B2 \\ Máté Farkas, Maria Spethmann}
@@ -310,11 +311,27 @@ Die Messwerterfassung erfolgte folgenderma\ss en:
 \end{table}
 
 \subsection{Versuchsauswertung}
-Unser Ziel ist es, die Spannung des Verstärkers gegen den Widerstand des Winkelaufnehmers aufzuzeichnen, und die Ergebnisse mit der theoretischen Erwartung zu vergleichen. Dafür werden die gemessenen Spannungswerte über die Proportionalität $I\propto U^{\frac{2}{a}}$ umgerechnet und die Lagen der Maxima der so erhaltenen Intensitätsverteilung bestimmt. Mit der so gewonnenen Informationen können wir auch die Wellenlänge $\lambda$ des Ultraschalls über die folgenden Gleichungen berechnen:
+Unser Ziel ist es, die Spannung des Verstärkers gegen den Widerstand des Winkelaufnehmers aufzuzeichnen, und die Ergebnisse mit der theoretischen Erwartung zu vergleichen. Dafür werden die gemessenen Spannungswerte über die Proportionalität $I\propto U^{\frac{2}{a}}$ umgerechnet und die Lagen der Maxima der so erhaltenen Intensitätsverteilung bestimmt. Mit den so gewonnenen Informationen können wir auch die Wellenlänge $\lambda$ des Ultraschalls über die folgenden Gleichungen berechnen:
 \begin{align*}
 	\lambda &= \frac{\pi}{4.49341\footnotemark}b \cdot \sin(\phi),&\, \text{für einen Einzelspalt der Breite b}\\
 	\lambda &= d \cdot \sin(\phi),&\, \text{für einen Doppelspalt mit Spaltabstand d}
 \end{align*}
 \footnotetext{der Faktor 4.49341 kommt durch $((\sin(x)/x)^2)'=0  \Rightarrow x = \tan(x)$ zustande (für die Maxima erster Ordnung)}
+Die Rohdaten zweier Beispielmessungen sind in der Abb. \ref{fig:rohdaten} dargestellt. Man erkennt sofort, dass die Peaks unscharf erscheinen, sodass die Unsicherheit auf die Maxima groß wird. Außerdem sieht man auch, dass die Verteilung gegen die Nullage verschoben ist, sodass sie zuerst zentriert werden soll, um sie mit der theoretischen Vorhersage zu vergleichen.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{Rohdaten/Images/einzelspalt_roh_3_3}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{Rohdaten/Images/doppelspalt_roh_2}
+	\end{subfigure}
+	\caption{Rohdaten der Spannungsmessung}
+	\label{fig:rohdaten}
+\end{figure}
+
+
 
 \end{document}

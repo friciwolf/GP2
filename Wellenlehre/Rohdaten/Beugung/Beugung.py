@@ -60,7 +60,7 @@ def zentriere(phi, U):
     i_null = index_element(null,np.abs(max_phi))
     delta = (max_phi[i_null+1]+max_phi[i_null-1])*0.5
     return phi-delta, delta, np.array(max_phi)-delta, np.array(max_U)
-    
+
 def Einzelspalt(file, b, debug):
     N = 1
     d = 0
@@ -69,6 +69,15 @@ def Einzelspalt(file, b, debug):
     R = np.array(data[:,3])
     eR = np.ones(len(R))*0.005
     phi, ephi = RtoDeg(R, eR)
+    
+    #Plot der Rohdaten
+    plt.plot(phi, U)
+    plt.xlabel("$\phi [°]$")
+    plt.ylabel("U [V]")
+    plt.savefig("../Images/einzelspalt_roh_"+str(b)+"_"+file[-5]+".pdf")
+    plt.show()
+    plt.close()
+    
     phi, delta,peaks,U_p  = zentriere(phi,U)
     Intens = UtoI(U, a)
     
@@ -112,7 +121,16 @@ def Doppelspalt(file, b, d, debug):
     R = np.array(data[:,3])
     eR = np.ones(len(R))*0.005
     phi, ephi = RtoDeg(R, eR)
-    phi, delta,peaks,U_p = zentriere(phi,U)
+    
+    #Plot der Rohdaten
+    plt.plot(phi, U)
+    plt.xlabel("$\phi [°]$")
+    plt.ylabel("U [V]")
+    plt.savefig("../Images/doppelspalt_roh_"+file[-5]+".pdf")
+    plt.show()
+    plt.close()
+
+    phi, delta,peaks,U_p = zentriere(phi,U)    
     Intens = UtoI(U, a)
     
     #Maxima abspeichern
