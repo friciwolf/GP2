@@ -47,7 +47,7 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
     plt.ylabel(yl+" [{}]".format(xeinheit))
     plt.ylim(top=7)
     print(ea)
-    plt.legend(title="Lineare Regression\n{} = ({:.4f} ± {:.4f}){}/{} $\cdot$ {}+({:.4f}±{:.4f}){}\n$\chi^2 /NDF={:.2f}$".format(yl,a,ea, xeinheit, yeinheit,xl,b, eb, xeinheit, chiq/(len(x)-2)), loc=1)
+    plt.legend(title="Lineare Regression\n{} = ({:.5f} ± {:.5f}){}/{} $\cdot$ {}+({:.2f}±{:.2f}){}\n$\chi^2 /NDF={:.2f}$".format(yl,a,ea, xeinheit, yeinheit,xl,b, eb, xeinheit, chiq/(len(x)-2)), loc=1)
     
     plt.subplot(gs1[2, :-1])
     plt.errorbar(x,y-a*x-b, np.sqrt(ex**2*a**2+ey**2), marker="x", linestyle="None", capsize=5)
@@ -60,7 +60,7 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
 data = cassy1.lese_lab_datei("../Winkelkal.lab")
 R = data[:,3]
 phi = data[:,5]
-ephi = np.ones(len(phi))*0.25 #Wähle 0.25° als Unsicherheit
+ephi = np.ones(len(phi))*0.5 #Wähle 0.5° als Unsicherheit
 #Verschiebe Gerade in den Ursprung
 eR = np.ones(len(R))*0.005 #nehme als statistische Fehler den Digitalisirungsfehler - chiq akzeptabel
 
