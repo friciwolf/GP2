@@ -1,4 +1,4 @@
-\babel@toc {german}{}
+\select@language {german}
 \contentsline {section}{\numberline {1}Theorie}{3}
 \contentsline {section}{\numberline {2}Abstandsmessung}{4}
 \contentsline {subsection}{\numberline {2.1}Versuchsaufbau}{4}
@@ -12,4 +12,5 @@
 \contentsline {section}{\numberline {4}Beugung am Einzelspalt und Doppelspalt}{12}
 \contentsline {subsection}{\numberline {4.1}Versuchsaufbau}{12}
 \contentsline {subsection}{\numberline {4.2}Vorversuch: Kalibrierung des Winkelaufnehmer}{12}
-\contentsline {subsection}{\numberline {4.3}Versuchsdurchf"uhrung}{12}
+\contentsline {subsection}{\numberline {4.3}Versuchsdurchf"uhrung}{13}
+\contentsline {subsection}{\numberline {4.4}Versuchsauswertung}{13}

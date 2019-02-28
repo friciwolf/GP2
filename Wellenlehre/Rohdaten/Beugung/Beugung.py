@@ -11,8 +11,9 @@ import numpy as np
 from matplotlib.gridspec import GridSpec
 import praktikum.cassy1 as cassy1
 from scipy.signal import find_peaks
+import praktikum.analyse as anal
 
-l = 0.9746 #in cm
+l = 0.9736 #in cm
 pi = np.pi
 a = 1.56
 maxima = []
@@ -71,9 +72,10 @@ def Einzelspalt(file, b, debug):
     phi, ephi = RtoDeg(R, eR)
     
     #Plot der Rohdaten
-    plt.plot(phi, U)
+    plt.plot(phi, U, label="Rohdaten")
     plt.xlabel("$\phi [°]$")
     plt.ylabel("U [V]")
+    plt.legend(title="N=1, b="+str(b)+" cm")
     plt.savefig("../Images/einzelspalt_roh_"+str(b)+"_"+file[-5]+".pdf")
     plt.show()
     plt.close()
@@ -111,6 +113,7 @@ def Einzelspalt(file, b, debug):
     plt.plot(phi, Intens, label = "I")
     plt.plot(phi, I(phi*pi/180, max(Intens),b,d,N), label = "$I_{theo}$")
     plt.legend(title="N=1, b="+str(b)+" cm")
+    plt.savefig("../Images/einzelspalt_"+str(b)+"_"+file[-5]+".pdf")
     plt.show()
     plt.close()
     
@@ -123,9 +126,10 @@ def Doppelspalt(file, b, d, debug):
     phi, ephi = RtoDeg(R, eR)
     
     #Plot der Rohdaten
-    plt.plot(phi, U)
+    plt.plot(phi, U, label="Rohdaten")
     plt.xlabel("$\phi [°]$")
     plt.ylabel("U [V]")
+    plt.legend(title="N=2, b="+str(b)+" cm, d="+str(d)+ " cm")
     plt.savefig("../Images/doppelspalt_roh_"+file[-5]+".pdf")
     plt.show()
     plt.close()
@@ -166,6 +170,7 @@ def Doppelspalt(file, b, d, debug):
     plt.plot(phi, Intens, label = "I")
     plt.plot(phi, I(phi*pi/180, max(Intens)/(N**2),b,d,N), label = "$I_{theo}$")
     plt.legend(title="N=2, b="+str(b)+" cm, d="+str(d)+ " cm")
+    plt.savefig("../Images/doppelspalt_"+file[-5]+".pdf")
     plt.show()
     plt.close()
 
@@ -205,6 +210,9 @@ for i in range(len(maxima)):
     elif (i)%3!=0 and i>=8*3:
         wellenlaenge.append(doppelspalt_abstand[i-24]*np.sin(maxima[i]*pi/180))
         e_wellenlaenge.append(np.sqrt((doppelspalt_abstand[i-24]*np.cos(maxima[i]*pi/180)*e_maxima*pi/180)**2+(np.sin(maxima[i]*pi/180)*e_b)**2))
-print(wellenlaenge)
+print(np.abs(wellenlaenge))
 print(np.average(np.abs(wellenlaenge)))
 print(e_wellenlaenge) #TODO: Fehler besser abschätzen?
+print(anal.gewichtetes_mittel(np.array(np.abs(wellenlaenge)), np.array(e_wellenlaenge)))
+
+
