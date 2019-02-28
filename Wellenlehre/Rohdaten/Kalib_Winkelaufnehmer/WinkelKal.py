@@ -29,11 +29,11 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
         pltmitres(x,y, ex, ey, "x", "y", "m/s", "s", "titel")
         plt.show()
     """
-    x = np.array(x)
-    y = np.array(y)
+    x = np.array(x)-np.average(x)
+    y = np.array(y)-np.average(y)
     ex = np.array(ex)
     ey = np.array(ey)
-    a,ea,b,eb,chiq,corr = anal.lineare_regression(x,y,ey)
+    a,ea,b,eb,chiq,corr = anal.lineare_regression_xy(x,y,ex,ey)
     
     gs1 = GridSpec(3, 5)
     
@@ -45,7 +45,8 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
     y2 = a*x2+b
     plt.plot(x2, y2, color="orange")
     plt.ylabel(yl+" [{}]".format(xeinheit))
-    plt.ylim(top=15)
+    plt.ylim(top=7)
+    print(ea)
     plt.legend(title="Lineare Regression\n{} = ({:.4f} ± {:.4f}){}/{} $\cdot$ {}+({:.4f}±{:.4f}){}\n$\chi^2 /NDF={:.2f}$".format(yl,a,ea, xeinheit, yeinheit,xl,b, eb, xeinheit, chiq/(len(x)-2)), loc=1)
     
     plt.subplot(gs1[2, :-1])
@@ -59,10 +60,14 @@ def pltmitres(x,y,ex,ey, xl, yl, xeinheit, yeinheit, titel):
 data = cassy1.lese_lab_datei("../Winkelkal.lab")
 R = data[:,3]
 phi = data[:,5]
-
+ephi = np.ones(len(phi))*0.25 #Wähle 0.25° als Unsicherheit
+#Verschiebe Gerade in den Ursprung
 eR = np.ones(len(R))*0.005 #nehme als statistische Fehler den Digitalisirungsfehler - chiq akzeptabel
 
-a, ea, b, eb, chiq = pltmitres(phi, R, np.ones(len(R))*0, eR, "$\phi$", "R", "$k\Omega$", "°", "")
+a, ea, b, eb, chiq = pltmitres(phi, R, ephi, eR, "$\phi$", "R", "$k\Omega$", "°", "")
 plt.savefig("../Images/Winkelkalib.pdf")
 plt.show()
 print("Lineare Regression\n{} = ({:.4f} ± {:.4f}){}/{} * {}+({:.4f}±{:.4f}){}\nchi^2 /NDF={:.2f}".format("R",a,ea, "kOhm", "°","phi",b, eb, "°", chiq/(len(R)-2)))
+print("oder umgestellt:")
+print("phi = R*{:.4f}".format(1/a))
+print("DurchschnittsR = ", np.average(R))
