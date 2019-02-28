@@ -21,6 +21,7 @@ einzelspalt_breite = []
 doppelspalt_breite = []
 doppelspalt_abstand = []
 e_maxima = np.round(0.05/0.0263,2) #Ungefähr auf 0.05 Ohm Genauigkeit-diese kommt aber auf den Punkt an!
+e_b = 0.1/np.sqrt(12)
 
 def UtoI(U, a):
     return U**(2/a)
@@ -74,7 +75,7 @@ def Einzelspalt(file, b, debug):
     #Maxima abspeichern
     null = np.min(np.abs(peaks))
     i_null = index_element(null,np.abs(peaks))
-    peak_1_theo = np.arcsin(4.49/pi*l/b)*180/pi
+    peak_1_theo = np.arcsin(4.49341/pi*l/b)*180/pi
     maxima.append(np.round(peaks[i_null], 2))
     maxima.append(np.round(peaks[i_null+1], 2))
     maxima.append(np.round(peaks[i_null-1], 2))
@@ -181,11 +182,11 @@ wellenlaenge = []
 e_wellenlaenge = []
 for i in range(len(maxima)):
     if (i)%3!=0 and i<8*3:
-        wellenlaenge.append(einzelspalt_breite[i]*np.sin(maxima[i]*pi/180)*pi/4.49)
-        e_wellenlaenge.append(einzelspalt_breite[i]*np.cos(maxima[i]*pi/180)*e_maxima*(pi/180)*pi/4.49)
+        wellenlaenge.append(einzelspalt_breite[i]*np.sin(maxima[i]*pi/180)*pi/4.49341)
+        e_wellenlaenge.append(pi/4.49341*np.sqrt((einzelspalt_breite[i]*np.cos(maxima[i]*pi/180)*e_maxima*(pi/180))**2+(np.sin(maxima[i]*pi/180)*e_b)**2))
     elif (i)%3!=0 and i>=8*3:
         wellenlaenge.append(doppelspalt_abstand[i-24]*np.sin(maxima[i]*pi/180))
-        e_wellenlaenge.append(doppelspalt_abstand[i-24]*np.cos(maxima[i]*pi/180)*e_maxima*pi/180)
+        e_wellenlaenge.append(np.sqrt((doppelspalt_abstand[i-24]*np.cos(maxima[i]*pi/180)*e_maxima*pi/180)**2+(np.sin(maxima[i]*pi/180)*e_b)**2))
 print(wellenlaenge)
 print(np.average(np.abs(wellenlaenge)))
 print(e_wellenlaenge) #TODO: Fehler besser abschätzen?
