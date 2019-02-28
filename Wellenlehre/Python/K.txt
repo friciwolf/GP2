@@ -1,0 +1,2 @@
+# Kalibrierungsfaktor Wegaufnehmer in cm/kOhm, Fehler
+1.601665275247017206e+01 1.025070330564127608e-02

@@ -1,0 +1,2 @@
+# Wellenlänge durch stehende Wellen, stat. Fehler, syst. Fehler
+9.736378728418564332e-01 1.171993777231813494e-03 6.240628172474408254e-04
