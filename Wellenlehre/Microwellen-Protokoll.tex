@@ -344,9 +344,18 @@ Aus diesen (insgesamt 11) Graphen wurden zuerst die Lagen $\phi_1,  \phi_2$ der 
 		\centering
 		\includegraphics[width=0.9\linewidth]{Rohdaten/Images/doppelspalt_2}
 	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{Rohdaten/Images/einzelspalt_4_3}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{Rohdaten/Images/doppelspalt_3}
+	\end{subfigure}
 	\caption{Rohdaten der Spannungsmessung}
 	\label{fig:daten_mit_theo}
 \end{figure}
+
 Durch Zusammenfassen der einzelnen Messungen erhält man in der folgenden Tabelle dargestellten Werte.\\
 \begin{table}[H]
 	\centering
@@ -363,15 +372,15 @@ Durch Zusammenfassen der einzelnen Messungen erhält man in der folgenden Tabell
 		Doppelspalt d=4,3cm, b=1,8cm&(12,74$\pm$1,9)$^\circ$ &13,1$^\circ$ \\
 		\hline 
 	\end{tabular}
-	\caption{Zusammenfassung der gemessenen Extrema} 
+	\caption{Zusammenfassung der gemessenen Maxima}
 \end{table}
 Man erkennt, dass alle der gemessenen Werte im 1$\sigma$-Bereich der theoretischen Vorhersage liegen. Allerdings gibt es Abweichungen in der Intensität, die sich unter Anderem auf Störeffekte (Reflexion an herumliegenden Gegenständen) zurückführen lassen, was durch eine Rauschmessung hätte korrigiert werden können.\\
 Aus der Lage der zuvor erwähnten Maxima kann man mithilfe der Gl. \ref{eq:lambda1} und der Gl. \ref{eq:lambda2} die Wellenlänge $\lambda$ bestimmen. Der Fehler $\sigma_\lambda$ wurde mittels Fehlerfortpflanzung bestimmt (wobei $\sigma_d=\sigma_b=1mm/\sqrt{12}$)
 \begin{equation*}
-	\sigma_{\lambda 1} = \left(\frac{\pi}{4.49341}\right)^2 \cdot \left[(\sin(\phi)\sigma_b)^2+(b\cos(\phi)\sigma_\phi)^2\right]
+	\sigma_{\lambda 1}^2 = \left(\frac{\pi}{4.49341}\right)^2 \cdot \left[(\sin(\phi)\sigma_b)^2+(b\cos(\phi)\sigma_\phi)^2\right]
 \end{equation*}
 \begin{equation*}
-	\sigma_{\lambda 2} = \left[(\sin(\phi)\sigma_d)^2+(d\cos(\phi)\sigma_\phi)^2\right],
+	\sigma_{\lambda {2}}^2 = \left[(\sin(\phi)\sigma_d)^2+(d\cos(\phi)\sigma_\phi)^2\right],
 \end{equation*}
 sodass man durch Kombination aller Messungen erhält
 \begin{equation}

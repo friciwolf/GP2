@@ -110,8 +110,8 @@ def Einzelspalt(file, b, debug):
 
     plt.xlabel("$\phi [°]$")
     plt.ylabel("Relative Intensität")
-    plt.plot(phi, Intens, label = "I")
-    plt.plot(phi, I(phi*pi/180, max(Intens),b,d,N), label = "$I_{theo}$")
+    plt.plot(phi, Intens, label = "I", color="gray")
+    plt.plot(phi, I(phi*pi/180, max(Intens),b,d,N), label = "$I_{theo}$", color="black")
     plt.legend(title="N=1, b="+str(b)+" cm")
     plt.savefig("../Images/einzelspalt_"+str(b)+"_"+file[-5]+".pdf")
     plt.show()
@@ -167,8 +167,8 @@ def Doppelspalt(file, b, d, debug):
 
     plt.xlabel("$\phi [°]$")
     plt.ylabel("Relative Intensität")
-    plt.plot(phi, Intens, label = "I")
-    plt.plot(phi, I(phi*pi/180, max(Intens)/(N**2),b,d,N), label = "$I_{theo}$")
+    plt.plot(phi, Intens, label = "I", color="gray")
+    plt.plot(phi, I(phi*pi/180, max(Intens)/(N**2),b,d,N), label = "$I_{theo}$", color="black")
     plt.legend(title="N=2, b="+str(b)+" cm, d="+str(d)+ " cm")
     plt.savefig("../Images/doppelspalt_"+file[-5]+".pdf")
     plt.show()
