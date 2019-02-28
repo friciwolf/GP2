@@ -255,17 +255,17 @@ Da die Messungen innerhalb ihrer statistischen Fehler "ubereinstimmen, berechnen
 \section{Beugung am Einzelspalt und Doppelspalt}
 
 \subsection{Versuchsaufbau}
-Ziel dieses Versuchs ist es die Intensit"atsverteilung hinter einem Einzel- oder Doppelspalt in Abh"angigkeit des Winkels $\alpha$ zur Einfallsrichtung zu bestimmen. Der Aufbau des Senders mit dem Parabolspiegel zur Erzeugung ebener Wellen aus dem vorherigen Versuch bleibt bestehen. Der Empf"anger dagegen wird dagegen an einem schwenkbaren Dreharm hinter der Reflexionswand befestigt (Der Aufbau entspricht den gestrichelten Linien von Abb. \ref{versuchsaufbau}). In die Reflexionswand lassen sich mithilfe von verschiebbaren Metallplatten Einzelspalten und Doppelspalten unterschiedlicher Breite einbauen. Der Drehtisch, an dem der Dreharm befestigt ist, l"asst sich mit einem Motor drehen und ist mit einem Drehpotentiometer verbunden, der somit als Winkelaufnehmer wirkt. 
+Ziel dieses Versuchs ist es die Intensit"atsverteilung hinter einem Einzel- oder Doppelspalt in Abh"angigkeit des Winkels $\phi$ zur Einfallsrichtung zu bestimmen. Der Aufbau des Senders mit dem Parabolspiegel zur Erzeugung ebener Wellen aus dem vorherigen Versuch bleibt bestehen. Der Empf"anger dagegen wird dagegen an einem schwenkbaren Dreharm hinter der Reflexionswand befestigt (Der Aufbau entspricht den gestrichelten Linien von Abb. \ref{versuchsaufbau}). In die Reflexionswand lassen sich mithilfe von verschiebbaren Metallplatten Einzelspalten und Doppelspalten unterschiedlicher Breite einbauen. Der Drehtisch, an dem der Dreharm befestigt ist, l"asst sich mit einem Motor drehen und ist mit einem Drehpotentiometer verbunden, der somit als Winkelaufnehmer wirkt. 
 
 \subsection{Vorversuch: Kalibrierung des Winkelaufnehmer}
-Zun"achst muss in einem Vorversuch der Winkelaufnehmer kalibriert werden. Der Winkel $\alpha$ h"angt linear von der Widerstandsmessung $R$ des Winkelaufnehmers ab. Zur Kalibrierung wird der Dreharm in Schritten von $\ang{10}$ von $\ang{-80}$ bis $\ang{80}$ manuell gedreht und jeweils der Widerstand aufgenommen. Die Winkel werden an dem Drehtisch abgelesen. Die Messwerterfassung des Widerstandes erfolgte im Bereich $0..10k\Omega$ und "uber 200ms gemittelt.\\
-Analog zur Kalibration des Wegaufnehmers erwartet man einen linearen Zusammenhang zwischen dem gemessenen Widerstandswert $R$ und dem Drehwinkel $\phi$, sodass man wider eine lineare Regression der Art
+Zun"achst muss in einem Vorversuch der Winkelaufnehmer kalibriert werden. Der Winkel $\phi$ h"angt linear von der Widerstandsmessung $R$ des Winkelaufnehmers ab. Zur Kalibrierung wird der Dreharm in Schritten von $\ang{10}$ von $\ang{-80}$ bis $\ang{80}$ manuell gedreht und jeweils der Widerstand aufgenommen. Die Winkel werden an dem Drehtisch abgelesen. Die Messwerterfassung des Widerstandes erfolgte im Bereich $0..10k\Omega$ und "uber 200ms gemittelt.\\
+Analog zur Kalibration des Wegaufnehmers erwartet man einen linearen Zusammenhang zwischen dem gemessenen Widerstandswert $R$ und dem Drehwinkel $\phi$, sodass man wieder eine lineare Regression der Art
 
 \begin{equation}
 	R-\bar{R}=K\cdot(\phi-\bar{\phi})
 \end{equation}
 
-durchführen kann. Als Fehler wurde hier folgende Werte genommen:
+durchführen kann. Als Fehler wurden hier folgende Werte genommen:
 \begin{center}
 	$\sigma_R = \SI{0.005}{k \Omega}$\\
 	$\sigma_{\phi} = 0.5^\circ$
@@ -287,7 +287,7 @@ Als Ergebnis der Regression erhält man einen $K$-Wert von $(0.02633\pm0.00007)k
 
 \subsection{Versuchsdurchf"uhrung}
 Zuerst werden die Metallplatten mthilfe eines Ma\ss bandes auf die zu untersuchende Spaltbreite eingestellt.
-Als n"achstes wird der Empf"anger auf $\pm\ang{80}$ geschoben und (bei einem Einzelspalt der Breite d=3cm und beim Doppelspalt) der Motor des Drehtisches gestartet, sodass der Empf"anger langsam um den Drehtisch schwenkt. Im anderen Fall (d=4cm) wurden die Werte per Hand (ohne Motorik) aufgenommen. Die Messung wird wiederholt, indem auch der R"uckweg aufgezeichnet wird.\\
+Als n"achstes wird der Empf"anger auf $\pm\ang{80}$ geschoben und (beim Einzelspalt der Breite d=3cm und beim Doppelspalt) der Motor des Drehtisches gestartet, sodass der Empf"anger langsam um den Drehtisch schwenkt. Im Falle des Einzelspalts der Breite d=4cm wurden die Werte per Hand aufgenommen. Die Messung wird wiederholt, indem auch der R"uckweg aufgezeichnet wird.\\
 Die Messwerterfassung erfolgte folgenderma\ss en:
 \begin{table}[H]
 	\centering
@@ -311,13 +311,15 @@ Die Messwerterfassung erfolgte folgenderma\ss en:
 \end{table}
 
 \subsection{Versuchsauswertung}
-Unser Ziel ist es, die Spannung des Verstärkers gegen den Widerstand des Winkelaufnehmers aufzuzeichnen, und die Ergebnisse mit der theoretischen Erwartung zu vergleichen. Dafür werden die gemessenen Spannungswerte über die Proportionalität $I\propto U^{\frac{2}{a}}$ umgerechnet und die Lagen der Maxima der so erhaltenen Intensitätsverteilung bestimmt. Mit den so gewonnenen Informationen können wir auch die Wellenlänge $\lambda$ des Ultraschalls über die folgenden Gleichungen berechnen:
-\begin{align*}
-	\lambda &= \frac{\pi}{4.49341\footnotemark}b \cdot \sin(\phi),&\, \text{für einen Einzelspalt der Breite b}\\
+Unser Ziel ist es, die Spannung des Verstärkers gegen den Widerstand des Winkelaufnehmers aufzuzeichnen, und die Ergebnisse mit der theoretischen Erwartung zu vergleichen. Dafür werden die gemessenen Spannungswerte über die Proportionalität $I\propto U^{\frac{2}{a}}$ umgerechnet und die Lagen der Maxima der so erhaltenen Intensitätsverteilung bestimmt. Mit den so gewonnenen Informationen können wir auch die Wellenlänge $\lambda$ des Ultraschalls über die folgenden Beziehungen berechnen:
+\begin{align}
+	\lambda &= \frac{\pi}{4.49341\footnotemark}b \cdot \sin(\phi),&\, \text{für einen Einzelspalt der Breite b}
+	\label{eq:lambda2}\\
 	\lambda &= d \cdot \sin(\phi),&\, \text{für einen Doppelspalt mit Spaltabstand d}
-\end{align*}
+	\label{eq:lambda1}
+\end{align}
 \footnotetext{der Faktor 4.49341 kommt durch $((\sin(x)/x)^2)'=0  \Rightarrow x = \tan(x)$ zustande (für die Maxima erster Ordnung)}
-Die Rohdaten (mit den umgerechneten Widerstandswerten) zweier Beispielmessungen sind in der Abb. \ref{fig:rohdaten} dargestellt. Man erkennt sofort, dass die Peaks unscharf erscheinen, sodass die Unsicherheit auf die Maxima unvermeidlich groß wird. Außerdem sieht man auch, dass die Verteilung gegen die Nullage verschoben ist, sodass sie zuerst zentriert werden soll, um sie mit der theoretischen Vorhersage zu vergleichen.
+Die Rohdaten (mit den umgerechneten Widerstandswerten) zweier Beispielmessungen sind in der Abb. \ref{fig:rohdaten} dargestellt. Man erkennt sofort, dass die Peaks unscharf erscheinen, sodass die Unsicherheiten auf die Maxima unvermeidlich groß wird. Außerdem sieht man auch, dass die Verteilung gegen die Nullage verschoben ist, sodass sie zuerst zentriert werden soll, um sie mit der theoretischen Vorhersage zu vergleichen.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
@@ -331,7 +333,7 @@ Die Rohdaten (mit den umgerechneten Widerstandswerten) zweier Beispielmessungen 
 	\caption{Rohdaten der Spannungsmessung}
 	\label{fig:rohdaten}
 \end{figure}
-Aus diesen (insgesamt 11) Graphen wurden zuerst die Lagen $\phi_1,  \phi_2$ der Maxima erster Ordnung mittels der Bibliothek scipy bestimmt. Um die Graphen zu zentrieren, wurden alle Daten mit $(\phi_1+\phi_2)/2$ verschoben, sodass diese Maxima symmetrisch verteilt sind. Die Plots der gleichen verschobenen Rohdaten sind in Abb. \ref{fig:daten_mit_theo} dargestellt.
+Aus diesen (insgesamt 11) Graphen wurden zuerst die Lagen $\phi_1,  \phi_2$ der Maxima erster Ordnung mittels der Python-Bibliothek scipy bestimmt. Um die Graphen zu zentrieren, wurden alle Daten mit $(\phi_1+\phi_2)/2$ verschoben, sodass diese Maxima symmetrisch um den Nullpunkt liegen. Die Plots der gleichen verschobenen Rohdaten sind in Abb. \ref{fig:daten_mit_theo} dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -346,7 +348,7 @@ Aus diesen (insgesamt 11) Graphen wurden zuerst die Lagen $\phi_1,  \phi_2$ der 
 	\caption{Rohdaten der Spannungsmessung}
 	\label{fig:daten_mit_theo}
 \end{figure}
-Durch Zusammenfassen der einzelnen Messungen erhält man in der Tab. \ref{tab:messwerte} dargestellten Resultate.\\
+Durch Zusammenfassen der einzelnen Messungen erhält man in der folgenden Tabelle dargestellten Werte.\\
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|c|c|}
@@ -355,15 +357,26 @@ Durch Zusammenfassen der einzelnen Messungen erhält man in der Tab. \ref{tab:me
 		\hline 
 		Einzelspalt d=3cm &(28,4$\pm$0,95)$^\circ$&27,69$^\circ$ \\ 
 		\hline 
-		Einzelspalt d=4cm &(21.245$\pm$0,95)$^\circ$ &20,4$^\circ$ \\ 
+		Einzelspalt d=4cm &(21,245$\pm$0,95)$^\circ$ &20,4$^\circ$ \\ 
 		\hline 
 		Doppelspalt d=4,9cm, b=2,4cm&(10,455$\pm$1,34)$^\circ$ &11.47$^\circ$ \\ 
 		\hline 
 		Doppelspalt d=4,3cm, b=1,8cm&(12,74$\pm$1,9)$^\circ$ &13,1$^\circ$ \\
 		\hline 
 	\end{tabular}
-	\label{tab:messwerte}
 	\caption{Zusammenfassung der gemessenen Extrema} 
 \end{table}
-Man erkennt, dass alle der gemessenen Werte im 1$\sigma$-Bereich der theoretischen Vorhersage liegen. Allerdings gibt es Abweichungen in der Intensität, die u.A. auf Störeffekte (Reflexion an umliegenden Gegenstände) zurückführen lassen, was man durch eine Rauschmessung hätte korrigieren können.
+Man erkennt, dass alle der gemessenen Werte im 1$\sigma$-Bereich der theoretischen Vorhersage liegen. Allerdings gibt es Abweichungen in der Intensität, die unter Anderem auf Störeffekte (Reflexion an herumliegenden Gegenständen) zurückführen lassen, was durch eine Rauschmessung hätte korrigiert werden können.\\
+Aus der Lage der zuvor erwähnten Maxima kann man damit mithilfe der Gl. \ref{eq:lambda1} und der Gl. \ref{eq:lambda2} die Wellenlänge $\lambda$ bestimmen. Der Fehler $\sigma_\lambda$ wurde dafür mittels Fehlerfortpflanzung bestimmt (wobei $\sigma_d=\sigma_b=1mm/\sqrt{12}$)
+\begin{equation*}
+	\sigma_{\lambda 1} = \left(\frac{\pi}{4.49341}\right)^2 \cdot \left[(\sin(\phi)\sigma_b)^2+(b\cos(\phi)\sigma_\phi)^2\right]
+\end{equation*}
+\begin{equation*}
+	\sigma_{\lambda 2} = \left[(\sin(\phi)\sigma_d)^2+(d\cos(\phi)\sigma_\phi)^2\right],
+\end{equation*}
+sodass man durch Kombination aller Messungen erhält
+\begin{equation}
+	\lambda = (0.9961 \pm 0.0171) cm.
+\end{equation}
+Dieser Wert liegt im 1,3$\sigma$-Bereich des im Abschnitt 3.3 erhaltenen Werts. Dieses Ergebnis lässt sich aber auch verbessern, indem man die Extrema höherer Ordnungen mitbetrachtet, sofern in der Messung sichtbar.
 \end{document}
