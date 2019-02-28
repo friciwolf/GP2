@@ -188,4 +188,4 @@ for i in range(len(maxima)):
         e_wellenlaenge.append(doppelspalt_abstand[i-24]*np.cos(maxima[i]*pi/180)*e_maxima*pi/180)
 print(wellenlaenge)
 print(np.average(np.abs(wellenlaenge)))
-print(e_wellenlaenge)
+print(e_wellenlaenge) #TODO: Fehler besser abschätzen?
