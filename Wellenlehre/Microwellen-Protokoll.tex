@@ -278,12 +278,15 @@ Die Ergebnisse der Regression sind in der Abb \ref{fig:winkelkalib} dargestellt:
 	\label{fig:winkelkalib}
 \end{figure}
 
-Als Ergebnis der Regression erhält man einen $K$-Wert von $(0.02633\pm0.00007)k\Omega/^\circ$. Dieses Ergebnis wurde auf $\phi$ umgestellt (man misst den Widerstand $R$), sodass es einen Umrechenfaktor von $K^{-1} =(37.9795\pm0.1006)^\circ/k\Omega$
+Als Ergebnis der Regression erhält man einen $K$-Wert von $(0.02633\pm0.00007)k\Omega/^\circ$. Dieses Ergebnis wurde auf $\phi$ umgestellt (man misst den Widerstand $R$), sodass es einen Umrechnungsfaktor von $K^{-1} =(37.9795\pm0.1006)^\circ/k\Omega$ ergibt.
+
+%Auffallend ist im Residuenplot das kleine $\chi^2/n_{ndf}$...
+
 
 
 \subsection{Versuchsdurchf"uhrung}
 Zuerst werden die Metallplatten mthilfe eines Ma\ss bandes auf die zu untersuchende Spaltbreite eingestellt.
-Als n"achstes wird der Empf"anger auf $\pm\ang{80}$ geschoben und der Motor des Drehtisches gestartet, sodass der Empf"anger langsam um den Drehtisch schwenkt. Dabei wird die Spannung des Verst"arkers gegen den Widerstand des Winkelaufnehmers aufgezeichnet. Die Messung wird wiederholt, indem auch der R"uckweg aufgezeichnet wird.\\
+Als n"achstes wird der Empf"anger auf $\pm\ang{80}$ geschoben und (bei einem Einzelspalt der Breite d=3cm und beim Doppelspalt) der Motor des Drehtisches gestartet, sodass der Empf"anger langsam um den Drehtisch schwenkt. Im anderen Fall (d=4cm) wurden die Werte per Hand (ohne Motorik) aufgenommen. Die Messung wird wiederholt, indem auch der R"uckweg aufgezeichnet wird.\\
 Die Messwerterfassung erfolgte folgenderma\ss en:
 \begin{table}[H]
 	\centering
@@ -291,7 +294,7 @@ Die Messwerterfassung erfolgte folgenderma\ss en:
 		\hline 
 		Messbereich Spannung (Dop.-Spalt, Einzelspalt 4cm)  & -1 V .. 1 V \\ 
 		\hline 
-		Messbereich Spannung (Einzelspalt 3cm)  & -0.3 V .. 0.3 V \\ 
+		Messbereich Spannung (Einzelspalt 3cm bzw. 4cm)  & -0.3 V .. 0.3 V \\ 
 		\hline 
 		Messbereich Widerstand Winkelaufnehmer & $0\,\text{k}\Omega\ ..\ 10\,\text{k}\Omega$\\ 
 		\hline 
@@ -305,5 +308,13 @@ Die Messwerterfassung erfolgte folgenderma\ss en:
 	\end{tabular} 
 	\label{tab:MessparameterAllgemein}
 \end{table}
+
+\subsection{Versuchsauswertung}
+Unser Ziel ist es, die Spannung des Verstärkers gegen den Widerstand des Winkelaufnehmers aufzuzeichnen, und die Ergebnisse mit der theoretischen Erwartung zu vergleichen. Dafür werden die gemessenen Spannungswerte über die Proportionalität $I\propto U^{\frac{2}{a}}$ umgerechnet und die Lagen der Maxima der so erhaltenen Intensitätsverteilung bestimmt. Mit der so gewonnenen Informationen können wir auch die Wellenlänge $\lambda$ des Ultraschalls über die folgenden Gleichungen berechnen:
+\begin{align*}
+	\lambda &= \frac{\pi}{4.49341\footnotemark}b \cdot \sin(\phi),&\, \text{für einen Einzelspalt der Breite b}\\
+	\lambda &= d \cdot \sin(\phi),&\, \text{für einen Doppelspalt mit Spaltabstand d}
+\end{align*}
+\footnotetext{der Faktor 4.49341 kommt durch $((\sin(x)/x)^2)'=0  \Rightarrow x = \tan(x)$ zustande (für die Maxima erster Ordnung)}
 
 \end{document}
