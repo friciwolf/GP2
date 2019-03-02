@@ -214,5 +214,3 @@ print(np.abs(wellenlaenge))
 print(np.average(np.abs(wellenlaenge)))
 print(e_wellenlaenge) #TODO: Fehler besser abschätzen?
 print(anal.gewichtetes_mittel(np.array(np.abs(wellenlaenge)), np.array(e_wellenlaenge)))
-
-
