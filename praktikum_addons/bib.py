@@ -39,6 +39,12 @@ def index_element(x0, x):
         if x0==x[n]: return n
     return -1
 
+def DegToRad(x):
+    """
+    Rechnet Daten in Radian um
+    """
+    return x*np.pi/180
+
 def finde_Knoten(x, y, I=30):
     """
     Sucht nach Knotenpunkte(=Minima) im Intervall von I um jeden Wert. Bei Gleichheit, nehme den Linken
