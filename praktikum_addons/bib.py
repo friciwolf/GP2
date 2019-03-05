@@ -45,6 +45,12 @@ def DegToRad(x):
     """
     return x*np.pi/180
 
+def chiq(fxi,yi, eyi):
+    fxi = np.array(fxi)
+    yi = np.array(yi)
+    eyi = np.array(eyi)
+    return np.sum(((yi-fxi)/eyi)**2)
+
 def finde_Knoten(x, y, I=30):
     """
     Sucht nach Knotenpunkte(=Minima) im Intervall von I um jeden Wert. Bei Gleichheit, nehme den Linken
@@ -65,7 +71,7 @@ def finde_Knoten(x, y, I=30):
             i_kn.append(i)
     return np.array(i_kn), np.array(x_kn)
 
-def pltmitres(x,y,ex,ey, xl="x", yl="y", xeinheit="", yeinheit="", title="", ratios=[2,1], regData=False):
+def pltmitres(x,y,ey,ex=0, xl="x", yl="y", xeinheit="", yeinheit="", title="", ratios=[2,1], regData=False):
     """
     Erstellen eines Plots mit dazugehörigem Residumplot
     
@@ -96,25 +102,25 @@ def pltmitres(x,y,ex,ey, xl="x", yl="y", xeinheit="", yeinheit="", title="", rat
     y = np.array(y)
     ex = np.array(ex)
     ey = np.array(ey)
-    if len(ex)==0: a,ea,b,eb,chiq,corr = anal.lineare_regression(x,y,ey)
+    if ex==0: a,ea,b,eb,chiq,corr = anal.lineare_regression(x,y,ey)
     else: a,ea,b,eb,chiq,corr = anal.lineare_regression_xy(x,y,ex,ey)
     
     fig, (ax1,ax2) = plt.subplots(2, 1,gridspec_kw = {'height_ratios':ratios})
     
     plt.title(title)
-    ax1.errorbar(x,y, ey, ex, marker="x", linestyle="None", capsize=5)
+    ax1.errorbar(x,y, ey, np.ones(len(x))*ex, marker="x", linestyle="None", capsize=5)
     l = max(x)-min(x)
     x2 = np.arange(min(x)-l*0.1, max(x)+l*0.1, l/1000)
     y2 = a*x2+b
     ax1.plot(x2, y2, color="orange")
     if yeinheit!="": ax1.set_ylabel(yl+" [{}]".format(yeinheit))
     else: ax1.set_ylabel(yl)
-    ax1.legend(title="Lineare Regression\n{} = ({:.2f} ± {:.2f}){} $\cdot$ {}+({:.2f}±{:.2f}){}\n$\chi^2 /NDF={:.2f}$".format(yl,a,ea, yeinheit+"/"+xeinheit,xl,b, eb, yeinheit, chiq/(len(x)-2)), loc=1)
+    ax1.legend(title="Lineare Regression\n{} = ({:.2f} ± {:.2f}){} $\cdot$ {}+({:.2f}±{:.2f}){}\n$\chi^2 /NDF={:.4f}$".format(yl,a,ea, yeinheit+"/"+xeinheit,xl,b, eb, yeinheit, chiq/(len(x)-2)), loc=1)
     
     ax2.errorbar(x,y-a*x-b, np.sqrt(ex**2*a**2+ey**2), marker="x", linestyle="None", capsize=5)
     ax2.axhline(0, color="orange")
     if xeinheit!="": plt.xlabel(xl+" [{}]".format(xeinheit))
-    else: plt.xlabel(yl)
+    else: plt.xlabel(xl)
 
     plt.tight_layout()
     if regData: return ax1, ax2, a,ea,b,eb,chiq,corr
