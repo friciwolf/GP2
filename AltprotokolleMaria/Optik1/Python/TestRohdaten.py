@@ -30,7 +30,7 @@ Zn_roh=np.reshape(Zn_roh, (4,3,3))
 
 
 Rohrohdaten = np.genfromtxt('Rohrohdaten.txt', skip_header=2, max_rows=1)
-print(Rohdaten0)
+print(Rohrohdaten)
 CdHg0 = np.array([[]])
 
 for j in range(3):
