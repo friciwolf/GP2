@@ -140,6 +140,7 @@ lambdagelb=576.96
 
 ngelb=nfunction(1/(lambdagelb*10**(-9))**(2), *popt)
 delmin_lambdagelb=180./np.pi*2*np.arcsin(ngelb*np.sin(30.*np.pi/180))-60.
+print("delta_min fuer die gelbe Spektrallinie ist: ", delmin_lambdagelb)
 
 print(ngelb)
 print_A(popt[1], popt[2], 0.001, delmin_lambdagelb, lambdagelb*10**(-9))
@@ -193,7 +194,7 @@ Zn = np.append(Zn, append06, axis=1)
 Zn = np.append(Zn, append07, axis=1)
 
 for i in range(MZn):
-    print('${:.2f}$&${:.3f}$&${:.3f}$&${:.4f}$&${:.1f}$&${:.5f}$&${:.1f}$\\\\'.format(Zn[i,0], Zn[i,1], Zn[i,3], Zn[i,5], Zn[i,6]*10000, Zn[i,7], Zn[i,8]*100000))
+    print('${:.2f}$&${:.3f}$&${:.3f}$&${:.4f}$&${:.4f}$&${:.5f}$&${:.5f}$\\\\'.format(Zn[i,0], Zn[i,1], Zn[i,3], Zn[i,5], Zn[i,6], Zn[i,7], Zn[i,8]))
 
 print(Zn)
 for i in range(MZn):
@@ -224,7 +225,7 @@ for i in range(MZn):
     plot((x_berp, x_berp),(n_min, n_berp), color='blue', linestyle='dashed')
     plot((x_ber, x_ber),(n_min, n_ber), color='blue')
     axvline(x_theo, color='red')
-    text(x_theo+0.003e12, n_max-0.00005, s='$\\lambda_{{erwartet}}$={:.5}m'.format(l_theo), color='red')
+    text(x_theo+0.003e12, n_max-0.00005, s='$\\lambda_{{Literatur}}$={:.5}m'.format(l_theo), color='red')
     text(x_berp+0.001e12, n_berm, s='$\\lambda_{{+\\Delta}}$={:.5}m \n$\\lambda_{{exp}}$={:.5}m \n$\\lambda_{{-\\Delta}}$={:.5}m'.format(l_berm, l_ber, l_berp), color='blue')
     xlabel('$1/\\lambda^2$ in $m^{-2}$')
     ylabel('n')

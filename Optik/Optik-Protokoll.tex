@@ -92,7 +92,7 @@ Zunächst verwenden wir eine Hg/Cd-Lampe und messen für sechs ausgewählte Spek
 Die gemessenen Werte für $\psi_{1}$ und $\psi_2$ sind in Tabelle \ref{table:Winkel_Rohdaten} zusammengefasst. Zur Bestimmung der Messunsicherheit auf $\psi$ verwenden wir die 10 linksseitigen Messungen $\psi_1$ der roten Cadmiumlinie. Abb.~\ref{Histogramm} zeigt ein Histogramm dieser 10 Messungen. Es ist zu erkennen, dass die Streuung recht gro\ss  ist, deutlich gr"o\ss er als die Winkelskala des Fernrohrs.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\linewidth]{Python/Histogramm_Psi.pdf}
+	\includegraphics[width=0.8\linewidth]{Python/Histogramm_Psi.pdf}
 	\caption{Histogramm der 10 linksseitigen Messungen der roten Cadmiumlinie. Orange markiert sind Mittelwert und Standardabweichung}
 	\label{Histogramm}
 \end{figure}
@@ -163,7 +163,7 @@ Die systematische Unsicherheit auf $\epsilon$ ist laut Hersteller sehr klein und
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
 		&&&&&&\\
-		$\lambda$ [nm]&$\overline{\psi_{1i}}\ [^{\circ}]$&$\overline{\psi_{2i}}\ [^{\circ}]$&$\delta_{min}\ [^{\circ}]$&$\sigma_{\delta_{min}}[10^{-4}\ ^{\circ}]$& $n$ & $\sigma_{n}[10^{-5}]$\\
+		$\lambda$ [nm]&$\overline{\psi_{1i}}\ [^{\circ}]$&$\overline{\psi_{2i}}\ [^{\circ}]$&$\delta_{min}\ [^{\circ}]$&$\sigma_{\delta_{min}}[^{\circ}]$& $n$ & $\sigma_{n}$\\
 		\hline
 		$643.85$&$26.907$&$144.839$&$58.9661$&$0.0004$&$1.72296$&$0.00022$\\
 		$546.07$&$25.572$&$146.256$&$60.3417$&$0.0005$&$1.73502$&$0.00027$\\
@@ -181,32 +181,33 @@ Die berechneten Werte für $n(\lambda)$ werden verwendet, um die Dispersionkurve
 f(x)=a+bx+cx^2,\qquad x=\frac{1}{\lambda^2}
 \end{equation}
 und Parametern $a$, $b$ und $c$.\\
+\newpage
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Python/CdHg_Fit_Messfehler.pdf}
+	\includegraphics[width=0.95\linewidth]{Python/CdHg_Fit_Messfehler.pdf}
 	\caption{Anpassung der Dispersionskurve mit der Cauchyformel}
 	\label{CdHg_Fit_Messfehler}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Python/CdHg_Residuen_Messfehler.pdf}
+	\includegraphics[width=\linewidth]{Python/CdHg_Residuen_Messfehler.pdf}
 	\caption{Residuenplot}
 	\label{CdHg_Residuenplot_Messfehler}
 \end{figure}
 Die Ergebnisse der Angleichung sind in Abb.~\ref{CdHg_Fit_Messfehler} und Abb.~\ref{CdHg_Residuenplot_Messfehler} dargestellt. Im Residuenplot ist erkennbar, dass der Brechungsindex von $\lambda=479.99nm$ (hellblau) stark von der gefitteten Kurve abweicht. Dieser Wert ist vermutlich auch der Grund für den großen Wert von $\chi^2/n_{df}=39.46$. Wir stellen fest, dass die linksseitigen Winkel $\psi_1$ der hellblauen Linie zu nah an den Werten der blaugr"unen liegt und vermuten einen Messfehler. Deshalb entschließen wir uns, die Messung der hellblauen Spektrallinie nicht in die weitere Auswertung mit einzubeziehen und wiederholen die Funktionsanpassung mit den restlichen fünf Punkten(Gl.~\eqref{fitfunktion}).
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Python/CdHg_Fit.pdf}
-	\caption{Anpassung der Dispersionskurve mit korrigierten Werten}
+	\includegraphics[width=0.95\linewidth]{Python/CdHg_Fit.pdf}
+	\caption{Anpassung der Dispersionskurve ohne Einbeziehung der hellblauen Spektrallinie}
 	\label{CdHg_LinReg}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Python/CdHg_Residuen.pdf}
+	\includegraphics[width=\linewidth]{Python/CdHg_Residuen.pdf}
 	\caption{Residuenplot}
 	\label{CdHg_Residuenplot}
 \end{figure}
-Die Ergebnisse sind in Abb.~\ref{CdHg_LinReg} dargestellt. Im Residuenplot (Abb.~\eqref{CdHg_Residuenplot}) ist erkennbar, dass sich die restlichen Messwerte sehr gut mit einer Parabel beschreiben lassen. Das $\chi^2/n_{df}$ ergibt 0.12, was ein Hinweis für zu groß angenommene Fehler ist. Zu groß angenommene Unsicherheiten sind nicht unplausibel, da die Rauschmessung der $\psi$ am Anfang des Versuchs durchgeführt wurde und sich das Geschick der Experimentatoren im Laufe des Versuchs verbessert haben könnte. Außerdem wurde die Rauschmessung nur für einen Experimentator durchgeführt, die Messgenauigkeit des zweiten Experimentators könnte sich von dem ersten unterscheiden.\\
+Die Ergebnisse sind in Abb.~\ref{CdHg_LinReg} dargestellt. Im Residuenplot (Abb.~\eqref{CdHg_Residuenplot}) ist erkennbar, dass sich die restlichen Messwerte sehr gut mit einer Parabel beschreiben lassen. Das $\chi^2/n_{df}$ ergibt 0.12, was ein Hinweis für zu groß angenommene Fehler ist. Zu groß angenommene Unsicherheiten sind nicht unplausibel, da die Rauschmessung der $\psi$ am Anfang des Versuchs durchgeführt wurde und sich das Geschick der Experimentatoren im Laufe des Versuchs verbessert haben könnte. Außerdem wurde die Rauschmessung nur für einen Experimentator durchgeführt, die Messgenauigkeit des zweiten Experimentators könnte sich von der des ersten unterscheiden.\\
 Für die Parameter der quadratischen Fitfunktion erhalten wir
 \begin{align}\label{Parameterwerte}
 a&=1.69642\pm0.00047\\
@@ -222,65 +223,57 @@ Wir vermuten abschließend, dass es sich bei unserem Prisma um ein besonders sta
 \FloatBarrier
 \section{Untersuchung des Spektrums einer Zinklampe}
 \subsection{Versuchsdurchführung}
-Nachdem die Dispersionskurve im letzten Teilversuch bestimmt wurde, wird nun das Spektrum einer Zinklampe vermessen. Wie im vorherigen Teil werden dafür jeweils drei links- und rechtsseitige Umkehrwinkel $\psi_1$ und $\psi_2$ gemessen zu vier verschiedenen Spektrallinien. Mithilfe der Dispersionskurve können nun die Wellenlängen dieser Spektrallinien berechnet werden und mit den Literaturwerten verglichen werden.
+Nachdem die Dispersionskurve im letzten Teilversuch bestimmt wurde, wird nun eine Spektrallinie einer Zinklampe vermessen. Wie im vorherigen Teil werden dafür jeweils drei links- und rechtsseitige Umkehrwinkel $\psi_1$ und $\psi_2$ gemessen. Mithilfe der Dispersionskurve können nun die Wellenlängen dieser Spektrallinie berechnet werden und mit dem Literaturwert (Quelle:Praktikumsskript) verglichen werden.
 \subsection{Auswertung}
-Die links- und rechtsseitigen Umkehrwinkel der vier betrachteten Spektrallinien werden in Tabelle \ref{table:Winkel_Rohdaten_Zn} zusammengefasst. Analog zum vorherigen Teilversuch mit der Hg/Cd-Lampe wird daraus für alle Spektrallinien der Brechungsindex einschließlich Unsicherheit berechnet. Die Ergebnisse werden in Tabelle \ref{table:Zn_Rechnung} aufgelistet.\\
+Die links- und rechtsseitigen Umkehrwinkel der betrachteten Spektrallinie lauten wie folgt:
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
 		& Winkel $\psi_{1i}$ in Grad & Winkel $\psi_{2i}$ in Grad\\
 		\hline
-		Zink&$322.5+\frac{22}{60}$&$204.5+\frac{11}{60}$\\[0.1cm]
-		rot&$322.5+\frac{22}{60}$&$204.5+\frac{11}{60}$\\[0.1cm]
-		$\lambda=636.23nm$&$322.5+\frac{20}{60}$&$204.5+\frac{12}{60}$\\[0.1cm]
-		\hline
-		Zink&$325.5+\frac{12}{60}$&$201.5+\frac{16}{60}$\\[0.1cm]
-		blau 1&$325.5+\frac{14}{60}$&$201.5+\frac{17}{60}$\\[0.1cm]
-		$\lambda=481.05nm$&$325.5+\frac{14}{60}$&$201.5+\frac{17}{60}$\\[0.1cm]
-		\hline
-		Zink&$326+\frac{1}{60}$&$201.5+\frac{0}{60}$\\[0.1cm]
-		blau 2&$326+\frac{1}{60}$&$201.5+\frac{0}{60}$\\[0.1cm]
-		$\lambda=472.22nm$&$326+\frac{1}{60}$&$201.5+\frac{0}{60}$\\[0.1cm]
-		\hline
-		Zink&$326+\frac{10}{60}$&$201+\frac{21}{60}$\\[0.1cm]
-		blau 3&$326+\frac{9}{60}$&$201+\frac{21}{60}$\\[0.1cm]
-		$\lambda=468.01nm$&$326+\frac{9}{60}$&$201+\frac{20}{60}$\\[0.1cm]
+		Zink&$24+\frac{4}{60}$&$147.5+\frac{22}{60}$\\[0.1cm]
+		blau&$24+\frac{0}{60}$&$147.5+\frac{20}{60}$\\[0.1cm]
+		$\lambda_{Lit}=481.05nm$&$24+\frac{0}{60}$&$147.5+\frac{22}{60}$\\[0.1cm]
 		\hline
 	\end{tabular}
-	\caption{Winkel der Spektrallinien von Zn}
 	\label{table:Winkel_Rohdaten_Zn}
 \end{table}
+Wie bei der Hg/Cd-Lampe kann daraus der Brechungsindex berechnet werden.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
 		&&&&&&\\
-		$\lambda$ [nm] (Literaturwert)&$\overline{\psi_{1i}}\ [^{\circ}]$&$\overline{\psi_{2i}}\ [^{\circ}]$&$\delta_{min}\ [^{\circ}]$&$\sigma_{\delta_{min}}[10^{-4}\ ^{\circ}]$& $n$ & $\sigma_{n}[10^{-5}]$\\
+		$\lambda$ [nm] (Literaturwert)&$\overline{\psi_{1i}}\ [^{\circ}]$&$\overline{\psi_{2i}}\ [^{\circ}]$&$\delta_{min}\ [^{\circ}]$&$\sigma_{\delta_{min}}[^{\circ}]$& $n$ & $\sigma_{n}$\\
 		\hline
-		$636.23$&$322.856$&$204.689$&$59.0833$&$1.4$&$1.72400$&$7.0$\\
-		$481.05$&$325.722$&$201.778$&$61.9722$&$1.4$&$1.74900$&$6.7$\\
-		$472.22$&$326.022$&$201.500$&$62.2611$&$1.4$&$1.75144$&$6.7$\\
-		$468.01$&$326.156$&$201.344$&$62.4056$&$1.4$&$1.75266$&$6.7$\\
+		$481.05$&$24.022$&$147.856$&$61.9167$&$0.0005$&$1.74853$&$0.00026$\\
 		\hline
 	\end{tabular}
-	\caption{Übersicht zur Berechnung der Zn Spektrallinien}
 	\label{table:Zn_Rechnung}
 \end{table}
 Die aus dem ersten Versuch erhaltene Dispersionkurve $n(\lambda)=f(x)$ ist auf dem für uns relevanten Bereich streng monoton steigend bezüglich $x=\frac{1}{\lambda^2}$ und ist bei positivem $\lambda$ umkehrbar. Die Umkehrfunktion lautet:
 \begin{equation}
 \lambda=\lambda(n)=\sqrt{\frac{2c}{-b+\sqrt{b^2-4c(a-n)}}}
 \end{equation} 
-Mit dieser Formel berechnen wir die Wellenlängen der Spektrallinien zu $\lambda_{rot}=636.1nm$, $\lambda_{blau1}=481.08nm$, $\lambda_{blau2}=472.14nm$ und $\lambda_{blau3}=467.91nm$. Um den Fehler auf diese Werte abzuschätzen, berücksichtigen wir die experimentell bestimmte statistische Unsicherheit auf den Brechungsindex $n$ und berechnen ein oberes und unteres $\sigma$-Intervall für die Wellenlänge:
+Mit dieser Formel berechnen wir die Wellenlängen der Spektrallinien zu 
+\begin{equation}
+\lambda_{blau}=481.6nm
+\end{equation}
+Um den Fehler auf diese Werte abzuschätzen, berücksichtigen wir die experimentell bestimmte statistische Unsicherheit auf den Brechungsindex $n$ und berechnen ein oberes und unteres $\sigma$-Intervall für die Wellenlänge:
 \begin{align}
 \lambda_{+\Delta}=\lambda(n)+\sigma_{+}=\lambda(n-\sigma_n)\\
 \lambda_{-\Delta}=\lambda(n)-\sigma_{-}=\lambda(n+\sigma_n)
 \end{align}
-Es gilt $\sigma_+\approx\sigma_-\equiv\sigma_{\lambda}$, weil sich $f(x)$ auf diesem kleinen Intervall linear nähern lässt. Die Unsicherheiten auf die Parameter $a$, $b$ und $c$ der Fitfunktion werden vernachlässigt, weil diese Unsicherheiten, dadurch dass die quadratische Angleichung mit 8 Punkten durchgeführt wurde, klein sind gegenüber der Unsicherheit auf $n$, die einem einzelnen Punkt in der Dispersionskurve entspricht. Die Unsicherheiten lauten somit für die rote Linie $\sigma_{\lambda}=0.73nm$, für die 1. blaue $\sigma_{\lambda}=0.25nm$, für die 2. blaue $\sigma_{\lambda}=0.24nm$ und für die 3. blaue $\sigma_{\lambda}=0.23nm$. Die berechneten Wellenlängen werden mit ihren Literaturwerten verglichen (Quelle:Praktikumsskript) und wir stellen fest, dass die erwarteten Wellenlängen für alle vier Spektrallinien gut mit den experimentellen Werten übereinstimmen und innerhalb der berechneten $1\sigma$-Intervallen liegen. Die Ergebnisse werden in den Abbildungen \ref{Zn_0},\ref{Zn_1},\ref{Zn_2} und \ref{Zn_3} zusammengefasst.
+Es gilt $\sigma_+\approx\sigma_-\equiv\sigma_{\lambda}$, weil sich $f(x)$ auf diesem kleinen Intervall linear nähern lässt. Die Unsicherheiten auf die Parameter $a$, $b$ und $c$ der Fitfunktion werden vernachlässigt, weil diese Unsicherheiten, dadurch dass die quadratische Angleichung mit 5 Punkten durchgeführt wurde, klein sind gegenüber der Unsicherheit auf $n$, die einem einzelnen Punkt in der Dispersionskurve entspricht. Man erh"alt:
+\begin{equation}
+\sigma_{\lambda,exp}=1.0nm
+\end{equation}
+Wir stellen fest, dass der Literaturwert im $1\sigma$-Intervall des experimentellen Wertes liegt. Die Ergebnisse werden in der Abbildungen \ref{Zn_0} zusammengefasst.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Python/Zn_0.pdf}
-	\caption{Wellenlängenbestimmung des Zinkspektrums: rote Linie. Vergleich mit Literaturwert.}
+	\caption{Wellenlängenbestimmung der 1. blauen Spektrallinie des Zinkspektrums und Vergleich mit Literaturwert.}
 	\label{Zn_0}
 \end{figure}
 
@@ -301,32 +294,29 @@ Für ein Lichtbündel der Breite $s$ erwarten wir ein Auflösungsvermögen des P
 \begin{equation}
 \frac{dn}{d\lambda}=-\frac{2b}{\lambda^3}-\frac{4c}{\lambda^5}
 \end{equation}
-Den minimalen Ablenkwinkel $\delta_{min}$ könnte man bei der Wellenlänge $\lambda=579.07nm$ aus Tabelle \ref{table:CdHg_Rechnung} ablesen. Wie in Abb.~\ref{CdHg_Residuenplot} erkennbar, weichen die Messergebnisse jedoch gerade bei dieser Wellenlänge relativ weit von der ermittelten Ausgleichsfunktion $f(x)$ ab (zweiter Punkt von links in Abb.~\ref{CdHg_Residuenplot}). Daher berechnen wir $\delta_{min}$ mithilfe der Fitfunktion $f(x)$ und dem Zusammenhang zwischen $n$ und $\delta_{min}$ (Gl.~\eqref{eq:n_aus_delmin}) bei $\lambda=576.96nm$:
+Wir berechnen $\delta_{min}$ mithilfe der Fitfunktion $f(x)$ und dem Zusammenhang zwischen $n$ und $\delta_{min}$ (Gl.~\eqref{eq:n_aus_delmin}) bei $\lambda=576.96nm$:
 \begin{equation}
-\delta_{min}=2\arcsin\left(n(\lambda=578.96nm)\sin{\frac{\epsilon}{2}}\right)-\epsilon=\ang{56.119}.
+\delta_{min}=2\arcsin\left(n(\lambda=578.96nm)\sin{\frac{\epsilon}{2}}\right)-\epsilon=\ang{59.820}.
 \end{equation}
 Insgesamt ergibt das Auflösungsvermögen
 \begin{align}
-\text{bei einer Spaltbreite von }s=1mm:A&=256.6\\
-\text{bei einer Spaltbreite von }s=1.5mm:A&=384.9
+\text{bei einer Spaltbreite von }s=1mm:A&=271.4\\
+\text{bei einer Spaltbreite von }s=1.5mm:A&=407.1
 \end{align}
-Weil das Auflösungsvermögen sehr vom subjektiven Empfinden des Experimentators abhängig ist und nur diskrete Spaltbreiten bei dem Vesuch verwendet wurden, wird auf eine Fehlerabschätzung verzichtet. Die Einschätzung des Experimentators stimmt jedoch in diesem Fall gut mit den Erwartungen überein: Bei einer Spaltbreite von 1mm liegt das Auflösungsvermögen des Prismas $A=256.6$ unterhalb des benötigten, theoretisch berechneten Auflösungsvermögens von $A_{theo}=273.4$ und die Linien sind nicht trennbar. Bei einer Spaltbreite von 1.5mm liegt das Auflösungsvermögen des Prismas $A=384.9$ oberhalb des benötigten, theoretischen Auflösungsvermögens und die Linien sind trennbar.
+Weil das Auflösungsvermögen sehr vom subjektiven Empfinden des Experimentators abhängig ist und nur diskrete Spaltbreiten bei dem Vesuch verwendet wurden, wird auf eine Fehlerabschätzung verzichtet. Die Einschätzung des Experimentators stimmt jedoch in diesem Fall mit den Erwartungen überein: Bei einer Spaltbreite von 1mm liegt das Auflösungsvermögen des Prismas $A=271.4$ knapp unterhalb des benötigten, theoretisch berechneten Auflösungsvermögens von $A_{theo}=273.4$ und die Linien sind nicht trennbar. Bei einer Spaltbreite von 1.5mm liegt das Auflösungsvermögen des Prismas $A=407.1$ oberhalb des benötigten, theoretischen Auflösungsvermögens und die Linien sind trennbar.
 
 \section{Fazit}
 Zunächst wurde die Dispersionskurve unseres Prismamaterials anhand des Hg/Cd-Spektrums bestimmt zu
 \begin{equation}
-n(\lambda)=(1.69719\pm0.00043)+(9.31\pm0.21)10^{-15}m^2\frac{1}{\lambda^2}+(6.20\pm0.25)10^{-28}m^4\frac{1}{\lambda^4}
+n(\lambda)=(1.69642\pm0.00047)+(9.61\pm0.24)10^{-15}m^2\frac{1}{\lambda^2}+(5.75\pm0.28)10^{-28}m^4\frac{1}{\lambda^4}
 \end{equation}
-Anschließend wurde das Spektrum einer Zinklampe vermessen und die experimentell bestimmten Wellenlängen mit den Literaturwerten verglichen. Die Literaturwerte liegen im $1\sigma$-Intervall der berechneten Werte.
+Anschließend wurde eine blaue Spektrallinie einer Zinklampe vermessen und die experimentell bestimmten Wellenlängen mit den Literaturwerten verglichen. Der Literaturwert liegt im $1\sigma$-Intervall des berechneten Werts.
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
  	\hline
- 	Spektrallinie & $\lambda_{exp}$&$\sigma_{\lambda}$&$\lambda_{erwartet}$\\
+ 	Spektrallinie & $\lambda_{exp}$&$\sigma_{\lambda}$&$\lambda_{Literatur}$\\
  	\hline
- 	rot&636.1nm&0.73nm&636.23nm\\
- 	blau 1&481.8nm&0.25nm&481.05nm\\
- 	blau 2&472.14nm&0.24nm&472.22nm\\
- 	blau 3&467.91nm&0.23nm&468.01nm\\
+ 	blau&481.6nm&1.0nm&481.05nm\\
  	\hline
 \end{tabular}
 \end{center}Schließlich wurde korrekt vorausgesagt, dass das Auflösungsvermögen des Prismas bei einer Ausleuchtung der Breite 1.5mm ausreichend, aber das Auflösungsvermögen bei einer Ausleuchtung der Breite 1mm zu klein ist, um die gelbe Hg-Doppellinie zu trennen.
