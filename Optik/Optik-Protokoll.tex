@@ -1,4 +1,4 @@
-% !TeX spellcheck = en_US
+% !TeX spellcheck = de_DE
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
@@ -61,7 +61,11 @@ und beschreibt die benötigte Wellenlängendifferenz $\Delta\lambda$, um zwei Sp
 \begin{equation}
 A=S\frac{dn}{d\lambda}
 \end{equation}
-mit Prismenbasis $S$.
+mit Prismenbasis $S$. Ist das Prisma nicht voll ausgeleuchtet, nimmt der obige Ausdruck folgende Form an:
+\begin{equation}
+	A=\frac{dn}{d\lambda}2a\frac{\sin\frac{\epsilon}{2}}{\cos\frac{\delta_{min}+\epsilon}{2}}
+\end{equation}
+mit $a$, der variablen Breite des Lichtbündels.
 \section{Allgemeiner Versuchsaufbau und Durchführung}
 Der Versuchsaufbau besteht aus einer Lichtquelle, einem festen Kollimator, einem Prisma auf einer Drehscheibe und einem schwenkbaren Fernrohr, dessen Winkeleinstellung bezüglich eines festen Teilkreises auf eine Bogenminute genau abgelesen werden kann. Das Licht der Spektrallampe fällt über einen Spalt, dessen Breite die Intensit"at regelt, in den Kollimator und wird an der Kollimatorlinse in ein ebenes Lichtbündel umgewandelt. Das Lichtbündel fällt auf das Prisma und wird abhängig von Einfallswinkel und Wellenlänge abgelenkt. Nun kann das abgelenkte Bild des Spaltes durch das Fernrohr vergrößert betrachtet werden, das aus einer Objektiv- und einer Okularlinse besteht. Der Strahlengang durch das Spektrometer wird in Abb.~\ref{Spektrometer_Aufbau} dargestellt. Abb.~\ref{Aufbau_Foto} zeigt eine Übersicht über den Versuchsaufbau (einschließlich der für Teilversuch 3 benötigten Schlitzblende).\\
 Bei Teilversuch 1 und 2 wird für jede Messung die Minimalablenkung eingestellt. Dazu betrachtet man durch das Fernrohr eine Spektrallinie und variiert durch Drehung der Prismadrehscheibe den Einfallswinkel. Ein symmetrischer Strahlendurchgang mit Minimalablenkung ist dann erreicht, wenn sich bei gleichsinniger Drehung des Prismas die Laufrichtung des Spaltbildes durch das Fernrohr umkehrt. Man schwenkt den Fernrohrarm so, dass sich das Fadenkreuz des Fernrohrs dann auf dem Spalt befindet, wenn die Minimalablenkung erreicht ist, und notiert den Winkel der Fernrohrposition $\psi_1$. Anschließend dreht man das Prisma um, sodass das Licht auf die andere Seite gebrochen wird, wiederholt den beschriebenen Prozess zum Finden des symmetrischen Strahldurchgangs und misst den zweiten Winkel $\psi_2$, der zur gleichen Spektrallinie gehört. Die Minimalauslenkung $\delta_{min}$ lässt sich nun berechnen durch
@@ -98,7 +102,7 @@ Die gemessenen Werte für $\psi_{1}$ und $\psi_2$ sind in Tabelle \ref{table:Win
 \end{figure}
 Wir berechnen die Standardabweichung der Verteilung durch
 \begin{equation}
-\sigma_{\psi}=\sqrt{\frac{1}{N-1}\sum^{N}_{i=1}{(\psi-\overline{\psi})^2}}
+\sigma_{\psi}=\sqrt{\frac{1}{N-1}\sum^{N}_{i=1}{(\psi_i-\overline{\psi})^2}}
 \end{equation}
 mit $N=10$ und nehmen an, dass diese Unsicherheit auch für die anderen Werte von $\psi_1$ und $\psi_2$ gilt. Die Berechnung ergibt
 \begin{equation}
@@ -207,7 +211,7 @@ Die Ergebnisse der Angleichung sind in Abb.~\ref{CdHg_Fit_Messfehler} und Abb.~\
 	\caption{Residuenplot}
 	\label{CdHg_Residuenplot}
 \end{figure}
-Die Ergebnisse sind in Abb.~\ref{CdHg_LinReg} und \eqref{CdHg_Residuenplot} dargestellt. Im Residuenplot ist erkennbar, dass sich die restlichen Spektrallinien sehr gut mit einer Parabel beschreiben lassen. Das $\chi^2/n_{df}$ ergibt 0.12, was ein Hinweis für zu groß angenommene Fehler ist. Zu groß angenommene Unsicherheiten sind nicht unplausibel, da die Rauschmessung der $\psi$ am Anfang des Versuchs durchgeführt wurde und sich das Geschick der Experimentatoren im Laufe des Versuchs verbessert haben könnte. Außerdem wurde die Rauschmessung nur für einen Experimentator durchgeführt, die Messgenauigkeit des zweiten Experimentators könnte sich von der des ersten unterscheiden.\\
+Die Ergebnisse sind in Abb.~\ref{CdHg_LinReg} und \ref{CdHg_Residuenplot} dargestellt. Im Residuenplot ist erkennbar, dass sich die restlichen Spektrallinien sehr gut mit einer Parabel beschreiben lassen. Das $\chi^2/n_{df}$ ergibt 0.12, was ein Hinweis für zu groß angenommene Fehler ist. Zu groß angenommene Unsicherheiten sind nicht unplausibel, da die Rauschmessung der $\psi$ am Anfang des Versuchs durchgeführt wurde und sich das Geschick der Experimentatoren im Laufe des Versuchs verbessert haben könnte. Außerdem wurde die Rauschmessung nur für einen Experimentator durchgeführt, die Messgenauigkeit des zweiten Experimentators könnte sich von der des ersten unterscheiden.\\
 Für die Parameter der quadratischen Fitfunktion erhalten wir
 \begin{align}\label{Parameterwerte}
 a&=1.69642\pm0.00047\\
@@ -261,7 +265,7 @@ Mit dieser Formel berechnen wir die Wellenlängen der Spektrallinien zu
 \lambda_{blau}=481.6nm
 \end{equation}
 Um den Fehler auf diese Werte abzuschätzen, berücksichtigen wir die experimentell bestimmte statistische Unsicherheit auf den Brechungsindex $n$ und berechnen ein oberes und unteres $\sigma$-Intervall für die Wellenlänge:
-\footnotetext{Die Unsicherheit auf die Wellenl"ange lässt sich auch durch gaußsche Fehlerfortpflanzung berechnen. Der erhaltene Wert von xxxx unterscheidet sich jedoch nur unwesentlich von der Verschiebemethode. Wir benutzen im Folgenden letzteres, weil sich die Methode graphisch gut darstellen lässt.}
+\footnotetext{Die Unsicherheit auf die Wellenl"ange lässt sich auch durch gaußsche Fehlerfortpflanzung mit der Pyhton-Bibliothek Sympy berechnen. Der erhaltene Wert von $\sigma_\lambda=0.995nm$ unterscheidet sich jedoch nur unwesentlich von der Verschiebemethode. Wir benutzen im Folgenden letzteres, weil sich die Methode graphisch gut darstellen lässt.}
 \begin{align}
 \lambda_{+\Delta}=\lambda(n)+\sigma_{+}=\lambda(n-\sigma_n)\\
 \lambda_{-\Delta}=\lambda(n)-\sigma_{-}=\lambda(n+\sigma_n)
