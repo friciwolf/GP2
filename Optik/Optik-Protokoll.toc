@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {5}Untersuchung des Spektrums einer Zinklampe}{11}
 \contentsline {subsection}{\numberline {5.1}Versuchsdurchf\IeC {\"u}hrung}{11}
 \contentsline {subsection}{\numberline {5.2}Auswertung}{11}
-\contentsline {section}{\numberline {6}Aufl\IeC {\"o}sungsverm\IeC {\"o}gen}{12}
-\contentsline {subsection}{\numberline {6.1}Versuchsaufbau und -durchf\IeC {\"u}hrung}{12}
+\contentsline {section}{\numberline {6}Aufl\IeC {\"o}sungsverm\IeC {\"o}gen}{13}
+\contentsline {subsection}{\numberline {6.1}Versuchsaufbau und -durchf\IeC {\"u}hrung}{13}
 \contentsline {subsection}{\numberline {6.2}Auswertung}{13}
-\contentsline {section}{\numberline {7}Fazit}{13}
+\contentsline {section}{\numberline {7}Fazit}{14}
