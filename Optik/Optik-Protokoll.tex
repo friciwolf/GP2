@@ -32,7 +32,7 @@
 Ziel dieses Versuchs ist es, die Dispersionskurve $n(\lambda)$ eines Prismas unbekannten Materials zu bestimmen. Dazu wird die Ablenkung der Spektrallinien einer Quecksilber-Cadium-Lampe mithilfe eines Prismenspektrometers gemessen. Nachdem die Dispersionskurve bestimmt wurde, wird eine Spektrallinie einer Zinklampe vermessen und die berechnete Wellenlänge mit dem Literaturwert verglichen. Schließlich wird das Auflösungsvermögen des Prismas anhand der gelben Hg-Doppellinie ermittelt.
 
 \section{Physikalische Grundlagen}
-Der Brechungsindex $n$ beschreibt die Ausbreitungsgeschwndigkeit von Licht in einem Medium. $n$ ist wellenlängenabhängig, weil die Anregung der Elektronen in einem Medium durch das Verhältnis zwischen Eigenfrequenz der Elektronen und Frequenz der elektromagnetischen Welle bestimmt wird. Im Bereich des sichtbaren Lichtes lässt sich die Dispersionskurve $n(\lambda)$ durch die Cauchy-Gleichung annähern
+Der Brechungsindex $n$ beschreibt die Ausbreitungsgeschwindigkeit von Licht in einem Medium. $n$ ist wellenlängenabhängig, weil die Anregung der Elektronen in einem Medium durch das Verhältnis zwischen Eigenfrequenz der Elektronen und Frequenz der elektromagnetischen Welle bestimmt wird. Im Bereich des sichtbaren Lichtes lässt sich die Dispersionskurve $n(\lambda)$ durch die Cauchy-Gleichung annähern
 \begin{equation}\label{eq:Cauchy-Gleichung}
 n(\lambda)=a+\frac{b}{\lambda^2}+\frac{c}{\lambda^4},
 \end{equation}
@@ -265,12 +265,11 @@ Mit dieser Formel berechnen wir die Wellenlängen der Spektrallinien zu
 \lambda_{blau}=481.6nm
 \end{equation}
 Um den Fehler auf diese Werte abzuschätzen, berücksichtigen wir die experimentell bestimmte statistische Unsicherheit auf den Brechungsindex $n$ und berechnen ein oberes und unteres $\sigma$-Intervall für die Wellenlänge:
-\footnotetext{Die Unsicherheit auf die Wellenl"ange lässt sich auch durch gaußsche Fehlerfortpflanzung mit der Pyhton-Bibliothek Sympy berechnen. Der erhaltene Wert von $\sigma_\lambda=0.995nm$ unterscheidet sich jedoch nur unwesentlich von der Verschiebemethode. Wir benutzen im Folgenden letzteres, weil sich die Methode graphisch gut darstellen lässt.}
 \begin{align}
 \lambda_{+\Delta}=\lambda(n)+\sigma_{+}=\lambda(n-\sigma_n)\\
 \lambda_{-\Delta}=\lambda(n)-\sigma_{-}=\lambda(n+\sigma_n)
 \end{align}
-Es gilt $\sigma_+\approx\sigma_-\equiv\sigma_{\lambda}$, weil sich $f(x)$ auf diesem kleinen Intervall linear nähern lässt. Die Unsicherheiten auf die Parameter $a$, $b$ und $c$ der Fitfunktion werden vernachlässigt, weil diese Unsicherheiten, dadurch dass die quadratische Angleichung mit 5 Punkten durchgeführt wurde, klein sind gegenüber der Unsicherheit auf $n$, die einem einzelnen Punkt in der Dispersionskurve entspricht. Man erh"alt:
+Es gilt $\sigma_+\approx\sigma_-\equiv\sigma_{\lambda}$, weil sich $f(x)$ auf diesem kleinen Intervall linear nähern lässt. Die Unsicherheiten auf die Parameter $a$, $b$ und $c$ der Fitfunktion werden vernachlässigt, weil diese Unsicherheiten, dadurch dass die quadratische Angleichung mit 5 Punkten durchgeführt wurde, klein sind gegenüber der Unsicherheit auf $n$, die einem einzelnen Punkt in der Dispersionskurve entspricht. Man erh"alt:\footnote{Die Unsicherheit auf die Wellenl"ange lässt sich auch durch gaußsche Fehlerfortpflanzung mit der Pyhton-Bibliothek Sympy berechnen. Der erhaltene Wert von $\sigma_\lambda=0.995nm$ unterscheidet sich jedoch nur unwesentlich von der Verschiebemethode. Wir benutzen im Folgenden letzteres, weil sich die Methode graphisch gut darstellen lässt.}
 \begin{equation}
 \sigma_{\lambda,exp}=1.0nm
 \end{equation}
