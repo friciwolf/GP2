@@ -102,7 +102,7 @@ def pltmitres(x,y,ey,ex=0, xl="x", yl="y", xeinheit="", yeinheit="", title="", r
     y = np.array(y)
     ex = np.array(ex)
     ey = np.array(ey)
-    if ex==0: a,ea,b,eb,chiq,corr = anal.lineare_regression(x,y,ey)
+    if ex.all()==0: a,ea,b,eb,chiq,corr = anal.lineare_regression(x,y,ey)
     else: a,ea,b,eb,chiq,corr = anal.lineare_regression_xy(x,y,ex,ey)
     
     fig, (ax1,ax2) = plt.subplots(2, 1,gridspec_kw = {'height_ratios':ratios})
