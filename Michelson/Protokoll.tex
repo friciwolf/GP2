@@ -87,7 +87,26 @@ sodass wir k mit einer linearen Regression bestimmen können. Wir tragen $s$ geg
 \sigma_{\Delta m}=0.1\\
 \sigma_s=\frac{10\mu m}{\sqrt{12}}
 \end{align}
-Wir nehmen eine Unsicherheit auf $\Delta m$ an, weil sich das Interferenzmaximum durch die Dicke der Ringe nicht immer gleich einstellen lie\ss. Der Fehler auf $s$ ergibt sich durch den Skalenfehler der minimalen Skalenbreite von $10\mu m$. Dieser wurde wegen für vier Teilintervalle der Messreihe durchgeführt, die Ergebnisse sind im Anhang zu sehen.
+Wir nehmen eine Unsicherheit auf $\Delta m$ an, weil sich das Interferenzmaximum durch die Dicke der Ringe nicht immer gleich einstellen lie\ss. Der Fehler auf $s$ ergibt sich durch den Skalenfehler der minimalen Skalenbreite von $10\mu m$. Dieser wurde wegen für vier Teilintervalle der Messreihe durchgeführt, Tab. \ref{table:kalib} fasst die Ergebnisse jedes solchen Bereichs zusammen:\\
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		Bereich in mm&$k_1$&$k_2$  \\ 
+		\hline 
+		7-7.55 &$0.04823\pm3.359 \cdot 10^{-4}$ &$0.04876\pm3.418 \cdot 10^{-4}$  \\ 
+		\hline 
+		7.55-8.04&$0.05072\pm3.705 \cdot 10^{-4}$ &$0.04746\pm3.254 \cdot 10^{-4}$ \\ 
+		\hline 
+		8.04-8.53&$0.04789\pm4.056 \cdot 10^{-4}$ &$0.04894\pm4.233 \cdot 10^{-4}$ \\ 
+		\hline 
+		8.53-9.00&$0.04832\pm3.371 \cdot 10^{-4}$ &$0.04671\pm3.155 \cdot 10^{-4}$ \\ 
+		\hline 
+	\end{tabular} 
+	\caption{Ergebnis der Kalibration im unterschiedlichen Bereichen}
+	\label{table:kalib}
+\end{table} 
 \begin{comment}
 	\begin{figure}[H]
 		\centering
@@ -129,7 +148,7 @@ sodass es eine grobe Wellenlänge über
 	\label{eq:l=2ak}
 \end{equation}
 von $\lambda=(523.47\pm3.2315\cdot10^{-3})$nm ergibt.\\
-Im Residumplot erkennt man starke systematische Abweichungen, die wir jetzt unterdrücken möchten. Diese lassen sich unter Anderem auf Folgendes zurückzuführen: entweder hat der Experimentator die Ringe verzählt, oder das Interferenzbild wurde durch eine größere Störung verstellt, oder der Zusammenhang zwischen der Verschiebung der Spiegel und der Drehung der Schraube ist nichtlinear. Außerdem können auch die Unsicherheiten beim Ablesen der Mikrometerschraube eine Rolle spielen.\\
+Im Residumplot erkennt man starke systematische Abweichungen, die wir jetzt unterdrücken möchten. Diese lassen sich unter Anderem auf Folgendes zurückzuführen: entweder hat der Experimentator die Ringe verzählt, oder das Interferenzbild wurde durch eine größere Störung verstellt, oder der Zusammenhang zwischen der Verschiebung der Spiegel und der Drehung der Schraube ist nichtlinear.\\
 Um die Wellenlänge $\lambda$ genauer abschätzen zu können, teilen wir die Messreihe in vier äquidistante Intervallen auf. Für jedes einzelnes Intervall rechnen wir die Kalibrierungskonstante $k$ aus, und gehen davon aus, dass in jedem solchen Bereich die Gleichung \ref{eq:d=ks} gilt. Da zwei Messreihen für die Kalibrierung aufgenommen wurden, wird $k$ gemittelt, und die Standardabewichung der Werte als $\sigma_{k}$ genommen. Die dazugehörigen Graphen und Tabellen sind im Anhang zu finden. Ganz analog zum vorherigem Verfahren werten wir die Daten aus, die in der Abbildung \ref{fig:lambda_Intervall} zusammenfassen lassen:
 \begin{figure}[H]
 	\centering
@@ -179,8 +198,8 @@ Aus den erhaltenen Parametern $a$ lässt sich die Wellenlänge über Gl. \ref{eq
 		\hline 
 	\end{tabular}
 \end{center}
-Hier stammt einmal der systematische Fehler auf $\lambda$ aus der Unsischerheit $\sigma_a$, die sich nach Gauß nach $\sigma_{\lambda} = 2k \cdot \sigma_a$ fortpflanzen lässt. Die systematische Unsicherheit wurde analog über $\sigma_k$ bestimmt, also $\sigma_{\lambda} = 2a\cdot \sigma_{k}$.\\
-Man erkennt, dass selbst mit dieser Methode im ersten Bereich anhand des Residumplots immer noch eine starke Systematik erkennbar ist. Dieser liefert dementsprechend der größte $\chi^2/n_{df}$-Wert und das Ergebnis liegt im $2\sigma$-Bereich. Im zweiten und im dritten fällt es einem auf, dass die Kalibrierungsdaten (siehe Anhang) sehr unterschiedliche Werte liefern, sodass es zu einer solchen großen systematische Abweichung kommt. In allen der letzten drei Fällen liegt somit das Ergebnis im $1\sigma$-Bereich. 
+Hier stammt einmal der statistische Fehler auf $\lambda$ aus der Unsischerheit $\sigma_a$, die sich nach Gauß nach $\sigma_{\lambda} = 2k \cdot \sigma_a$ fortpflanzen lässt. Die systematische Unsicherheit wurde analog über $\sigma_k$ bestimmt, also $\sigma_{\lambda} = 2a\cdot \sigma_{k}$.\\
+Man erkennt, dass selbst mit dieser Methode im ersten Bereich anhand des Residumplots immer noch eine starke Systematik erkennbar ist. Dieser liefert dementsprechend der größte $\chi^2/n_{df}$-Wert und das Ergebnis liegt im $2\sigma$-Bereich. Im zweiten und im vierten Bereich fällt es einem auf, dass die Kalibrierungsdaten (siehe Anhang) sehr unterschiedliche Werte liefern, sodass es zu einer solchen großen systematische Abweichung kommt. Des Weiteren wird also mit dem dritten Wert gerechnet, in allen der letzten drei Fällen liegt aber das Ergebnis im $1\sigma$-Bereich des erwarteten Werts.
 \section{Druckabhängigkeit des Brechungsindexes von Luft}
 \subsection{Versuchsaufbau und Durchführung}
 Als nächstes wird die Druckabhängigkeit des Brechungsindexes von Luft untersucht. Dazu wird in den Strahlengang zwischen Strahlteiler und Spiegel M4 eine Glasparzelle (hohler Glaszylinder) der Länge $L=10mm$ befestigt. Die Glasparzelle ist über zwei Schläuche an einem digitalen Druckmessgerät und an einer Handpumpe angeschlossen. Über die Handpumpe kann der Druck in der Parzelle verringert werden, wobei der konkrete Wert des Luftdrucks am Messgerät auf 1hPa genau ausgelesen werden kann. Zunächst wird bei Normaldruck, in unserem Fall 995hPa, durch Drehen der Mikrometerschraube ein Interferenzbild erzeugt mit einem Maximum im Zentrum. Nun wird langsam der Druck in der Glasparzelle erniedrigt und bei jeder Entstehung eines neuen Interferenzrings im Zentrum der Druck notiert. Wir beenden einen Messvorgang, wenn wir einen Druck von ca. 300hPa erreichen. Insgesamt wurden 7 Messreihen durchgeführt.
@@ -433,19 +452,4 @@ Der Literaturwert von $2.655\cdot10^{-7}\frac{1}{hPa}$ liegt in einer $1.2\sigma
 	\qquad
 	\subfloat{{\includegraphics[width=7cm]{Python/Uebersetzungsfaktor24_Residuen}}}
 \end{figure}
-\newpage
-\subsection{Ergebnis der Kalibrierung}
-\begin{tabular}{|c|c|}
-	\hline 
-	$k_1$&$k_2$  \\ 
-	\hline 
-	$0.04823\pm3.359 \cdot 10^{-4}$ &$0.04876\pm3.418 \cdot 10^{-4}$  \\ 
-	\hline 
-	$0.05072\pm3.705 \cdot 10^{-4}$ &$0.04746\pm3.254 \cdot 10^{-4}$ \\ 
-	\hline 
-	$0.04789\pm4.056 \cdot 10^{-4}$ &$0.04894\pm4.233 \cdot 10^{-4}$ \\ 
-	\hline 
-	$0.04832\pm3.371 \cdot 10^{-4}$ &$0.04671\pm3.155 \cdot 10^{-4}$ \\ 
-	\hline 
-\end{tabular} 
 \end{document}

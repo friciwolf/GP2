@@ -10,8 +10,7 @@
 \contentsline {subsection}{\numberline {4.2}Versuchsauswertung}{5}
 \contentsline {section}{\numberline {5}Druckabh\IeC {\"a}ngigkeit des Brechungsindexes von Luft}{7}
 \contentsline {subsection}{\numberline {5.1}Versuchsaufbau und Durchf\IeC {\"u}hrung}{7}
-\contentsline {subsection}{\numberline {5.2}Auswertung}{7}
+\contentsline {subsection}{\numberline {5.2}Auswertung}{8}
 \contentsline {section}{\numberline {6}Anhang}{10}
 \contentsline {subsection}{\numberline {6.1}Kalibrierung - erste Messreihe}{11}
 \contentsline {subsection}{\numberline {6.2}Kalibrierung - zweite Messreihe}{12}
-\contentsline {subsection}{\numberline {6.3}Ergebnis der Kalibrierung}{13}
