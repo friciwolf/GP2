@@ -11,8 +11,8 @@ import scipy.optimize
 
 
 
-lambdag=532e-9
-elambdag=1e-9
+lambdag=528.66e-9
+elambdag=7.02e-9
 
 L=0.01   #in m
 
@@ -113,7 +113,7 @@ def Rohdaten():
 
     NP_mean, eNP_stat_mean = analyse.gewichtetes_mittel(NP, eNP_stat)
     eNP_sys_mean = max(eNP_sys)
-    print('Ergebnis nach gewichtetes Mittel: NP = {:.3f}e-7  +- {:.3f}e-7(stat) +-{:.3f}e-7(sys), SigmaUmgebung={:.1f}'.format(NP_mean*10**7, eNP_stat_mean*10**7, eNP_sys_mean*10**7, (NP_mean*10**7-2.655)/((eNP_stat_mean+eNP_sys_mean)*10**7)))
+    print('Ergebnis nach gewichtetes Mittel: NP = {:.3f}e-7  +- {:.3f}e-7(stat) +-{:.3f}e-7(sys), SigmaUmgebung={:.1f}'.format(NP_mean*10**7, eNP_stat_mean*10**7, eNP_sys_mean*10**7, (NP_mean*10**7-2.655)/((np.sqrt(eNP_stat_mean**2+eNP_sys_mean**2))*10**7)))
 
 Rohdaten()
 

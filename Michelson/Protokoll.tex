@@ -73,7 +73,7 @@ Mit dem Feinsteinstelltrieb an Spiegel M3 kann die optische Wegl"ange des zugeh"
 \Delta d=k\cdot \Delta s
 \end{equation}
 Zu diesem Zweck zählen wir die Anzahl an verschwindenden Interferenzringen $\Delta m$ in Abhängigkeit der Position der Mikrometerschraube $s$.
-Wir beginnen bei einem Intensit"atsmaximum im Interferenzzentrum bei $s=7.00mm$, und z"ahlen durch Drehen der Mikrometerschraube 300 Ringe ab, wobei alle 10 Ringe der dazugeh"ohrige Skalenwert der Mikrometerschraube $s$ notiert wird. Die Mikrometerschraube hat eine minimale Skalenbreite von $10\mu m$.\\
+Wir beginnen bei einem Intensit"atsmaximum im Interferenzzentrum bei $s=7.00mm$, und z"ahlen durch Drehen der Mikrometerschraube 300 Ringe ab, wobei alle 10 Ringe der dazugeh"ohrige Skalenwert der Mikrometerschraube $s$ notiert wird. Es werden zwei solcher Messreihen aufgenommen. Die Mikrometerschraube hat eine minimale Skalenbreite von $10\mu m$.\\
 Der Versuch wurde mit dem Gerät mit Nummer 2 durchgeführt.
 
 \subsection{Versuchsauswertung}
@@ -87,7 +87,7 @@ sodass wir k mit einer linearen Regression bestimmen können. Wir tragen $s$ geg
 \sigma_{\Delta m}=0.1\\
 \sigma_s=\frac{10\mu m}{\sqrt{12}}
 \end{align}
-Wir nehmen eine Unsicherheit auf $\Delta m$ an, weil sich das Interferenzmaximum durch die Dicke der Ringe nicht immer gleich einstellen lie\ss. Der Fehler auf $s$ ergibt sich durch den Skalenfehler der minimalen Skalenbreite von $10\mu m$. Dieser wurde wegen für vier Teilintervalle der Messreihe durchgeführt, Tab. \ref{table:kalib} fasst die Ergebnisse jedes solchen Bereichs zusammen:\\
+Wir nehmen eine Unsicherheit auf $\Delta m$ an, weil sich das Interferenzmaximum durch die Dicke der Ringe nicht immer gleich einstellen lie\ss. Der Fehler auf $s$ ergibt sich durch den Skalenfehler der minimalen Skalenbreite von $10\mu m$. Dieser wurde für vier Teilintervalle der Messreihe durchgeführt, Tab. \ref{table:kalib} fasst die Ergebnisse jedes solchen Bereichs zusammen:\\
 
 \begin{table}[H]
 	\centering
@@ -104,7 +104,7 @@ Wir nehmen eine Unsicherheit auf $\Delta m$ an, weil sich das Interferenzmaximum
 		8.53-9.00&$0.04832\pm3.371 \cdot 10^{-4}$ &$0.04671\pm3.155 \cdot 10^{-4}$ \\ 
 		\hline 
 	\end{tabular} 
-	\caption{Ergebnis der Kalibration im unterschiedlichen Bereichen}
+	\caption{Ergebnis der Kalibration in unterschiedlichen Bereichen}
 	\label{table:kalib}
 \end{table} 
 \begin{comment}
@@ -129,12 +129,12 @@ Wir nehmen eine Unsicherheit auf $\Delta m$ an, weil sich das Interferenzmaximum
 In diesem Versuch soll die Wellenlänge eines grünen Lasers mithilfe der eben bestimmten Kalibrierungskonstante $k$ des Feinsteinstelltriebs bestimmt werden. Dazu wird das Lasergerät des roten Lasers gegen das des grünen Lasers ausgetauscht. Sowohl der Versuchsaufbau als auch die Durchführung sind identisch zum vorherigen Versuch. Es werden 360 Maxima im kalibrierten Bereich der Mikrometerschraube $s\in[7.00mm,9.00mm]$ durchlaufen.
 Weitere Messreihen wurden nicht in die Auswertung mit aufgenommen, weil die Messreihen entweder zu kurz sind oder sich der Experimentator bei der Abz"ahlung sehr unsicher war und deswegen zu viele Messfehler erwartet werden.
 \subsection{Versuchsauswertung}
-Als Erstes führen wir eine lineare Regression im gesamten Messintervall durch, um einen Eindruck über die Qualität der Daten zu erhalten. Die Ergebnisse dieses Vorgehens werden wir des Weiteren verfeinern, da wir in diesem Fall z.B. die Nichtlinearität von Gl. \ref{eq:d=ks} und die auch im Messprotokoll notierten Störungen gar nicht mitbeachten. Unsere Rohdaten sind in Tab \ref{tab:Rohdaten_gruen} und graphisch (mit der erwähnten Regression) in Abb. \ref{fig:lambdarohlinreg} zusammengefasst.
+Als Erstes führen wir eine lineare Regression im gesamten Messintervall durch, um einen Eindruck über die Qualität der Daten zu erhalten. Die Ergebnisse dieses Vorgehens werden wir später verfeinern, da wir in diesem Fall z.B. die Nichtlinearität von Gl. \ref{eq:d=ks} und Messfehler nicht beachten. Unsere Rohdaten sind in Tab \ref{tab:Rohdaten_gruen} und graphisch (mit der Regression) in Abb. \ref{fig:lambdarohlinreg} zusammengefasst.
 \begin{figure}[H]
 	\centering
-	\subfloat{{\includegraphics[width=7cm]{Python/lambda_roh_LinReg} }}
+	\subfloat{{\includegraphics[width=0.7\textwidth]{Python/lambda_roh_LinReg} }}
 	\qquad
-	\subfloat{{\includegraphics[width=7cm]{Python/lambda_roh_Residuen} }}
+	\subfloat{{\includegraphics[width=0.7\textwidth]{Python/lambda_roh_Residuen} }}
 	\caption{Ergebnisse der provisorischen linearen Regression}
 	\label{fig:lambdarohlinreg}
 \end{figure}
@@ -142,34 +142,34 @@ Das Ergebnis der Regression beträgt
 \begin{equation*}
 s = (5.4694\cdot10^{-3}\pm4.5240\cdot10^{-6})mm\cdot m+(6.9958\pm9.4680*10^{-4})mm
 \end{equation*}
-sodass es eine grobe Wellenlänge über
+sodass wir erhalten über
 \begin{equation}
 	\lambda = 2a\cdot k
 	\label{eq:l=2ak}
 \end{equation}
-von $\lambda=(523.47\pm3.2315\cdot10^{-3})$nm ergibt.\\
-Im Residumplot erkennt man starke systematische Abweichungen, die wir jetzt unterdrücken möchten. Diese lassen sich unter Anderem auf Folgendes zurückzuführen: entweder hat der Experimentator die Ringe verzählt, oder das Interferenzbild wurde durch eine größere Störung verstellt, oder der Zusammenhang zwischen der Verschiebung der Spiegel und der Drehung der Schraube ist nichtlinear.\\
-Um die Wellenlänge $\lambda$ genauer abschätzen zu können, teilen wir die Messreihe in vier äquidistante Intervallen auf. Für jedes einzelnes Intervall rechnen wir die Kalibrierungskonstante $k$ aus, und gehen davon aus, dass in jedem solchen Bereich die Gleichung \ref{eq:d=ks} gilt. Da zwei Messreihen für die Kalibrierung aufgenommen wurden, wird $k$ gemittelt, und die Standardabewichung der Werte als $\sigma_{k}$ genommen. Die dazugehörigen Graphen und Tabellen sind im Anhang zu finden. Ganz analog zum vorherigem Verfahren werten wir die Daten aus, die in der Abbildung \ref{fig:lambda_Intervall} zusammenfassen lassen:
+eine vorläufige Wellenlänge von $\lambda=(523.47\pm3.2315\cdot10^{-3})$nm.\\
+Im Residumplot erkennt man starke systematische Abweichungen, die wir jetzt unterdrücken möchten. Diese lassen sich unter Anderem auf Folgendes zurückzuführen: entweder hat der Experimentator sich beim Ringezählen verzählt, oder das Interferenzbild wurde durch eine größere Störung verstellt, oder der Zusammenhang zwischen der Verschiebung der Spiegel und der Drehung der Schraube ist nichtlinear.\\
+Um die Wellenlänge $\lambda$ genauer abschätzen zu können, teilen wir die Messreihe in die gleichen vier äquidistante Intervalle auf, die wir bereits bei der Kalibrierung des Feinsteinstelltriebs verwendet haben. Wir gehen davon aus, dass in jedem solchen Bereich die Gleichung \ref{eq:d=ks} gilt. Da zwei Messreihen für die Kalibrierung aufgenommen wurden, wird $k$ gemittelt, und die empirische Standardabweichung der Werte als $\sigma_{k}$ genommen. Die dazugehörigen Graphen und Tabellen sind im Anhang zu finden. Ganz analog zum vorherigem Verfahren werten wir die Daten aus, die in der Abbildung \ref{fig:lambda_Intervall} zusammengefasst sind:
 \begin{figure}[H]
 	\centering
-	\subfloat{{\includegraphics[width=7cm]{Python/Lambda1_mResiduen} }}
+	\subfloat{{\includegraphics[width=0.8\textwidth]{Python/Lambda1_mResiduen} }}
 	\qquad
-	\subfloat{{\includegraphics[width=7cm]{Python/Lambda2_mResiduen} }}
+	\subfloat{{\includegraphics[width=0.8\textwidth]{Python/Lambda2_mResiduen} }}
 	\label{}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\subfloat{{\includegraphics[width=7cm]{Python/Lambda3_mResiduen} }}
+	\subfloat{{\includegraphics[width=0.8\textwidth]{Python/Lambda3_mResiduen} }}
 	\qquad
-	\subfloat{{\includegraphics[width=7cm]{Python/Lambda4_mResiduen} }}
+	\subfloat{{\includegraphics[width=0.8\textwidth]{Python/Lambda4_mResiduen} }}
 	\caption{Auswertung der Intervalle zur Bestimmung der Wellenlänge}
 	\label{fig:lambda_Intervall}
 \end{figure}
-oder im tabellarischen Form:
+In tabellarischer Form erhalten wir:
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline 
-		Bereich in mm&Bereich als m & $k$  & $a$ \\
+		Intervall für $s$ in mm&Intervall für m& $k$  & $a$ \\
 		\hline 
 		\hline 
 		7-7.55&0-90& $0.0484\pm0.0003$ &$(5.424\pm0.0323)\mu m$  \\ 
@@ -182,7 +182,7 @@ oder im tabellarischen Form:
 		\hline 
 	\end{tabular}  
 \end{center}
-Aus den erhaltenen Parametern $a$ lässt sich die Wellenlänge über Gl. \ref{eq:l=2ak} bestimmen auf:
+Aus den erhaltenen Parametern $a$ lässt sich die Wellenlänge über Gl. \ref{eq:l=2ak} bestimmen zu:
 \begin{center}
 	\begin{tabular}{|c|c|}
 		\hline 
@@ -199,10 +199,14 @@ Aus den erhaltenen Parametern $a$ lässt sich die Wellenlänge über Gl. \ref{eq
 	\end{tabular}
 \end{center}
 Hier stammt einmal der statistische Fehler auf $\lambda$ aus der Unsischerheit $\sigma_a$, die sich nach Gauß nach $\sigma_{\lambda} = 2k \cdot \sigma_a$ fortpflanzen lässt. Die systematische Unsicherheit wurde analog über $\sigma_k$ bestimmt, also $\sigma_{\lambda} = 2a\cdot \sigma_{k}$.\\
-Man erkennt, dass selbst mit dieser Methode im ersten Bereich anhand des Residumplots immer noch eine starke Systematik erkennbar ist. Dieser liefert dementsprechend der größte $\chi^2/n_{df}$-Wert und das Ergebnis liegt im $2\sigma$-Bereich. Im zweiten und im vierten Bereich fällt es einem auf, dass die Kalibrierungsdaten (siehe Anhang) sehr unterschiedliche Werte liefern, sodass es zu einer solchen großen systematische Abweichung kommt. Des Weiteren wird also mit dem dritten Wert gerechnet, in allen der letzten drei Fällen liegt aber das Ergebnis im $1\sigma$-Bereich des erwarteten Werts.
+Die Wellenlängen pro intervall stimmen innerhalb ihrer Fehler überein. Allerdings erkennt man eine wannenförmige Systematik im Residuenplot des ersten Intervalls, das auch eine großes $\chi^2/n_{df}$ von 3.99 aufweist. Bei den restlichen drei Intervallen liegen die $\chi^2/n_{df}$-Werte dagegen im Bereich von 1.19 bis 1.36. Wir rechnen deshalb das gewichtete Mittel der Wellenlängen der drei letzten Intervalle und erhalten:
+\begin{equation}
+\lambda=(528.7\pm7.0)nm
+\end{equation} 
+Das Ergebnis liegt somit im $1\sigma$-Intervall der Herstellerangabe von $\lambda$=532nm.
 \section{Druckabhängigkeit des Brechungsindexes von Luft}
 \subsection{Versuchsaufbau und Durchführung}
-Als nächstes wird die Druckabhängigkeit des Brechungsindexes von Luft untersucht. Dazu wird in den Strahlengang zwischen Strahlteiler und Spiegel M4 eine Glasparzelle (hohler Glaszylinder) der Länge $L=10mm$ befestigt. Die Glasparzelle ist über zwei Schläuche an einem digitalen Druckmessgerät und an einer Handpumpe angeschlossen. Über die Handpumpe kann der Druck in der Parzelle verringert werden, wobei der konkrete Wert des Luftdrucks am Messgerät auf 1hPa genau ausgelesen werden kann. Zunächst wird bei Normaldruck, in unserem Fall 995hPa, durch Drehen der Mikrometerschraube ein Interferenzbild erzeugt mit einem Maximum im Zentrum. Nun wird langsam der Druck in der Glasparzelle erniedrigt und bei jeder Entstehung eines neuen Interferenzrings im Zentrum der Druck notiert. Wir beenden einen Messvorgang, wenn wir einen Druck von ca. 300hPa erreichen. Insgesamt wurden 7 Messreihen durchgeführt.
+Als nächstes wird die Druckabhängigkeit des Brechungsindexes von Luft untersucht. Dazu wird in den Strahlengang zwischen Strahlteiler und Spiegel M4 eine Glasparzelle (hohler Glaszylinder) der Länge $L=10mm$ befestigt. Die Glasparzelle ist über zwei Schläuche an einem digitalen Druckmessgerät und an einer Handpumpe angeschlossen. Über die Handpumpe kann der Druck in der Parzelle verringert werden, wobei der konkrete Wert des Luftdrucks am Messgerät auf 1hPa genau ausgelesen werden kann. Zunächst wird bei Normaldruck, in unserem Fall 995hPa, durch Drehen der Mikrometerschraube ein Interferenzbild erzeugt mit einem Maximum im Zentrum. Nun wird langsam der Druck in der Glasparzelle erniedrigt und bei jeder Entstehung eines neuen Interferenzrings im Zentrum der Druck notiert. Wir beenden einen Messvorgang, wenn wir einen Druck von ca. 300hPa erreichen. Insgesamt wurden 7 Messreihen aufgenommen.
 
 \subsection{Auswertung}
 Die Rohdaten der 7 Messreihen sind in Tabelle \ref{table:RohdatenDruck} aufgelistet.
@@ -240,23 +244,22 @@ Wir tragen für jede Messreihe $P$ gegen $m$ auf und führen eine lineare Regres
 \sigma_{m}&=0.1\\
 \sigma_{P}&=1\ hPa
 \end{align}
-Für den Wert von $\sigma_m$ nehmen an, dass wir die Zahl der Interferenzringe richtig abzählen, aber die genaue Position des Interferenzmaximums nicht exakt bestimmen können. Die Unsicherheit auf $P$ ergibt sich aus der Leckrate von ca. $1hPa/s$ und einer Ableseschnelligkeit von ca. $1s$. Ein Druck-Offset im Druckmessgerät ist für unsere Berechnungen irrelevant, da nur die Druckdifferenzen von Bedeutung sind. \\
+Für den Wert von $\sigma_m$ nehmen wir an, dass wir die Zahl der Interferenzringe richtig abzählen, aber die genaue Position des Interferenzmaximums nicht exakt bestimmen können. Die Unsicherheit auf $P$ ergibt sich aus der Leckrate von ca. $1hPa/s$ und einer Ableseschnelligkeit von ca. $1s$. Ein Druck-Offset im Druckmessgerät ist für unsere Berechnungen irrelevant, da nur die Druckdifferenzen von Bedeutung sind. \\
 Die Ergebnisse der linearen Regression sind beispielhaft anhand der Messreihen 0 und 1 in folgenden Abbildungen dargestellt.
-\begin{comment}
+
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{Python/MR6_LinReg_Rohdaten.pdf}
-	\end{subfigure}
-	\begin{subfigure}{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{Python/MR6_Residuen_Rohdaten.pdf}
-	\end{subfigure}
-	\caption{Lineare Regression mit den Rohdaten der Messreihe 6}
-	\label{MR6_Rohdaten}
+	\includegraphics[width=0.7\linewidth]{Python/MR0_LinReg_Druck.pdf}
+	\includegraphics[width=0.7\linewidth]{Python/MR0_Residuen_Druck.pdf}
+	\caption{Lineare Regression von Messreihe 0 zur Druckabhängigkeit des Brechungsindexes}
 \end{figure}
-\end{comment}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Python/MR1_LinReg_Druck.pdf}
+	\includegraphics[width=0.7\linewidth]{Python/MR1_Residuen_Druck.pdf}
+	\caption{Lineare Regression von Messreihe 1 zur Druckabhängigkeit des Brechungsindexes}
+\end{figure}
+
 Die Werte für $\chi^2/n_{df}$  der anderen Messreihen befinden sich im Bereich von 0.78 bis 1.26, sodass wir die G"ute der Fits als zufriedenstellend betrachten. Aus den Steigungen $-a$ lassen sich nun $\frac{\Delta n}{\Delta P}$ mit Unsicherheit $\sigma$ pro Messreihe bestimmen, durch
 \begin{align}\label{eq:dndp_aus_Steigung}
 \frac{\Delta n}{\Delta P}&=\frac{\lambda}{2La}\nonumber\\
@@ -271,13 +274,13 @@ Die Ergebnisse sind in Tabelle \ref{table:Methode1_dndP} zusammengefasst und in 
 		Messreihe&$\chi^2/n_{df}$ der&Steigung a &$\Delta n/\Delta P$&$\sigma_{\text{stat}}$&$\sigma_{\text{sys}}$\\
 		&linearen Regression&[hPa]&[$10^{-7}$/hPa]&[$10^{-7}$/hPa]&[$10^{-7}$/hPa]\\
 		\hline
-		0&1.56&$97.0\pm1.5$&2.743&0.043&0.005\\
-		1&1.35&$99.7\pm1.6$&2.667&0.042&0.005\\
-		2&1.26&$95.4\pm1.5$&2.789&0.044&0.005\\
-		3&0.29&$97.1\pm1.3$&2.739&0.036&0.005\\
-		4&0.90&$96.2\pm1.5$&2.765&0.044&0.005\\
-		5&0.78&$97.0\pm1.3$&2.742&0.036&0.005\\
-		6&1.23&$97.6\pm1.5$&2.725&0.043&0.005\\
+		0&1.56&$97.0\pm1.5$&2.726&0.043&0.036\\
+		1&1.35&$99.7\pm1.6$&2.650&0.042&0.035\\
+		2&1.26&$95.4\pm1.5$&2.771&0.044&0.037\\
+		3&0.29&$97.1\pm1.3$&2.721&0.036&0.036\\
+		4&0.90&$96.2\pm1.5$&2.748&0.043&0.036\\
+		5&0.78&$97.0\pm1.3$&2.725&0.036&0.036\\
+		6&1.23&$97.6\pm1.5$&2.708&0.043&0.036\\
 		\hline
 	\end{tabular}
 	\caption{Steigung und resultierendes $\Delta n/\Delta P$ pro Messreihe}
@@ -286,17 +289,17 @@ Die Ergebnisse sind in Tabelle \ref{table:Methode1_dndP} zusammengefasst und in 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Python/Methode1_Ergebnisse.pdf}
+	\includegraphics[width=0.7\textwidth]{Python/Methode1_Ergebnisse.pdf}
 	\caption{$\Delta n/\Delta P$ für die unterschiedlichen Messreihen mit statistischem Fehler}
 	\label{Methode1_dndP}
 \end{figure}
 
-Die Werte f"ur $\frac{\Delta n}{\Delta P}$ sind in ihren Unsicherheiten kompatibel. Daher berechnen wir das gewichtete Mittel aus allen Messreihen mit den statistischen Unsicherheiten.und erhalten
+Die Werte f"ur $\frac{\Delta n}{\Delta P}$ sind in ihren Unsicherheiten kompatibel. Daher berechnen wir das gewichtete Mittel aus allen Messreihen mit den statistischen Unsicherheiten und erhalten
 \begin{equation}
-\frac{\Delta n}{\Delta P}=(2.713\pm 0.019(\text{stat.})\pm 0.031(\text{sys.}))\cdot10^{-7}\frac{1}{hPa}
+\frac{\Delta n}{\Delta P}=(2.721\pm 0.015(\text{stat.})\pm 0.037(\text{sys.}))\cdot10^{-7}\frac{1}{hPa}
 \end{equation}
-Der Literaturwert von $2.655\cdot10^{-7}\frac{1}{hPa}$ liegt in einer $1.2\sigma$-Umgebung.\\
-\footnote{Würden wir mit der Herstellerangabe der Wellenlänge des grünen Festkörperlasers rechnen, w"urden wir einen Wert von $\frac{\Delta n}{\Delta P}=(2.738\pm 0.015(\text{stat.})\pm 0.005(\text{sys.}))\cdot10^{-7}\frac{1}{hPa}$ erhalten, was in einer 4$\sigma$ Umgebung des Piteraturwertes im Praktikumsskript liegt. Die Abweichung l"asst sich eventuell darauf zur"uckf"uhren, dass sich die Literaturangabe auf eine Wellenl"ange von 632nm bezieht, und sich vom Brechungsindex f"ur die Wellenl"ange im Versuch unterscheidet.}
+Der Literaturwert von $2.655\cdot10^{-7}\frac{1}{hPa}$ liegt in einer $1.6\sigma$-Umgebung.\\
+\footnote{Würden wir mit der Herstellerangabe der Wellenlänge des grünen Festkörperlasers rechnen, w"urden wir einen Wert von $\frac{\Delta n}{\Delta P}=(2.738\pm 0.015(\text{stat.})\pm 0.005(\text{sys.}))\cdot10^{-7}\frac{1}{hPa}$ erhalten, was in einer 4$\sigma$ Umgebung des Literaturwertes im Praktikumsskript liegt. Eine Erklärung für die Abweichung ist, dass sich die Literaturangabe auf eine Wellenl"ange von 632nm bezieht, und sich vom Brechungsindex f"ur die Wellenl"ange im Versuch unterscheidet.}
 
 \newpage
 \section{Anhang}
