@@ -127,13 +127,13 @@ for j in range(len(Teilung)):
     ax1.errorbar(x=xwerte, y=ywerte, yerr=eywerte, xerr=exwerte, linestyle='none', marker='o', markersize=4, elinewidth=1, zorder=1)
     ax1.plot(xwerte, anpassung(xwerte), '-')
     ax1.set_ylabel('s / mm')
-    ax1.set_title('Steigung: $({:.4f}\\pm{:.4f})\mu m$ \ny-Achsenabschnitt: $({:.4f}\\pm{:.4f})$mm \n$k={:.4f}\pm{:.4f}$'.format(a*10**3, ea*10**3, b, eb, Kalib[j+1],Errkalib[j+1]))
+    ax1.set_title('Steigung: $({:.4f}\\pm{:.4f})\mu$ m'.format(a*10**3, ea*10**3))
     ax1.legend(title='$\chi^2/n_{{df}}$ = {:.2f}'.format(chiq/(len(xwerte)-2)))
  
     ax2.errorbar(x=xwerte, y=ywerte-anpassung(xwerte), yerr=np.sqrt((eywerte)**2+(exwerte*ea)**2), linestyle='none', marker='o', markersize=4, elinewidth=1, zorder=1)
     ax2.plot(xwerte,0.*xwerte, zorder=2) # Linie bei Null 
     ax2.set_xlabel('m')
-    savefig('{}_mResiduen.pdf'.format(name), bbox_inches = 'tight')
+    savefig('{}_m2Residuen.pdf'.format(name), bbox_inches = 'tight')
     
     show()
     
