@@ -154,7 +154,7 @@ Q_mean,Q_std = analyse.gewichtetes_mittel(np.array(Q),np.array(eQall))
 
 figure()
 x=range(len(Q))
-label=['Oszilloskop','Erwartung','Strommaximum','Spannungsüberhöhung','Phase']
+label=['Oszilloskop','Erwartung','Strommaximum','Spannungs- \n überhöhung','Phase']
 errorbar(x, Q, yerr=eQall, linestyle='none', marker='o', markersize=6, elinewidth=1)
 #plot(x, Q_mean*np.ones(len(x)), label='Q_mean={:.2f}$\pm${:.2f}'.format(Q_mean, Q_std))
 xticks(x,label, rotation='vertical')
@@ -317,7 +317,7 @@ Q_mean,Q_std = analyse.gewichtetes_mittel(np.array(Q),np.array(eQall))
 
 figure()
 x=range(len(Q))
-label=['Erwartung','Strommaximum','Spannungsüberhöhung','Phase']
+label=['Erwartung','Strommaximum','Spannungs- \n überhöhung','Phase']
 errorbar(x, Q, yerr=eQall, linestyle='none', marker='o', markersize=6, elinewidth=1)
 #plot(x, Q_mean*np.ones(len(x)), label='Q_mean={:.2f}$\pm${:.2f}'.format(Q_mean, Q_std))
 xticks(x,label, rotation='vertical')
@@ -472,7 +472,7 @@ Q_mean,Q_std = analyse.gewichtetes_mittel(np.array(Q),np.array(eQall))
 
 figure()
 x=range(len(Q))
-label=['Erwartung','Strommaximum','Spannungsüberhöhung','Phase']
+label=['Erwartung','Strommaximum','Spannungs- \n überhöhung','Phase']
 errorbar(x, Q, yerr=eQall, linestyle='none', marker='o', markersize=6, elinewidth=1)
 #plot(x, Q_mean*np.ones(len(x)), label='Q_mean={:.2f}$\pm${:.2f}'.format(Q_mean, Q_std))
 xticks(x,label, rotation='vertical')

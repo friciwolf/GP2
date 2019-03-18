@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.17)  18 MAR 2019 02:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.17)  18 MAR 2019 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -869,11 +869,7 @@ Already applied: [0000/00/00] float order in 2-column on input line 151.
 (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-(./E-Lehre-Protokoll.aux
-
-LaTeX Warning: Label `eq:guete_ueber_f' multiply defined.
-
-)
+(./E-Lehre-Protokoll.aux)
 \openout1 = `E-Lehre-Protokoll.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -888,7 +884,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count280
 \scratchdimen=\dimen175
@@ -1133,139 +1130,182 @@ Package pdftex.def Info: Daten/S10_Rohdaten_I.jpg  used on input line 223.
 (pdftex.def)             Requested size: 223.07211pt x 215.39735pt.
  [7 <./Daten/S1_Rohdaten_U.jpg> <./Daten/S1_Rohdaten_I.jpg> <./Daten/S5_Rohdate
 n_U.jpg> <./Daten/S5_Rohdaten_I.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 229--234
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
 
  []
 
 <Daten/S1_f0.jpg, id=51, 651.43375pt x 500.87125pt>
 File: Daten/S1_f0.jpg Graphic file (type jpg)
 <use Daten/S1_f0.jpg>
-Package pdftex.def Info: Daten/S1_f0.jpg  used on input line 244.
+Package pdftex.def Info: Daten/S1_f0.jpg  used on input line 243.
 (pdftex.def)             Requested size: 364.19667pt x 280.02742pt.
 [8 <./Daten/S10_Rohdaten_U.jpg> <./Daten/S10_Rohdaten_I.jpg>]
 <Daten/S1_f0_sys.jpg, id=55, 651.43375pt x 500.87125pt>
 File: Daten/S1_f0_sys.jpg Graphic file (type jpg)
 <use Daten/S1_f0_sys.jpg>
-Package pdftex.def Info: Daten/S1_f0_sys.jpg  used on input line 255.
+Package pdftex.def Info: Daten/S1_f0_sys.jpg  used on input line 254.
 (pdftex.def)             Requested size: 364.19667pt x 280.02742pt.
  [9 <./Daten/S1_f0.jpg>]
 <Daten/S1_U.jpg, id=59, 657.45625pt x 532.99126pt>
 File: Daten/S1_U.jpg Graphic file (type jpg)
 <use Daten/S1_U.jpg>
-Package pdftex.def Info: Daten/S1_U.jpg  used on input line 286.
+Package pdftex.def Info: Daten/S1_U.jpg  used on input line 285.
 (pdftex.def)             Requested size: 364.19667pt x 295.25249pt.
  [10 <./Daten/S1_f0_sys.jpg>]
 <Daten/S1_phi.jpg, id=63, 657.45625pt x 532.99126pt>
 File: Daten/S1_phi.jpg Graphic file (type jpg)
 <use Daten/S1_phi.jpg>
-Package pdftex.def Info: Daten/S1_phi.jpg  used on input line 321.
+Package pdftex.def Info: Daten/S1_phi.jpg  used on input line 320.
 (pdftex.def)             Requested size: 364.19667pt x 295.25249pt.
  [11 <./Daten/S1_U.jpg>]
-Overfull \hbox (7.62263pt too wide) in paragraph at lines 346--357
+Overfull \hbox (7.62263pt too wide) in paragraph at lines 345--356
  [][] 
  []
 
 [12 <./Daten/S1_phi.jpg>]
-<Python/S1_Fazit.pdf, id=70, 390.73793pt x 353.00572pt>
+<Python/S1_Fazit.pdf, id=70, 390.73793pt x 316.99619pt>
 File: Python/S1_Fazit.pdf Graphic file (type pdf)
 <use Python/S1_Fazit.pdf>
-Package pdftex.def Info: Python/S1_Fazit.pdf  used on input line 362.
-(pdftex.def)             Requested size: 318.66948pt x 287.90988pt.
-<Python/S5_Fazit.pdf, id=71, 390.73793pt x 353.00572pt>
+Package pdftex.def Info: Python/S1_Fazit.pdf  used on input line 361.
+(pdftex.def)             Requested size: 273.14923pt x 221.60558pt.
+<Python/S5_Fazit.pdf, id=71, 390.73793pt x 316.99619pt>
 File: Python/S5_Fazit.pdf Graphic file (type pdf)
 <use Python/S5_Fazit.pdf>
-Package pdftex.def Info: Python/S5_Fazit.pdf  used on input line 368.
-(pdftex.def)             Requested size: 318.66948pt x 287.90988pt.
-<Python/S10_Fazit.pdf, id=72, 397.12115pt x 353.00572pt>
+Package pdftex.def Info: Python/S5_Fazit.pdf  used on input line 367.
+(pdftex.def)             Requested size: 273.14923pt x 221.60558pt.
+<Python/S10_Fazit.pdf, id=72, 397.12115pt x 316.99619pt>
 File: Python/S10_Fazit.pdf Graphic file (type pdf)
 <use Python/S10_Fazit.pdf>
-Package pdftex.def Info: Python/S10_Fazit.pdf  used on input line 374.
-(pdftex.def)             Requested size: 318.66948pt x 283.28294pt.
- [13 <./Python/S1_Fazit.pdf>] [14 <./Python/S5_Fazit.pdf> <./Python/S10_Fazit.p
-df
+Package pdftex.def Info: Python/S10_Fazit.pdf  used on input line 373.
+(pdftex.def)             Requested size: 273.14923pt x 218.05042pt.
+ [13 <./Python/S1_Fazit.pdf> <./Python/S5_Fazit.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./Python/S10_Fazit.pdf): PDF inclusion:
- multiple pdfs with page group included in a single page
->] [15] [16]
-<Daten/Aufbau_Parallelschwingkreis.png, id=194, 413.545pt x 531.9875pt>
+pdfTeX warning: /usr/bin/pdflatex (file ./Python/S5_Fazit.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>] [14 <./Python/S10_Fazit.pdf>] [15]
+<Daten/Aufbau_Parallelschwingkreis.png, id=197, 413.545pt x 531.9875pt>
 File: Daten/Aufbau_Parallelschwingkreis.png Graphic file (type png)
 <use Daten/Aufbau_Parallelschwingkreis.png>
 Package pdftex.def Info: Daten/Aufbau_Parallelschwingkreis.png  used on input l
-ine 447.
+ine 445.
 (pdftex.def)             Requested size: 136.57462pt x 175.69441pt.
 
 
-LaTeX Warning: Reference `Rohdaten_P47' on page 17 undefined on input line 480.
+LaTeX Warning: Reference `Rohdaten_P47' on page 16 undefined on input line 478.
 
 
 
-LaTeX Warning: Reference `Rohdaten_P100' on page 17 undefined on input line 480
+LaTeX Warning: Reference `Rohdaten_P100' on page 16 undefined on input line 478
 .
 
 
-LaTeX Warning: Reference `Rohdaten_Pinf' on page 17 undefined on input line 480
+LaTeX Warning: Reference `Rohdaten_Pinf' on page 16 undefined on input line 478
 .
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--505
+Underfull \hbox (badness 10000) in paragraph at lines 478--503
 
  []
 
-[17 <./Daten/Aufbau_Parallelschwingkreis.png>]
+[16 <./Daten/Aufbau_Parallelschwingkreis.png>]
 
-LaTeX Warning: Reference `P47Ohm_f0' on page 18 undefined on input line 508.
+LaTeX Warning: Reference `P47Ohm_f0' on page 17 undefined on input line 506.
 
 
-LaTeX Warning: Reference `P47Ohm_f0_sys' on page 18 undefined on input line 517
+LaTeX Warning: Reference `P47Ohm_f0_sys' on page 17 undefined on input line 515
 .
 
 
-LaTeX Warning: Reference `P47Ohm_I' on page 18 undefined on input line 549.
+LaTeX Warning: Reference `P47Ohm_I' on page 17 undefined on input line 547.
 
 
-LaTeX Warning: Reference `P47Ohm_I' on page 18 undefined on input line 558.
+LaTeX Warning: Reference `P47Ohm_I' on page 17 undefined on input line 556.
 
-[18]
+[17]
 
-LaTeX Warning: Reference `P47_Fazit' on page 19 undefined on input line 594.
-
-
-LaTeX Warning: Reference `P100_Fazit' on page 19 undefined on input line 594.
+LaTeX Warning: Reference `P47_Fazit' on page 18 undefined on input line 592.
 
 
-LaTeX Warning: Reference `Pinf_Fazit' on page 19 undefined on input line 594.
+LaTeX Warning: Reference `P100_Fazit' on page 18 undefined on input line 592.
 
 
-Overfull \hbox (7.22264pt too wide) in paragraph at lines 597--606
+LaTeX Warning: Reference `Pinf_Fazit' on page 18 undefined on input line 592.
+
+
+Overfull \hbox (7.22264pt too wide) in paragraph at lines 595--604
  [][] 
  []
 
-<Daten/S5_f0.jpg, id=202, 607.26875pt x 491.8375pt>
-File: Daten/S5_f0.jpg Graphic file (type jpg)
-<use Daten/S5_f0.jpg>
-Package pdftex.def Info: Daten/S5_f0.jpg  used on input line 632.
-(pdftex.def)             Requested size: 318.66948pt x 258.09846pt.
-<Daten/S10_f0.jpg, id=203, 588.1975pt x 450.68375pt>
-File: Daten/S10_f0.jpg Graphic file (type jpg)
-<use Daten/S10_f0.jpg>
-Package pdftex.def Info: Daten/S10_f0.jpg  used on input line 637.
-(pdftex.def)             Requested size: 318.66948pt x 244.17018pt.
-[19] [20 <./Daten/S5_f0.jpg> <./Daten/S10_f0.jpg>] (./E-Lehre-Protokoll.aux)
+<Daten/Schaltkreis_HochTiefpass.png, id=205, 489.83pt x 315.1775pt>
+File: Daten/Schaltkreis_HochTiefpass.png Graphic file (type png)
+<use Daten/Schaltkreis_HochTiefpass.png>
+Package pdftex.def Info: Daten/Schaltkreis_HochTiefpass.png  used on input line
+ 632.
+(pdftex.def)             Requested size: 318.66948pt x 205.0505pt.
+[18]
+<Daten/50Hz_Rohdaten_UC.jpg, id=209, 683.55376pt x 189.70876pt>
+File: Daten/50Hz_Rohdaten_UC.jpg Graphic file (type jpg)
+<use Daten/50Hz_Rohdaten_UC.jpg>
+Package pdftex.def Info: Daten/50Hz_Rohdaten_UC.jpg  used on input line 677.
+(pdftex.def)             Requested size: 455.24411pt x 126.34868pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--680
+
+ []
+
+[19 <./Daten/Schaltkreis_HochTiefpass.png>]
+<Daten/50Hz_Rohdaten_UR.jpg, id=215, 667.49374pt x 204.765pt>
+File: Daten/50Hz_Rohdaten_UR.jpg Graphic file (type jpg)
+<use Daten/50Hz_Rohdaten_UR.jpg>
+Package pdftex.def Info: Daten/50Hz_Rohdaten_UR.jpg  used on input line 683.
+(pdftex.def)             Requested size: 455.24411pt x 139.65701pt.
+<Python/Fourier_UC_Rohdaten.pdf, id=216, 792.05597pt x 375.80775pt>
+File: Python/Fourier_UC_Rohdaten.pdf Graphic file (type pdf)
+<use Python/Fourier_UC_Rohdaten.pdf>
+Package pdftex.def Info: Python/Fourier_UC_Rohdaten.pdf  used on input line 692
+.
+(pdftex.def)             Requested size: 409.71692pt x 194.40044pt.
+<Python/Fourier_UR_Rohdaten.pdf, id=217, 792.05597pt x 375.80775pt>
+File: Python/Fourier_UR_Rohdaten.pdf Graphic file (type pdf)
+<use Python/Fourier_UR_Rohdaten.pdf>
+Package pdftex.def Info: Python/Fourier_UR_Rohdaten.pdf  used on input line 698
+.
+(pdftex.def)             Requested size: 409.71692pt x 194.40044pt.
+ [20 <./Daten/50Hz_Rohdaten_UC.jpg> <./Daten/50Hz_Rohdaten_UR.jpg>]
+<Python/Fourier_UC_Erwartung.pdf, id=221, 736.04674pt x 376.10574pt>
+File: Python/Fourier_UC_Erwartung.pdf Graphic file (type pdf)
+<use Python/Fourier_UC_Erwartung.pdf>
+Package pdftex.def Info: Python/Fourier_UC_Erwartung.pdf  used on input line 71
+1.
+(pdftex.def)             Requested size: 455.24411pt x 232.62074pt.
+ [21 <./Python/Fourier_UC_Rohdaten.pdf> <./Python/Fourier_UR_Rohdaten.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Python/Fourier_UR_Rohdaten.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>]
+<Python/Fourier_UR_Erwartung.pdf, id=295, 736.04674pt x 376.10574pt>
+File: Python/Fourier_UR_Erwartung.pdf Graphic file (type pdf)
+<use Python/Fourier_UR_Erwartung.pdf>
+Package pdftex.def Info: Python/Fourier_UR_Erwartung.pdf  used on input line 71
+7.
+(pdftex.def)             Requested size: 455.24411pt x 232.62074pt.
+ [22 <./Python/Fourier_UC_Erwartung.pdf> <./Python/Fourier_UR_Erwartung.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Python/Fourier_UR_Erwartung.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>] (./E-Lehre-Protokoll.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 15950 strings out of 492982
- 313540 string characters out of 6134895
- 342724 words of memory out of 5000000
- 19335 multiletter control sequences out of 15000+600000
- 549209 words of font info for 78 fonts, out of 8000000 for 9000
+ 15994 strings out of 492982
+ 314838 string characters out of 6134895
+ 342787 words of memory out of 5000000
+ 19372 multiletter control sequences out of 15000+600000
+ 550740 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,10389b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,10389b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
@@ -1278,14 +1318,16 @@ cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-bx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfs
-l1200.pfb>
-Output written on E-Lehre-Protokoll.pdf (20 pages, 3682788 bytes).
+bx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
+m1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfsl1200.pfb>
+Output written on E-Lehre-Protokoll.pdf (22 pages, 3473178 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 451 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

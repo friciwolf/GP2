@@ -11,11 +11,13 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Versuchsaufbau- und Durchf\IeC {\"u}hrung}{6}
 \contentsline {subsubsection}{\numberline {3.4.2}Auswertung}{7}
 \contentsline {subsection}{\numberline {3.5}Zusammenfassung}{12}
-\contentsline {section}{\numberline {4}Parallelschwingkreis}{16}
-\contentsline {subsection}{\numberline {4.1}Physikalische Grundlagen}{16}
-\contentsline {subsection}{\numberline {4.2}Verwendete Bauteile}{16}
-\contentsline {subsection}{\numberline {4.3}CASSY-Messung}{17}
-\contentsline {subsubsection}{\numberline {4.3.1}Aufbau und Durchf\IeC {\"u}hrung}{17}
-\contentsline {subsubsection}{\numberline {4.3.2}Auswertung}{17}
-\contentsline {subsection}{\numberline {4.4}Zusammenfassung}{19}
-\contentsline {section}{\numberline {5}Anhang}{20}
+\contentsline {section}{\numberline {4}Parallelschwingkreis}{15}
+\contentsline {subsection}{\numberline {4.1}Physikalische Grundlagen}{15}
+\contentsline {subsection}{\numberline {4.2}Verwendete Bauteile}{15}
+\contentsline {subsection}{\numberline {4.3}CASSY-Messung}{16}
+\contentsline {subsubsection}{\numberline {4.3.1}Aufbau und Durchf\IeC {\"u}hrung}{16}
+\contentsline {subsubsection}{\numberline {4.3.2}Auswertung}{16}
+\contentsline {subsection}{\numberline {4.4}Zusammenfassung}{18}
+\contentsline {section}{\numberline {5}Hochpass und Tiefpass}{18}
+\contentsline {subsection}{\numberline {5.1}Versuchsaufbau und Durchf\IeC {\"u}hrung}{18}
+\contentsline {subsection}{\numberline {5.2}Auswertung}{19}

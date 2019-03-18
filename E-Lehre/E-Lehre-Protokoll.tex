@@ -225,20 +225,19 @@ Abb.~\ref{Rohdaten_S1}, \ref{Rohdaten_S5} und \ref{Rohdaten_S10} zeigen die Rohd
 	\caption{Rohdaten zum Serienschwingkreis mit Widerstand $R=10\Omega$}
 	\label{Rohdaten_S10}
 \end{figure}
-
 Wir bestimmen die Güte durch Ablesen der relevanten Daten aus den in CASSYlab produzierten Graphen. Die diskreten Messpunkte werden in CASSYlab mit einer Linie verbunden, sodass man beispielsweise auch innerhalb der Schrittweite von 5Hz Datenpunkte einfach aus den Graphen ablesen kann.
 Die Digitalisierungsfehler der CASSY-Geräte sind um Größenordnungen kleiner als die Ablesegenauigkeit und werden im Folgenden vernachlässigt. Die Ablesegenauigkeit schätzen wir ab, indem wir für jede aus dem Graphen ausgelesene Größe $x$ ein Intervall $[x-\sigma_-,x+\sigma_+]$ angeben, in dem wir die Größe vermuten. Aufgrund unterschiedlicher Verläufe der Graphen und Abstände der Messpunkte sind diese Intervalle unterschiedlich groß. Die Ableseungenauigkeit für einen Punkt bestimmen wir durch die gemittelte Differenz der Intervallgrenzen zum abgelesenen Wert, also $\sigma_x=(\sigma_++\sigma_-)/2$.\\
 \\
 \textbf{Güteberechnung durch Breite des Strommaximums}\\
 Wir lesen die Frequenz $f_0$ und die Höhe des Strommaximums $I_0$ ab, anschließend die Frequenzen $f_- $ und $f_+$, bei denen der Strom auf $I_0/\sqrt(2)$ abgefallen ist.  Die Güte berechnet sich durch
-\begin{equation}\label{eq:guete_ueber_f}
+\begin{equation}
 Q=\frac{f_0}{f_+-f_-}.
 \end{equation}
 Die statistischen Fehler auf $f_0$, $f_-$ und $f_+$ berechnen wir wie beschrieben durch Abschätzen eines Fehlerintervalls. Der statistische Fehler pflanzt sich auf $Q$ fort:
 \begin{equation}\label{eq:Fehlerfortpflanzung_Qdurchf}
 \sigma_Q(stat.)=Q\sqrt{\left(\frac{\sigma_{f_0}}{f_0}\right)^2+\left(\frac{\sigma_{f_-}}{f_+-f_-}\right)^2+\left(\frac{\sigma_{f_+}}{f_+-f_-}\right)^2}
 \end{equation}
-In Abb.~\ref{S1Ohm_f0} wird die Vorgehensweise beim Ablesen beispielhaft für den $1\Omega$-Widerstand dargestellt. Im Anhang finden sich entsprechende Graphen für $R=5\Omega$ und $R=10\Omega$.
+In Abb.~\ref{S1Ohm_f0} wird die Vorgehensweise beim Ablesen beispielhaft für den $1\Omega$-Widerstand dargestellt.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Daten/S1_f0.jpg}
@@ -359,23 +358,22 @@ Wir fassen unsere Ergebnisse in Abb.~\ref{S1_Fazit}, \ref{S5_Fazit}, \ref{S10_Fa
 \end{table}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Python/S1_Fazit.pdf}
+	\includegraphics[width=0.6\textwidth]{Python/S1_Fazit.pdf}
 	\caption{Güteberechnung für $R=1\Omega$}
 	\label{S1_Fazit}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Python/S5_Fazit.pdf}
+	\includegraphics[width=0.6\textwidth]{Python/S5_Fazit.pdf}
 	\caption{Güteberechnung für $R=5\Omega$}
 	\label{S5_Fazit}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Python/S10_Fazit.pdf}
+	\includegraphics[width=0.6\textwidth]{Python/S10_Fazit.pdf}
 	\caption{Güteberechnung für $R=10\Omega$}
 	\label{S10_Fazit}
 \end{figure}
-
 Die Restwiderstände im Schaltkreis lassen sich mit diesen Ergebnissen folgendermaßen abschätzen, wobei für $Q_{CASSY}$ das gewichtete Mittel der drei CASSY-Berechnungen mit statistischen Fehler eingesetzt wird.
 \begin{equation}
 R_{Rest}=\frac{1}{Q_{CASSY}}\sqrt{\frac{L}{C}}-(R+R_L)=(0.76\pm0.09)\Omega
@@ -626,6 +624,105 @@ Wir fassen unsere Ergebnisse in Abb.~\ref{P47_Fazit}, \ref{P100_Fazit}, \ref{Pin
 \label{Pinf_Fazit}
 \end{figure}
 \end{comment}
+\section{Hochpass und Tiefpass}
+\subsection{Versuchsaufbau und Durchführung}
+In diesem Versuch wird qualitativ das Antwortverhalten eines Hoch- und Tiefpasses untersucht. Wir bauen einen Serienschwingkreis aus einem Widerstand mit $R=47\Omega$ und Kondensator mit $C=4,7\mu F$ auf, gemäß folgendem Schaltbild (Abb.~\ref{HT_Schaltbild}):
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Daten/Schaltkreis_HochTiefpass.png}
+	\caption{Schaltbild für den Hochpass und Tiefpass (Quelle:Praktikumsskript)}
+	\label{HT_Schaltbild}
+\end{figure}
+Als Generator verwenden wir das Power-CASSY-Gerät und nehmen die Spannungen über den Widerstand ($U_R$) und den Kondensator ($U_C$) über den Sensor-CASSY auf. Wir stellen eine Rechtecksspannung mit Amplitude $U_0=1V$ und Frequenz $f=50$Hz als Eingangsspannung ein. Nun nehmen wir die Momentanwerte der Spannungen $U_0$, $U_R$ und $U_C$ als Funktion der Zeit auf. In Tabelle \ref{table:Messwerterfassung_HT} werden die Messparameter zusammengefasst.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		Messwertbereich $U_0$&-1V .. 1V\\
+		\hline
+		Amplitude $U_0$&1V\\
+		\hline
+		Signalform&Rechteckwechselspannung, 50\% Symmetrie\\
+		\hline
+		Frequenz&50Hz\\
+		\hline
+		Messwertbereich $U_C$, $U_R$&-1V .. 1V\\
+		\hline
+		Messwerterfassung&Momentanwerte\\
+		\hline
+		Aufnahme&Automatisch, Anzahl: 16001\\
+		\hline
+		Messzeit&160ms, Intervall: $10\mu$s\\
+		\hline
+	\end{tabular}
+	\caption{Messwertparameter Hoch-/Tiefpass}
+	\label{table:Messwerterfassung_HT}
+\end{table}
+\subsection{Auswertung}
+Ein Hochpass ist ein Filter, der hohe Frequenzen passieren lässt, aber kleine Frequenzen dämpft, wohingegen ein Tiefpass kleine Frequenzen passieren lässt, aber hohe Frequenzen dämpft.\\
+Die am Kondensator abgegriffene Spannung im betrachteten Schaltbild lässt sich über die Impedanzen der Bauteile berechnen zu
+\begin{equation}
+|U_C|=\frac{|U_0|}{\sqrt{(\frac{1}{\omega CR})^2+1}}
+\end{equation}\label{eq:Tiefpass}
+Wie an dieser Formel zu erkennen ist, verhält sich die Ausgangsspannung am Kondensator wie ein Tiefpass.
+Die über den Widerstand abgegriffene Spannung berechnet sich zu
+\begin{equation}
+|U_R|=\frac{|U_0|}{\sqrt{1+(\omega CR)^2}}
+\end{equation}\label{eq:Hochpass}
+womit die Spannung am Widerstand einem Hochpass entspricht. Die zugehörige Grenzfrequenz, bei der $|U_C|=|U_R|=\frac{|U_0|}{\sqrt{2}}$ ist, liegt bei $\omega=1/RC$.\\
+\\
+Die Rohdaten unserer Messung sind in Abb.~\ref{HT_Rohdaten_C} und \ref{HT_Rohdaten_R} dargestellt.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Daten/50Hz_Rohdaten_UC.jpg}
+	\caption{Rohdaten: Eingangsspannung ($U_0$) und Spannung über Kondensator ($U_C$) als Funktion der Zeit}
+	\label{HT_Rohdaten_C}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Daten/50Hz_Rohdaten_UR.jpg}
+	\caption{Rohdaten: Eingangsspannung ($U_0$) und Spannung über Widerstand ($U_R$) als Funktion der Zeit}
+	\label{HT_Rohdaten_R}
+\end{figure}
+An den Graphen lassen sich die Auflade- und Entladekurve des Kondensators beobachten. Die Spannung am Kondensator ist proportional zum Integral der Eingangsspannung ("\ Integrierglied"), wohingegen die Spannung am Widerstand proportional zur zeitlichen Ableitung der Eingangsspannung ist ("Differenzierglied").\\
+Um das Durchlassverhalten bei unterschiedlichen Frequenzen zu beobachten, führen wir eine Fast Fourier Transformation (FFT) mit den Spannungskurven durch, wobei wir die in Cassylab vorimplementierte Funktion für diese Rechnung nutzen. Hintergrund dieser Vorgehensweise ist, dass sich eine Rechteckspannung als Fourierreihe, also Summe vieler sinusförmigen Wellen mit unterschiedlichen Frequenzen darstellen lässt.\\
+Das Ergebnis dieser diskreten Fouriertransfomationen ist in den Abb.~\ref{FFT_C} und \ref{FFT_R} zu sehen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Python/Fourier_UC_Rohdaten.pdf}
+	\caption{Ausschnitt der Fast Fourier Transformation (FFT) der Eingangsspannung und der Spannung über dem Kondensator}
+	\label{FFT_C}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Python/Fourier_UR_Rohdaten.pdf}
+	\caption{Ausschnitt der Fast Fourier Transformation (FFT) der Eingangsspannung und der Spannung über dem Widerstand}
+	\label{FFT_R}
+\end{figure}
+Man erkennt, dass für Frequenzen unterhalb der Grenzfrequenz von  $f=1/(2\pi CR)=724Hz$ die Spannungsamplituden am Kondensator fast der Amplituden der Eingangsspannung (blau) entsprechen, wohingegen die Spannungsamplituden am Widerstand deutlich gedämpft sind. Für Frequenzen oberhalb der Grenzfrequenz ist es genau umgekehrt: Die Spannungsamplituden am Kondensator sind gedämpft, wohingegen sich die Amplituden am Widerstand der Eingangsamplituden nähern.\\
+Als nächstes wollen wir das gemessene Fourierspektrum mit dem erwarteten, berechenbaren Fourierspektrum vergleichen. Die Fourierreihe der betrachteten Rechteckspannung lautet
+\footnote{Quelle:Wikipedia}
+\begin{equation}
+F(U_0)=\frac{4U_0}{\pi}\sum_{k=0}^{\infty}{\frac{\sin((2k+1)\omega)}{2k+1}}
+\end{equation}
+mit Eingangsamplitude $U_0=1$V und Grundfrequenz $\omega=50Hz$. Man sieht anhand dieser Formel, dass nur ungerade Vielfache der Grundfrequenz zur Reihe beitragen, und diese eine Amplitude von $\frac{4V}{\pi(2k-1)}$ haben. Damit lassen sich die Frequenzanteile der Eingangsspannung vorhersagen. Für die Frequenzanteile am Kondensator und am Widerstand werden die Amplituden gemäß Gl.~\ref{eq:Tiefpass} und \ref{eq:Hochpass} durch $\sqrt{(\frac{1}{\omega CR})^2+1}$ bzw $\sqrt{1+(\omega CR)^2}$ geteilt. Die erwarteten Amplituden sind in Abb.~\ref{HT_Erwartung_C} und \ref{HT_Erwartung_R} gezeigt.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Python/Fourier_UC_Erwartung.pdf}
+	\caption{FFT der Kondensatorspannung mit Erwartungswerten der einzelnen Frequenzen}
+	\label{HT_Erwartung_C}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Python/Fourier_UR_Erwartung.pdf}
+	\caption{FFT der Widerstandsspannung mit Erwartungswerten der einzelnen Frequenzen}
+	\label{HT_Erwartung_R}
+\end{figure}
+Die gemessenen Fourierspektren stimmen gut mit den erwarteten Fourierspektren überein. Lediglich beim Fourierspektrum der Widerstandsspannung ist der gemessene Wert geringfügig höher als der berechnete, was wahrscheinlich an nichtbeachteten Restwiderständen im Schaltkreis liegt. 
+
+
+
+\begin{comment}
 \section{Anhang}
 \begin{figure}[H]
 	\centering
@@ -637,6 +734,8 @@ Wir fassen unsere Ergebnisse in Abb.~\ref{P47_Fazit}, \ref{P100_Fazit}, \ref{Pin
 	\includegraphics[width=0.7\textwidth]{Daten/S10_f0.jpg}
 	\caption{Güteberechnung durch Breite des Strommaximums für $R=10\Omega$ beim Serienschwingkreis}
 \end{figure}
+\\end{comment}
+
 \end{document}
 
 
