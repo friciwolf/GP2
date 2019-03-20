@@ -1,4 +1,4 @@
-% !TeX spellcheck = en_US
+% !TeX spellcheck = de_DE
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
@@ -415,6 +415,10 @@ Schließlich lässt sich die Güte auch direkt über die Werte von $R$, $R_L$, $
 \begin{equation}\label{eq:guete_parallelschaltkreis}
 Q=\frac{R\sqrt{\frac{C}{L}}}{1+R\cdot R_L\cdot \frac{C}{L}}
 \end{equation}
+oder als
+\begin{equation}
+	\frac{1}{Q}=\frac{1}{R}\sqrt{\frac{L}{C}}+R_L\sqrt{\frac{C}{L}}
+\end{equation}
 \subsection{Verwendete Bauteile}
 Wir verwenden die gleichen Bauteile, die wir für den Serienschwingkreis bereits ausgemessen hatten. Somit lassen sich die Messwerte für $R$, $R_L$, $L$ und $C$ aus Tabelle \ref{table:Messbruecke} auslesen. Aus diesen Werten lässt sich mit Gl.~\eqref{eq:guete_parallelschaltkreis} die Güte des Schaltkreises berechnen. Der Fehler auf die Güte wird durch Gaußsche Fehlerfortpflanzung berechnet:
 \begin{equation}
@@ -427,9 +431,9 @@ Insgesamt erhalten wir folgende Werte für die Widerstände $R=47\Omega$, $R=100
 		\hline
 		$R[\Omega]$&$Q$&$\sigma_Q(sys)$\\
 		\hline
-		47&1.250&0.003\\
-		100&2.297&0.006\\
-		$\infty$&8.532&0.026\\
+		47&1.244&0.003\\
+		100&2.273&0.005\\
+		$\infty$&8.536&0.026\\
 		\hline
 	\end{tabular}
 	\caption{Gütebestimmung über Messbrücke}
@@ -453,20 +457,20 @@ Wir bauen den Parallelschwingkreis wie in Abb.~\ref{Aufbau_Parallelschaltung} da
 		\hline
 		Messwertbereich $U_3$&0V .. 0.7V\\
 		\hline
-		Amplitude $U_3$&0.5V\\
+		Amplitude $U_3$&1V\\
 		\hline
 		Signalform&Sinusförmig, 50\% Symmetrie\\
 		\hline
-		Messwertbereich $f_1$&0Hz .. 2000Hz\\
+		Messwertbereich $f_1$&0Hz .. 1400Hz\\
 		\hline
-		Formel $f_1$&$(n-1)\cdot20$\\
+		Formel $f_1$&$700+(n-1)\cdot20 oder 900+(n-1)\cdot10$\\
 		\hline
-		Messwertbereich $I_L$, $I_C$, $I_3$&0A .. 0.21A\\
+		Messwertbereich $I_L$, $I_C$, $I_3$&0A .. 0.07A\\
 		\hline
 		Messwerterfassung&Effektivwerte\\
 		&gemittelt über 100ms\\
 		\hline
-		Messbedingung&f\_1<2000 and delta t>2\\
+		Messbedingung&f\_1<12000 and delta t>2\\
 		\hline
 	\end{tabular}
 	\caption{Messwertparameter Parallelschwingkreis}
@@ -476,51 +480,48 @@ Wir bauen den Parallelschwingkreis wie in Abb.~\ref{Aufbau_Parallelschaltung} da
 
 \subsubsection{Auswertung}
 Abb.~\ref{Rohdaten_P47}, \ref{Rohdaten_P100} und \ref{Rohdaten_Pinf} zeigen die Rohdaten unserer Messungen.
-\begin{comment}
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Daten/P47Ohm_Rohdaten_I.jpg}
+	\includegraphics[width=0.8\textwidth]{Daten/P47Ohm_Rohdaten_I.png}
 	\caption{Rohdaten zum Parallelschwingkreis mit $R=47\Omega$}
 	\label{Rohdaten_P47}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Daten/P100Ohm_Rohdaten_I.jpg}
+	\includegraphics[width=0.8\textwidth]{Daten/P100Ohm_Rohdaten_I.png}
 	\caption{Rohdaten zum Parallelschwingkreis mit $R=100\Omega$}
 	\label{Rohdaten_P100}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Daten/PinfOhm_Rohdaten_I.jpg}
+	\includegraphics[width=0.8\textwidth]{Daten/PinfOhm_Rohdaten_I.png}
 	\caption{Rohdaten zum Parallelschwingkreis mit $R=\infty$(geöffnete Schaltung)}
 	\label{Rohdaten_Pinf}
 \end{figure}
-\end{comment}
-Die Auswertung der Messdaten erfolgt mit den gleichen Methoden wie bei den Versuchen zum Serienschwingkreis. Auch hier bestimmen wir die Güte des Systems durch Ablesen von Werten in den von CASSYlab produzierten Graphen. Die Ablesegenauigkeit wird wieder durch Abschätzen eines Fehlerintervalls bestimmt und ist größer als der Digitalisierungsfehler durch die CASSY-Geräte.\\
+
+Die Auswertung der Messdaten erfolgt mit den gleichen Methoden wie bei den Versuchen zum Serienschwingkreis. Auch hier bestimmen wir die Güte des Systems durch Ablesen von Werten in den von CASSY-Lab produzierten Graphen. Die Ablesegenauigkeit wird wieder durch Abschätzen eines Fehlerintervalls bestimmt und ist größer als der Digitalisierungsfehler durch die CASSY-Geräte.\\
 \\
 \textbf{Güteberechnung durch Breite des Stromminimums}\\
 Wir bestimmen die Resonanzfrequenz als die Frequenz $f_0$, bei der der in den Schwingkreis hineinfließende Strom  minimal wird $I_3=I_0$. Die Breite der Resonanzkurve ergibt sich als Differenz der Frequenzen $f_+$ und $f_-$, bei denen der Strom auf $\sqrt{2}I_0$ angestiegen ist. Die Güte berechnet sich damit zu
 \begin{equation}\label{eq:guete_ueber_f}
 Q=\frac{f_0}{f_+-f_-}
 \end{equation}
-wie bei der Berechnung im Serienschwingkreis. In Abb.~\ref{P47Ohm_f0} sind die abgelesenen Werte für $f_-$, $f_0$ und $f_+$ bei einem Widerstand von $R=1\Omega$ beispielhaft dargestellt.
-\begin{comment}
+wie bei der Berechnung im Serienschwingkreis. In Abb.~\ref{P100Ohm_f0} sind die abgelesenen Werte für $f_-$, $f_0$ und $f_+$ bei einem Widerstand von $R=100\Omega$ beispielhaft dargestellt.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Daten/P47Ohm_f0.jpg}
+	\includegraphics[width=0.8\textwidth]{Daten/P100Ohm_f0_1.jpg}
 	\caption{G"uteberechnung durch Breite des Stromminimums}
-	\label{P47Ohm_f0}
+	\label{P100Ohm_f0}
 \end{figure}
-\end{comment}
-Ebenfalls wie im Serienschwingkreis schätzen wir die Unsicherheit auf $f_-$, $f_0$ und $f_+$ durch Fehlerintervalle ab und pflanzen den Fehler auf die Güte fort, wo sie die relevante statistische Unsicherheit darstellt (Gl.~\eqref{eq:Fehlerfortpflanzung_Qdurchf}). Schließlich bestimmen wir auch den systematischen Fehler wie im Serienschwingkreis durch die Verschiebemethode. Wir verschieben den Strom um die vom Hersteller angegebene Offset-Unsicherheit von $\frac{0.005}{\sqrt{3}}I_{Berechsendwert}=0.0006A$ nach oben und nach unten und berechnen die Güte aus diesen verschobenen Stromkurven (siehe Abb.~\ref{P47Ohm_f0_sys}).
-\begin{comment}
+Ebenfalls wie im Serienschwingkreis schätzen wir die Unsicherheit auf $f_-$, $f_0$ und $f_+$ durch Fehlerintervalle ab und pflanzen den Fehler auf die Güte fort, wo sie die relevante statistische Unsicherheit darstellt (Gl.~\eqref{eq:Fehlerfortpflanzung_Qdurchf}). Schließlich bestimmen wir auch den systematischen Fehler wie im Serienschwingkreis durch die Verschiebemethode. Wir verschieben den Strom um die vom Hersteller angegebene Offset-Unsicherheit von $\frac{0.005}{\sqrt{3}}I_{Berechsendwert}=0.0002A$ nach oben und nach unten und berechnen die Güte aus diesen verschobenen Stromkurven (siehe Abb.~\ref{P100Ohm_f0_sys}).
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Daten/P47Ohm_f0_sys.jpg}
+	\includegraphics[width=0.8\textwidth]{Daten/P100Ohm_f0.jpg}
 	\caption{Verschiebemethode zur Berechnung des systematischen Fehlers}
-	\label{P47Ohm_f0_sys}
+	\label{P100Ohm_f0_sys}
 \end{figure}
-\end{comment}
 Die gemittelte Differenz zur ursprünglich bestimmten Güte enspricht dem systematischen Fehler. In Tabelle \ref{table:P_f0} werden die ausgelesenen Frequenzen und berechneten Güten für die unterschiedlichen Widerstände präsentiert. Die Bezeichnung $R=\infty$ stellt hier und im Folgenden den Schaltkreis mit geöffnetem Schalter statt Ohmschen Widerstand dar.
 \begin{table}[H]
 	\centering
@@ -528,9 +529,9 @@ Die gemittelte Differenz zur ursprünglich bestimmten Güte enspricht dem system
 		\hline
 		R[$\Omega$]&$f_0[Hz]$&$f_-[Hz]$&$f_+[Hz]$&Q&$\sigma_Q(stat.)$&$\sigma_Q(sys.)$\\
 		\hline
-		47&$1180\pm22$&$781\pm12$&$1759\pm20$&1.21&0.04&0.05\\
-		100&$1137\pm17$&$888\pm6$&$1475\pm6$&1.94&0.04&0.15\\
-		$\infty$&$1119\pm13$&$1006\pm4$&$1216\pm4$&5.33&0.16&1.05\\
+		47&$1169\pm20$&$770\pm20$&$1728\pm20$&1.22&0.04&0.01\\
+		100&$1146\pm20$&$898\pm20$&$1440\pm20$&2.12&0.09&0.05\\
+		$\infty$&$1101\pm10$&$1013\pm10$&$1225\pm10$&5.18&0.35&0.12\\
 		\hline		
 	\end{tabular}
 	\caption{Güteberechnung durch Breite des Stromminimums}
@@ -540,20 +541,18 @@ Die gemittelte Differenz zur ursprünglich bestimmten Güte enspricht dem system
 
 
 \textbf{Güteberechnung durch Quantifizierung der Stromüberhöhung}\\
-Schließlich berechnen wir die Güte über die Stromüberhöhung. Bei (in etwa) der Resonanzfrequenz schneiden sich die Stromkurven der hyperbelförmigen Spulenstromkurve und der linear ansteigenden Stromkurve ($I_L=I_C$). In unserer Messung zeigt die Kondensatorstromkurve eine wellenartige Schwankung um den linearen Anstieg, sodass wir zur einfacheren Auswertung mit CASSYlab eine Urpsungsgerade durch die Punkte legen.  Wir verzichten auf eine ausführliche Fehlerdiskussion der Geradenanpassung und schätzen dafür den Kondensator- bzw Spulentrom mit etwas größeren Fehlern ab. Schließlich berechnen wir die Güte über 
+Schließlich berechnen wir die Güte über die Stromüberhöhung. Bei (in etwa) der Resonanzfrequenz schneiden sich die Stromkurven der hyperbelförmigen Spulenstromkurve und der linear ansteigenden Stromkurve ($I_L=I_C$). Wir berechnen die Güte über 
 \begin{equation}
 Q=\frac{I_L}{I_0^*}=\frac{I_L}{I_0^*}
 \end{equation}
-wobei $I_0^*$ der Gesamtstrom bei der Frequenz ist, bei der sich Kondensatorstrom und Spulenstrom schneiden. In Abb.\ref{P47Ohm_I} werden die abgelesenen Werte für $I_C=I_L$ und $I_0^*$ für die Messung mit $R=47\Omega$ illustriert.
-\begin{comment}
+wobei $I_0^*$ der Gesamtstrom bei der Frequenz ist, bei der der Strom minimal ist. In Abb.\ref{P100Ohm_I} werden die abgelesenen Werte für $I_C=I_L$ und $I_0^*$ für die Messung illustriert.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Daten/P47Ohm_I.jpg}
+	\includegraphics[width=0.8\textwidth]{Daten/P100Ohm_I.jpg}
 	\caption{G"uteberechnung durch Ablesen der Stromüberhöhung}
-	\label{P47Ohm_I}
+	\label{P100Ohm_I}
 \end{figure}
-\end{comment}
-Für die Bestimmung der statistischen Unsicherheit, schätzen wir die Fehler auf $I_L=I_C$ und $I_0^*$ mit Fehlerintervallen ab (Abb.~\ref{P47Ohm_I}) und pflanzen den Fehler auf $Q$ fort:
+Für die Bestimmung der statistischen Unsicherheit, schätzen wir die Fehler auf $I_L=I_C$ und $I_0^*$ mit Fehlerintervallen ab (Abb.~\ref{P100Ohm_I}) und pflanzen den Fehler auf $Q$ fort:
 \begin{equation}
 \sigma_Q(stat.)=Q\sqrt{\left(\frac{\sigma_{I_L}}{I_L}\right)^2+\left(\frac{\sigma_{I_0^*}}{I_0^*}\right)^2}
 \end{equation}
@@ -561,7 +560,7 @@ $I_L$, $I_C$ und der einlaufende Strom unterliegen außerdem einem systematische
 \begin{equation}
 \sigma_{I,sys}=(0.02\cdot I_i+0.005\cdot I_{Bereichsendwert})/\sqrt{3}
 \end{equation}
-Wir berechnen den Fehler auf jeweils $I_L=I_C$ und $I_0^*$ und pflanzen den Fehler auf Q wie bei der statistischen Unsicherheit mit Gaußscher Fehlerfortpflanzung fort.
+Wir berechnen den Fehler auf jeweils $I_L=I_C$ und $I_0^*$ und pflanzen den Fehler auf Q wie bei der statistischen Unsicherheit mit Gaußscher Fehlerfortpflanzung fort:
 \begin{equation}
 \sigma_Q(sys.)=Q\sqrt{\left(\frac{\sigma_{I_L}(sys.)}{I_L}\right)^2+\left(\frac{\sigma_{I_0^*}(sys.)}{I_0^*}\right)^2}
 \end{equation}
@@ -572,9 +571,9 @@ Die Ergbenisse für alle Widerstände sind in Tabelle \ref{table:P_I} zusammenge
 		\hline
 		R[$\Omega$]&$I_L=I_C[A]$&$I_0^*[A]$&Q&$\sigma_Q(stat.)$&$\sigma_Q(sys.)$\\
 		\hline
-		1&$0.0107\pm0.0002$&$0.0091\pm0.0001$&1.18&0.03&0.12\\
-		5&$0.0107\pm0.0001$&$0.0051\pm0.0001$&2.10&0.05&0.31\\
-		10&$0.0109\pm0.0001$&$0.0022\pm0.0001$&4.95&0.13&1.46\\
+		100&$0.0218\pm0.0002$&$0.0100\pm0.0001$&2.17&0.02&0.08\\
+		47&$0.0217\pm0.0002$&$0.0177\pm0.0001$&1.23&0.01&0.03\\
+		$\infty$&$0.0219\pm0.0002$&$0.0038\pm0.0003$&5.76&0.46&0.32\\
 		\hline		
 	\end{tabular}
 	\caption{Güteberechnung durch Stromüberhöhung}
@@ -589,22 +588,21 @@ Die Ergbenisse für alle Widerstände sind in Tabelle \ref{table:P_I} zusammenge
 
 \subsection{Zusammenfassung}
 
-Wir fassen unsere Ergebnisse in Abb.~\ref{P47_Fazit}, \ref{P100_Fazit}, \ref{Pinf_Fazit} und Tabelle \ref{table:Fazit_Parallelschwingkreis} zusammen. Die erwartete Güte aus der Vermessen der Bauteil ist größer ist als die mit CASSY berechneten Güten, was wieder an vernachlässigten Kabelwiderständen liegen könnte. Die Gütewerte der CASSY-Messung stimmen innerhalb ihrer $1\sigma$-Umgebung überein. Es fällt auf, dass die systematischen Unsicherheiten im Parallelschwingkreis deutlich größer sind als im Serienschwingkreis. Das liegt daran, dass sich der Offset-Fehler auf den Strom beim Minimalstromwert des Parallelschwingkreises stärker bemerkbar macht als bei den großen Maximalstromwerten im Serienschwingkreis.  Schließlich lässt sich beobachten, dass die Güten wie erwartet größer werden für größer gewählte Widerstände.
+Wir fassen unsere Ergebnisse in der Tabelle \ref{table:Fazit_Parallelschwingkreis} zusammen. Die erwartete Güte aus der Vermessen der Bauteil ist größer ist als die mit CASSY berechneten Güten, was wieder an vernachlässigten Kabelwiderständen liegen könnte. Die Gütewerte der CASSY-Messung stimmen innerhalb ihrer $1\sigma$-Umgebung überein. Es fällt auf, dass die systematischen Unsicherheiten im Parallelschwingkreis deutlich größer sind als im Serienschwingkreis. Das liegt daran, dass sich der Offset-Fehler auf den Strom beim Minimalstromwert des Parallelschwingkreises stärker bemerkbar macht als bei den großen Maximalstromwerten im Serienschwingkreis.  Schließlich lässt sich beobachten, dass die Güten wie erwartet größer werden für größer gewählte Widerstände.
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|l|c|c|c}
+	\begin{tabular}{|l|c|c|c|}
 		\hline
 		&$R=47\Omega$&$R=100\Omega$&$R=\infty$\\
 		\hline
-		Erwartung/Messbrücke&$1.250\pm 0.003(sys.)$&$2.297\pm 0.005(sys.)$&$8.532\pm 0.026(sys.)$\\
-		Stromminimum&$1.21\pm 0.04\pm 0.05$&$1.94\pm 0.04 \pm0.15$&$5.33\pm 0.16\pm 1.05$\\
-		Stromüberhöhung&$1.18\pm 0.03 \pm0.12$&$2.10\pm 0.05\pm 0.31$&$4.95\pm 0.13\pm1.46$\\		
+		Erwartung/Messbrücke&$1.244\pm 0.003(sys.)$&$2.273\pm 0.005(sys.)$&$8.536\pm 0.026(sys.)$\\
+		Stromminimum&$1.22\pm 0.04\pm 0.01$&$2.12\pm 0.09 \pm0.05$&$5.18\pm 0.35\pm 0.12$\\
+		Stromüberhöhung&$1.23\pm 0.01 \pm0.03$&$2.17\pm 0.02\pm 0.08$&$5.76\pm 0.46\pm0.32$\\		
 		\hline
 	\end{tabular}
 	\caption{Zusammenfasssung Parallelschwingkreis}
 	\label{table:Fazit_Parallelschwingkreis}
 \end{table}
-\begin{comment}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Python/P47_Fazit.pdf}
@@ -623,7 +621,7 @@ Wir fassen unsere Ergebnisse in Abb.~\ref{P47_Fazit}, \ref{P100_Fazit}, \ref{Pin
 \caption{Güteberechnung für $R=\infty$}
 \label{Pinf_Fazit}
 \end{figure}
-\end{comment}
+
 \section{Hochpass und Tiefpass}
 \subsection{Versuchsaufbau und Durchführung}
 In diesem Versuch wird qualitativ das Antwortverhalten eines Hoch- und Tiefpasses untersucht. Wir bauen einen Serienschwingkreis aus einem Widerstand mit $R=47\Omega$ und Kondensator mit $C=4,7\mu F$ auf, gemäß folgendem Schaltbild (Abb.~\ref{HT_Schaltbild}):
