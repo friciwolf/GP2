@@ -13,16 +13,24 @@ import praktikum.cassy as cassy
 
 def c_open(file, symbols, messungsnr=1):
     """
-    Zum Einlesen der CASSY-Messungen
+    Liest CASSY-Messungen ein.
     
-    Parameter:
-        :param file: Messdatei
-        :param symbols: Bezeichnung der Datenreihen z.B. R_B1, U_A1 als string
-        :param messungsnr: Nummer der Messung (default: 1)
-        :rtype: Array der Messdaten, also output[0] <=> R_B1, output[1] <=> U_A1 
-    Verwendung:
-        import praktikum_addons.bib as bib
-        x,y = bib.c_open("../doppel_1.lab", ["R_B1","U_A1"])
+    Parameter
+    ---------
+        file:
+            Messdatei
+        symbols:
+            Bezeichnung der Datenreihen z.B. R_B1, U_A1 als string
+        messungsnr:
+            Nummer der Messung (default: 1)
+    Returns
+    -------
+    Array der Messdaten, also output[0] <=> R_B1, output[1] <=> U_A1
+    
+    Verwendung
+    ----------
+        >>> import praktikum_addons.bib as bib
+        >>> x,y = bib.c_open("../doppel_1.lab", ["R_B1","U_A1"])
     """
     data = cassy.CassyDaten(file)
     N = len(data.messung(messungsnr).datenreihe(symbols[0]).werte)
@@ -55,9 +63,12 @@ def finde_Knoten(x, y, I=30):
     """
     Sucht nach Knotenpunkte(=Minima) im Intervall von I um jeden Wert. Bei Gleichheit, nehme den Linken
     
-    Returns:
-        :rtype: i_kn Indizes der Punkte
-        :rtype: x_kn x-Werte der Punkte
+    Returns
+    -------
+        i_kn:
+            Indizes der Punkte
+        x_kn:
+            x-Werte der Punkte
     """
     x_kn = []
     i_kn = []
@@ -71,32 +82,44 @@ def finde_Knoten(x, y, I=30):
             i_kn.append(i)
     return np.array(i_kn), np.array(x_kn)
 
-def pltmitres(x,y,ey,ex=0, xl="x", yl="y", xeinheit="", yeinheit="", title="", ratios=[2,1], regData=False, capsize=5, markersize=5):
+def pltmitres(x,y,ey,ex=0, xlabel="x", ylabel="y", xunit="", yunit="", title="", ratios=[2,1], RegData=False, precision=2,capsize=5, markersize=5):
     """
     Erstellen eines Plots mit dazugehörigem Residumplot
     
-    Parameter:
-        :param x,y,ex,ey: Daten mit Fehler
-        :param xl,yl: Titel der Achsen
-        :param xeinheit,yeinheit: Einheit der Werte als String
-        :param titel: Titel des Plots
-        :param ratios: Flächenverhältnis zwischen Daten- und Residumplot
-        :param regData: Falls wahr, a,ea,b,eb,chiq,corr der Regression werden auch zurückgegeben
+    Parameter
+    ---------
+        x,y,ex,ey:
+            Daten mit Fehler
+        xl,yl:
+            Titel der Achsen
+        xeinheit,yeinheit:
+            Einheit der Werte als String
+        titel:
+            Titel des Plots
+        ratios:
+            Flächenverhältnis zwischen Daten- und Residumplot
+        regData:
+            Falls wahr, a,ea,b,eb,chiq,corr der Regression werden auch zurückgegeben
+        precision:
+            Nachkommastellen der Parameter a,b
     
-    Returns:
-        :rtype fig, ax1, ax2 - Figurenplot, Achsen des Datenplots bzw. Residumplots 
-    Verwendung:
-        import numpy as np
-        import praktikum_addons.bib as bib
-        import matplotlib.pyplot as plt
-        
-        x = np.arange(0.1,1.3,0.1)
-        y = np.sin(x)
-        ex = np.ones(len(x))*0.03
-        ey = np.ones(len(y))*0.1
-        fig,ax1, ax2 = bib.pltmitres(x,y, ex, ey, yeinheit = "s", xeinheit="m", ratios=[7,1])
-        ax1.set_ylim(top=2)
-        plt.show()
+    Returns
+    --------
+    ax : 
+        Achsen des Datenplots (0) bzw. Residumplots (1)
+    
+    Verwendung
+    ----------
+        >>> import numpy as np
+        >>> import praktikum_addons.bib as bib
+        >>> import matplotlib.pyplot as plt
+        >>> x = np.arange(0.1,1.3,0.1)
+        >>> y = np.sin(x)
+        >>> ex = np.ones(len(x))*0.03
+        >>> ey = np.ones(len(y))*0.1
+        >>> ax = bib.pltmitres(x,y, ex, ey, yunit = "s", xunit="m", ratios=[7,1])
+        >>> ax[0].set_ylim(top=2)
+        >>> plt.show()
     """
     x = np.array(x)
     y = np.array(y)
@@ -111,15 +134,15 @@ def pltmitres(x,y,ey,ex=0, xl="x", yl="y", xeinheit="", yeinheit="", title="", r
     x2 = np.arange(min(x)-l*0.1, max(x)+l*0.1, l/1000)
     y2 = a*x2+b
     ax1.plot(x2, y2, color="orange")
-    if yeinheit!="": ax1.set_ylabel(yl+" [{}]".format(yeinheit))
-    else: ax1.set_ylabel(yl)
-    ax1.legend(title="Lineare Regression\n{} = ({:.6f} ± {:.6f}){} $\cdot$ {}+({:.6f}±{:.6f}){}\n$\chi^2 /NDF={:.4f}$".format(yl,a,ea, yeinheit+"/"+xeinheit,xl,b, eb, yeinheit, chiq/(len(x)-2)), loc=1)
+    if yunit!="": ax1.set_ylabel(ylabel+" [{}]".format(yunit))
+    else: ax1.set_ylabel(ylabel)
+    ax1.legend(title="Lineare Regression\n{1} = ({2:.{0}f} ± {3:.{0}f}){4} $\cdot$ {5}+({6:.{0}f}±{7:.{0}f}){8}\n$\chi^2 /NDF={9:.4f}$".format(precision,ylabel,a,ea, yunit+"/"+xunit,xlabel,b, eb, yunit, chiq/(len(x)-2)), loc=1)
     
     ax2.errorbar(x,y-a*x-b, np.sqrt(ex**2*a**2+ey**2), marker="x", linestyle="None", capsize=capsize, markersize=markersize)
     ax2.axhline(0, color="orange")
-    if xeinheit!="": plt.xlabel(xl+" [{}]".format(xeinheit))
-    else: plt.xlabel(xl)
+    if xunit!="": plt.xlabel(xlabel+" [{}]".format(xunit))
+    else: plt.xlabel(xlabel)
 
     plt.tight_layout()
-    if regData: return ax1, ax2, a,ea,b,eb,chiq,corr
-    else: return ax1, ax2
+    if RegData: return (ax1, ax2), (a,ea),(b,eb),chiq,corr
+    else: return (ax1, ax2)
