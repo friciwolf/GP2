@@ -82,23 +82,23 @@ def finde_Knoten(x, y, I=30):
             i_kn.append(i)
     return np.array(i_kn), np.array(x_kn)
 
-def pltmitres(x,y,ey,ex=0, xlabel="x", ylabel="y", xunit="", yunit="", title="", ratios=[2,1], RegData=False, precision=2,capsize=5, markersize=5):
+def pltmitres(x,y,ey,ex=0, xlabel="x", ylabel="y", xunit="", yunit="", title="", ratios=[2,1], regdata =False, precision=2,capsize=5, markersize=5):
     """
     Erstellen eines Plots mit dazugehörigem Residumplot
     
     Parameter
     ---------
         x,y,ex,ey:
-            Daten mit Fehler
-        xl,yl:
+            Daten mit Fehler (ex optionell)
+        xlabel,ylabel:
             Titel der Achsen
-        xeinheit,yeinheit:
+        xunit,yunit:
             Einheit der Werte als String
-        titel:
+        title:
             Titel des Plots
         ratios:
             Flächenverhältnis zwischen Daten- und Residumplot
-        regData:
+        regdata :
             Falls wahr, a,ea,b,eb,chiq,corr der Regression werden auch zurückgegeben
         precision:
             Nachkommastellen der Parameter a,b
@@ -107,6 +107,8 @@ def pltmitres(x,y,ey,ex=0, xlabel="x", ylabel="y", xunit="", yunit="", title="",
     --------
     ax : 
         Achsen des Datenplots (0) bzw. Residumplots (1)
+    (a, ea), (b,eb),chiq,corr:
+        Ergebnisse der linearen Regression (falls regdata = True)
     
     Verwendung
     ----------
@@ -144,5 +146,5 @@ def pltmitres(x,y,ey,ex=0, xlabel="x", ylabel="y", xunit="", yunit="", title="",
     else: plt.xlabel(xlabel)
 
     plt.tight_layout()
-    if RegData: return (ax1, ax2), (a,ea),(b,eb),chiq,corr
+    if regdata : return (ax1, ax2), (a,ea),(b,eb),chiq,corr
     else: return (ax1, ax2)
