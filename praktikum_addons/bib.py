@@ -13,11 +13,10 @@ import praktikum.cassy as cassy
 
 class measure:
     """
-    Enthält Informationen über Physikalische Größen wie Unsicherheiten oder
+    Enthält alle Informationen über physikalische Größen wie Unsicherheiten oder
     nominelle (vom Hersteller gegebene) Werte. Daneben unterstützt diese Klasse
     die vier aritmetischen Grundrechenarten inkl. Fehlerfortpflanzung aufs
     Ergebnis.
-    
     Parameter
     ---------
         value:
@@ -59,7 +58,10 @@ class measure:
             return(measure(self.m*other.m,np.sqrt((self.s*other.m)**2+(other.s*self.m)**2),self.n*other.n))
     
     def __truediv__(self,other):
-        return(measure(self.m/other.m,np.sqrt((self.s/other.m)**2+(other.s*self.m/other.m**2)**2),self.n/other.n))
+        if type(other)==int or type(other)==float:
+            return(measure(self.m/other,self.s/other,self.n/other))
+        else:
+            return(measure(self.m/other.m,np.sqrt((self.s/other.m)**2+(other.s*self.m/other.m**2)**2),self.n/other.n))
     
     def cut(self,lower_bound,upper_bound):
         """
