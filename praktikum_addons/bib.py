@@ -11,6 +11,70 @@ import numpy as np
 import praktikum.analyse as anal
 import praktikum.cassy as cassy
 
+class measure:
+    """
+    Enthält Informationen über Physikalische Größen wie Unsicherheiten oder
+    nominelle (vom Hersteller gegebene) Werte. Daneben unterstützt diese Klasse
+    die vier aritmetischen Grundrechenarten inkl. Fehlerfortpflanzung aufs
+    Ergebnis.
+    
+    Parameter
+    ---------
+        value:
+            Der Messwert als numpy-Array oder Zahl
+        measure_uncertainty:
+            Unsicherheiten als numpy-Array oder Zahl
+        measure_nominal_value:
+            Nominelle Werte als numpy-Array oder Zahl
+    Returns
+    -------
+        self.m:
+            value
+        self.s:
+            measure_uncertainty
+        self.n:
+            measure_nominal_value
+    """
+    def __init__(self,value,measure_uncertainty,measure_nominal_value=0):
+        self.m = value
+        self.s = measure_uncertainty
+        if type(measure_nominal_value)==float or type(measure_nominal_value)==int:
+            if type(value)==float or type(value)==int:
+                self.n = measure_nominal_value
+            else:
+                self.n = np.ones(len(value))*measure_nominal_value
+        else:
+            self.n = measure_nominal_value
+        
+    def __add__(self,other):
+        return(measure(self.m+other.m,np.sqrt(self.s**2+other.s**2),self.n+other.n))
+
+    def __sub__(self,other):
+        return(measure(self.m-other.m,np.sqrt(self.s**2+other.s**2),self.n-other.n))
+    
+    def __mul__(self,other):
+        if type(other)==int or type(other)==float:
+            return(measure(self.m*other,self.s*other,self.n*other))
+        else:
+            return(measure(self.m*other.m,np.sqrt((self.s*other.m)**2+(other.s*self.m)**2),self.n*other.n))
+    
+    def __truediv__(self,other):
+        return(measure(self.m/other.m,np.sqrt((self.s/other.m)**2+(other.s*self.m/other.m**2)**2),self.n/other.n))
+    
+    def cut(self,lower_bound,upper_bound):
+        """
+        Parameters
+        ----------
+            lower_bound: int
+                Untere Abschneidegrenze.
+            upper_bound: int
+                Obere Abschneidegrenze.
+        Returns
+        -------
+            Der Sub-measure. List-Analogon: list[lower_bound:upper_bound]
+        """
+        return measure(self.m[lower_bound:upper_bound], self.s[lower_bound:upper_bound],self.n[lower_bound:upper_bound])
+
 def c_open(file, symbols, messungsnr=1):
     """
     Liest CASSY-Messungen ein.
